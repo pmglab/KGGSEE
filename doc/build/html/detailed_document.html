@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detailed Document &mdash; KGGSEE  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/kggsee.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Options" href="options.html" />
+    <link rel="prev" title="Quick tutorials" href="quick_tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> KGGSEE
+          </a>
+              <div class="version">
+                v1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_tutorials.html">Quick tutorials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detailed Document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gene-based-association-tests">1. Gene-based association tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gene-based-association-tests-based-on-physical-distance">Gene-based association tests based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gene-based-association-tests-based-on-eqtls">Gene-based association tests based on eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transcript-based-association-tests-based-on-eqtls">Transcript-based association tests based on eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dese">2. DESE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dese-based-on-physical-distance">DESE based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edese-based-on-gene-level-eqtls">eDESE based on gene-level eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seldp-based-on-gene-level-eqtls">SelDP based on gene-level eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#emic">3. EMIC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#emic-based-on-gene-level-eqtl">EMIC based on gene-level eQTL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emic-based-on-transcript-level-eqtl">EMIC based on transcript-level eQTL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gene-based-heritability-estimation">4. Gene-based heritability estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gene-heritability-based-on-physical-distance">Gene heritability based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gene-heritability-based-on-eqtls">Gene heritability based on eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transcript-heritability-based-on-eqtls">Transcript heritability based on eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">KGGSEE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Detailed Document</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/detailed_document.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detailed-document">
+<span id="id1"></span><h1>Detailed Document<a class="headerlink" href="#detailed-document" title="Permalink to this headline"></a></h1>
+<p>We first describe the general aspects of all analyses and then describe details for each analysis. KGGSEE performs analysis according to the following procedure:</p>
+<ol class="arabic simple">
+<li><p>Reads genotypes of an ancestrally matched reference population, e.g., a panel of 1000 Genomes Project. The genotypes can be in a VCF file specified by <code class="docutils literal notranslate"><span class="pre">--vcf-ref</span></code>, and if <code class="docutils literal notranslate"><span class="pre">--keep-ref</span></code> is used at the same run, KGGSEE  saves the parsed VCF file in KGGSEE object format in the folder of <code class="docutils literal notranslate"><span class="pre">path/to/outputs/VCFRefhg*/</span></code>. For later run with <code class="docutils literal notranslate"><span class="pre">--keep-ref</span> <span class="pre">path/to/outputs/VCFRefhg*/</span></code>, KGGSEE reads genotypes from the object format files, which will be faster than parsing VCF files. KGGSEE calculates the minor allele frequency of each SNP and filters out SNPs with a minor allele frequency lower than the threshold specified by <code class="docutils literal notranslate"><span class="pre">--filter-maf-le</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0.05</span></code>). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by <code class="docutils literal notranslate"><span class="pre">--hwe-all</span></code> (default: <code class="docutils literal notranslate"><span class="pre">1E-5</span></code>). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.</p></li>
+<li><p>Reads GWAS summary statistics from a whitespace delimitated file specified by <code class="docutils literal notranslate"><span class="pre">--sum-file</span></code>. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For all analyses, an eQTL summary statistic file specified by <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> may be read. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for downloading on <a class="reference external" href="https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&amp;ga=1">OneDrive</a>.</p></li>
+<li><p>Based on the flag specified, KGGSEE reads more needed files and performs the corresponding analysis.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#detail-ecs"><span class="std std-ref">Gene-based association tests</span></a> trigered by <code class="docutils literal notranslate"><span class="pre">--gene-assoc</span></code>;</p></li>
+<li><p><a class="reference internal" href="#detail-dese"><span class="std std-ref">DESE</span></a> trigered by <code class="docutils literal notranslate"><span class="pre">--gene-finemapping</span></code>;</p></li>
+<li><p><a class="reference internal" href="#detail-emic"><span class="std std-ref">EMIC</span></a> trigered by <code class="docutils literal notranslate"><span class="pre">--emic</span></code>;</p></li>
+<li><p><a class="reference internal" href="#detail-h2"><span class="std std-ref">Gene-based heritability estimation</span></a> trigered by <code class="docutils literal notranslate"><span class="pre">--estimate-heritability</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<p id="eqtl-file">The KGGSEE format of eQTL summary statistics is fasta-styled. An example is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#symbol   id chr     pos     ref     alt     altfreq beta    se      p       neff    r2</span>
+<span class="o">&gt;</span><span class="n">WASH7P</span>      <span class="n">ENSG00000227232</span> <span class="mi">1</span>
+<span class="mi">52238</span>        <span class="n">T</span>       <span class="n">G</span>       <span class="mf">0.94</span>    <span class="o">-</span><span class="mf">1.77</span>   <span class="mf">0.28</span>    <span class="mf">5.1E-9</span>  <span class="mi">65</span>      <span class="mf">0.38</span>
+<span class="mi">74681</span>        <span class="n">G</span>       <span class="n">T</span>       <span class="mf">0.95</span>    <span class="o">-</span><span class="mf">1.45</span>   <span class="mf">0.33</span>    <span class="mf">1.1E-5</span>  <span class="mi">63</span>      <span class="mf">0.23</span>
+<span class="mi">92638</span>        <span class="n">A</span>       <span class="n">T</span>       <span class="mf">0.24</span>    <span class="mf">0.54</span>    <span class="mf">0.20</span>    <span class="mf">7.9E-3</span>  <span class="mi">53</span>      <span class="mf">0.12</span>
+<span class="o">&gt;</span><span class="n">MIR130</span>      <span class="n">ENSG00000284557</span> <span class="mi">1</span>
+<span class="mi">52238</span>        <span class="n">T</span>       <span class="n">G</span>       <span class="mf">0.94</span>    <span class="o">-</span><span class="mf">1.77</span>   <span class="mf">0.28</span>    <span class="mf">5.1E-9</span>  <span class="mi">65</span>      <span class="mf">0.38</span>
+<span class="mi">74681</span>        <span class="n">G</span>       <span class="n">T</span>       <span class="mf">0.95</span>    <span class="o">-</span><span class="mf">1.45</span>   <span class="mf">0.33</span>    <span class="mf">1.1E-5</span>  <span class="mi">63</span>      <span class="mf">0.23</span>
+</pre></div>
+</div>
+<p>The first row starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> is the header line. Then, eQTLs of each gene/transcript are chunked. For each gene/transcript, the first row has three columns of (1) the gene symbol prefixed by <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, (2) Ensembl gene/transcript ID, and (3) chromosome; the second and following rows have nine columns of (4) the eQTL coordinate, (5) the reference allele, (6) the alternative allele, (7) the frequency of the alternative allele, (8) the effect size, (9) the standard error of the effect size, (10) the p-value of nonzero effect size, (11) the effective sample size and (12) coefficient of determination.</p>
+<section id="gene-based-association-tests">
+<span id="detail-ecs"></span><h2>1. Gene-based association tests<a class="headerlink" href="#gene-based-association-tests" title="Permalink to this headline"></a></h2>
+<p>KGGSEE performs the gene-based association analysis by GATES (a rapid and powerful <strong>G</strong>ene-based <strong>A</strong>ssociation <strong>T</strong>est using <strong>E</strong>xtended <strong>S</strong>imes procedure) and ECS (an <strong>E</strong>ffective <strong>C</strong>hi-square <strong>S</strong> tatistics). The <code class="docutils literal notranslate"><span class="pre">--gene-assoc</span></code> flag trigers both.</p>
+<p>GATES (<a class="reference external" href="https://doi.org/10.1016/j.ajhg.2011.01.019">the GATES paper</a>) is basically an extension of the Simes procedure to dependent tests, as the individual GWAS tests are dependent due to LD. GATES calculates an effective number of independent p-values which is then used by a Simes procedure.</p>
+<p>ECS (<a class="reference external" href="https://doi.org/10.1093/bioinformatics/bty682">the ECS paper</a>) first converts the p-values of a gene to chi-square statistics(one degree of freedom). Then, merges all chi-square statistics of a gene after correcting the redundancy of the statistics due to LD. The merged statistic is called an ECS which is used to calculate the p-value of the gene.</p>
+<section id="synopsis">
+<h3>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xms16g -Xmx16g -jar kggsee.jar
+--gene-assoc
+--out &lt;prefix&gt;
+--vcf-ref &lt;file&gt;
+--sum-file &lt;file&gt;
+--chrom-col &lt;header&gt;  <span class="c1"># default: CHR</span>
+--pos-col &lt;header&gt;  <span class="c1"># default: BP</span>
+--p-col &lt;header&gt;  <span class="c1"># default: P</span>
+--neargene &lt;basepair&gt;  <span class="c1"># default: 5000</span>
+--eqtl-file &lt;file&gt;
+--filter-eqtl-p &lt;pval&gt;  <span class="c1"># default: 0.01</span>
+</pre></div>
+</div>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">--gene-assoc</span></code> triggers the gene-based association tests. <code class="docutils literal notranslate"><span class="pre">--sum-file</span></code> specifies a white space-delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by <code class="docutils literal notranslate"><span class="pre">--chrom-col</span></code>, <code class="docutils literal notranslate"><span class="pre">--pos-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--p-col</span></code> separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is overridden. When <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, <code class="docutils literal notranslate"><span class="pre">--filter-eqtl-p</span></code> can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. <a class="reference internal" href="#eqtl-file"><span class="std std-ref">A description of the eQTL file format</span></a> is near the beginning of the page.</p>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
+<section id="gene-based-association-tests-based-on-physical-distance">
+<h4>Gene-based association tests based on physical distance<a class="headerlink" href="#gene-based-association-tests-based-on-physical-distance" title="Permalink to this headline"></a></h4>
+<p>In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped for association tests.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-assoc <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--neargene <span class="m">10000</span> <span class="se">\</span>
+--out t1.1
+</pre></div>
+</div>
+</section>
+<section id="gene-based-association-tests-based-on-eqtls">
+<h4>Gene-based association tests based on eQTLs<a class="headerlink" href="#gene-based-association-tests-based-on-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, eQTLs of a gene will be grouped for association tests.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-assoc <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--out t1.2
+</pre></div>
+</div>
+</section>
+<section id="transcript-based-association-tests-based-on-eqtls">
+<h4>Transcript-based association tests based on eQTLs<a class="headerlink" href="#transcript-based-association-tests-based-on-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, eQTLs of a transcript will be grouped for association tests.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-assoc <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--out t1.3
+</pre></div>
+</div>
+</section>
+</section>
+<section id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline"></a></h3>
+<p>The file with a suffix of <code class="docutils literal notranslate"><span class="pre">.gene.pvalue.txt</span></code> saves the results of gene-based association tests. Columns of the file are as follow:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gene</p></td>
+<td><p>Gene symbol</p></td>
+</tr>
+<tr class="row-odd"><td><p>#Var</p></td>
+<td><p>Number of variants within the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>ECSP</p></td>
+<td><p>p-value of ECS</p></td>
+</tr>
+<tr class="row-odd"><td><p>GATESP</p></td>
+<td><p>p-value of GATES</p></td>
+</tr>
+<tr class="row-even"><td><p>Chrom</p></td>
+<td><p>Chromosome of the gene</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos</p></td>
+<td><p>The coordinate of the variant with the lowest p-value within the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>GWAS_Var_P</p></td>
+<td><p>p-value of the variant</p></td>
+</tr>
+</tbody>
+</table>
+<p>Columns of the file with the suffix of <code class="docutils literal notranslate"><span class="pre">.gene.var.pvalue.txt.gz</span></code> are the same as <code class="docutils literal notranslate"><span class="pre">*.gene.pvalue.txt</span></code>. The difference is that, for each gene, in <code class="docutils literal notranslate"><span class="pre">*.gene.pvalue.txt</span></code>, only the variant with the lowest p-value is output, while in <code class="docutils literal notranslate"><span class="pre">*.gene.var.pvalue.txt.gz</span></code>, all variants are output. The file with the suffix of <code class="docutils literal notranslate"><span class="pre">.qq.png</span></code> is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.</p>
+</section>
+</section>
+<section id="dese">
+<span id="detail-dese"></span><h2>2. DESE<a class="headerlink" href="#dese" title="Permalink to this headline"></a></h2>
+<p>DESE (<strong>D</strong>river-tissue <strong>E</strong>stimation by <strong>S</strong>elective <strong>E</strong>xpression; <a class="reference external" href="https://doi.org/10.1186/s13059-019-1801-5">the DESE paper</a>) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype.</p>
+<p>DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the <strong>e</strong>QTL-guided <strong>DESE</strong> eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (<a class="reference external" href="https://doi.org/10.7554/eLife.70779">the eDESE paper</a>).</p>
+<section id="id2">
+<h3>Synopsis<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xms16g -Xmx16g -jar kggsee.jar
+--gene-finemapping
+--out &lt;prefix&gt;
+--vcf-ref &lt;file&gt;
+--sum-file &lt;file&gt;
+--chrom-col &lt;header&gt;  <span class="c1"># default: CHR</span>
+--pos-col &lt;header&gt;  <span class="c1"># default: BP</span>
+--p-col &lt;header&gt;  <span class="c1"># default: P</span>
+--neargene &lt;basepair&gt;  <span class="c1"># default: 5000</span>
+--eqtl-file &lt;file&gt;
+--filter-eqtl-p &lt;pval&gt;  <span class="c1"># default: 0.01</span>
+--multiple-testing &lt;bonf<span class="p">|</span>benfdr<span class="p">|</span>fixed&gt;  <span class="c1"># default: bonf</span>
+--p-value-cutoff &lt;pval&gt;  <span class="c1"># default: 0.05</span>
+--top-gene &lt;number&gt;
+--expression-file &lt;file&gt;
+--geneset-db &lt;cura<span class="p">|</span>cgp<span class="p">|</span>cano<span class="p">|</span>cmop<span class="p">|</span>onto<span class="p">|</span>onco<span class="p">|</span>immu&gt;
+--geneset-file &lt;file&gt;
+</pre></div>
+</div>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">--gene-finemapping</span></code> triggers DESE. First, KGGSEE performs gene-based association tests, which is the same as the analyses triggered by <code class="docutils literal notranslate"><span class="pre">--gene-assoc</span></code>. <code class="docutils literal notranslate"><span class="pre">--sum-file</span></code> specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by <code class="docutils literal notranslate"><span class="pre">--chrom-col</span></code>, <code class="docutils literal notranslate"><span class="pre">--pos-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--p-col</span></code> separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, eDESE is evoked; KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is overridden. When <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, <code class="docutils literal notranslate"><span class="pre">--filter-eqtl-p</span></code> can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. <a class="reference internal" href="#eqtl-file"><span class="std std-ref">A description of the eQTL file format</span></a> is near the beginning of the page.</p>
+<p>Second, after the gene-based association tests, significant genes by ECS are retained for fine-mapping. <code class="docutils literal notranslate"><span class="pre">--multiple-testing</span></code> specifies the method for multiple testing correction: <code class="docutils literal notranslate"><span class="pre">bonf</span></code> denotes Bonferroni correction; <code class="docutils literal notranslate"><span class="pre">benfdr</span></code> denotes Benjamini–Hochberg FDR; <code class="docutils literal notranslate"><span class="pre">fixed</span></code> denotes no correction. <code class="docutils literal notranslate"><span class="pre">--p-value-cutoff</span></code> specifies the threshold of the adjusted p-value. <code class="docutils literal notranslate"><span class="pre">--top-gene</span></code> specifies the maximum number of genes retained for fine-mapping. So, only genes (no more than the specified maximum number) with adjusted p-values lower than the specified threshold are retained for fine-mapping. Then, KGGSEE reads the expression file specified by <code class="docutils literal notranslate"><span class="pre">--expression-file</span></code> and performs iterative estimation of driver tissues.</p>
+<p>Finally, if <code class="docutils literal notranslate"><span class="pre">--geneset-db</span></code> is specified, KGGSEE tests if the conditional significant genes are enriched in gene sets of <a class="reference external" href="http://www.gsea-msigdb.org/gsea/msigdb/index.jsp">MSigDB</a>. The abbreviations of gene sets are as follow:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cura</span></code>: C2. curated gene sets;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cgp</span></code> : C2. chemical and genetic perturbations;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cano</span></code>: C2. canonical pathways;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cmop</span></code>: C4. computational gene sets;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">onto</span></code>: C5. ontology gene sets;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">onco</span></code>: C6. oncogenic signature gene sets;</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">immu</span></code>: C7. immunologic signature gene sets.</div>
+</div>
+</div></blockquote>
+<p>Customized gene sets for enrichment tests can be specified by <code class="docutils literal notranslate"><span class="pre">--geneset-file</span></code>. Please refer to <code class="docutils literal notranslate"><span class="pre">resources/*.symbols.gmt.gz</span></code> under the KGGSEE directory for file formats.</p>
+<p>Expression files should be white space delimitated. The first column is gene/transcript IDs. The following columns are means and standard errors of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>                 <span class="n">Tissue1</span><span class="o">.</span><span class="n">mean</span>   <span class="n">Tissue1</span><span class="o">.</span><span class="n">SE</span>     <span class="n">Tissue2</span><span class="o">.</span><span class="n">mean</span>   <span class="n">Tissue2</span><span class="o">.</span><span class="n">SE</span>     <span class="o">...</span>
+<span class="n">ENSG00000223972</span><span class="o">.</span><span class="mi">5</span>    <span class="mf">0.0038016</span>      <span class="mf">0.00036668</span>     <span class="mf">0.0045709</span>      <span class="mf">0.00046303</span>     <span class="o">...</span>
+<span class="n">ENSG00000227232</span><span class="o">.</span><span class="mi">5</span>    <span class="mf">1.9911</span>         <span class="mf">0.030021</span>       <span class="mf">1.8841</span>         <span class="mf">0.040247</span>       <span class="o">...</span>
+<span class="n">ENSG00000278267</span><span class="o">.</span><span class="mi">1</span>    <span class="mf">0.00049215</span>     <span class="mf">0.00010645</span>     <span class="mf">0.00036466</span>     <span class="mf">9.2944E-05</span>     <span class="o">...</span>
+<span class="n">ENSG00000243485</span><span class="o">.</span><span class="mi">5</span>    <span class="mf">0.0047772</span>      <span class="mf">0.00038018</span>     <span class="mf">0.0067897</span>      <span class="mf">0.00074318</span>     <span class="o">...</span>
+<span class="n">ENSG00000237613</span><span class="o">.</span><span class="mi">2</span>    <span class="mf">0.0030462</span>      <span class="mf">0.00027513</span>     <span class="mf">0.0030465</span>      <span class="mf">0.00031694</span>     <span class="o">...</span>
+<span class="n">ENSG00000268020</span><span class="o">.</span><span class="mi">3</span>    <span class="mf">0.011766</span>       <span class="mf">0.00061769</span>     <span class="mf">0.013409</span>       <span class="mf">0.0011429</span>      <span class="o">...</span>
+<span class="n">ENSG00000240361</span><span class="o">.</span><span class="mi">1</span>    <span class="mf">0.017913</span>       <span class="mf">0.00093294</span>     <span class="mf">0.021833</span>       <span class="mf">0.001556</span>       <span class="o">...</span>
+</pre></div>
+</div>
+<p>A transcript-level expression file looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>                                   <span class="n">Tissue1</span><span class="o">.</span><span class="n">mean</span>   <span class="n">Tissue1</span><span class="o">.</span><span class="n">SE</span>     <span class="n">Tissue2</span><span class="o">.</span><span class="n">mean</span>   <span class="n">Tissue2</span><span class="o">.</span><span class="n">SE</span>     <span class="o">...</span>
+<span class="n">ENST00000373020</span><span class="o">.</span><span class="mi">8</span><span class="p">:</span><span class="n">ENSG00000000003</span><span class="o">.</span><span class="mi">14</span>   <span class="mf">35.06</span>          <span class="mf">0.52271</span>        <span class="mf">35.725</span>         <span class="mf">0.66812</span>        <span class="o">...</span>
+<span class="n">ENST00000494424</span><span class="o">.</span><span class="mi">1</span><span class="p">:</span><span class="n">ENSG00000000003</span><span class="o">.</span><span class="mi">14</span>   <span class="mf">0.0034329</span>      <span class="mf">0.001209</span>       <span class="mf">0.0016207</span>      <span class="mf">0.0006441</span>      <span class="o">...</span>
+<span class="n">ENST00000496771</span><span class="o">.</span><span class="mi">5</span><span class="p">:</span><span class="n">ENSG00000000003</span><span class="o">.</span><span class="mi">14</span>   <span class="mf">1.0462</span>         <span class="mf">0.019697</span>       <span class="mf">1.1043</span>         <span class="mf">0.02552</span>        <span class="o">...</span>
+<span class="n">ENST00000612152</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="n">ENSG00000000003</span><span class="o">.</span><span class="mi">14</span>   <span class="mf">2.5764</span>         <span class="mf">0.041124</span>       <span class="mf">2.4045</span>         <span class="mf">0.043626</span>       <span class="o">...</span>
+<span class="n">ENST00000614008</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="n">ENSG00000000003</span><span class="o">.</span><span class="mi">14</span>   <span class="mf">0.42826</span>        <span class="mf">0.01346</span>        <span class="mf">0.41354</span>        <span class="mf">0.01551</span>        <span class="o">...</span>
+<span class="n">ENST00000373031</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="n">ENSG00000000005</span><span class="o">.</span><span class="mi">5</span>    <span class="mf">15.215</span>         <span class="mf">0.58333</span>        <span class="mf">9.5993</span>         <span class="mf">0.49941</span>        <span class="o">...</span>
+<span class="n">ENST00000485971</span><span class="o">.</span><span class="mi">1</span><span class="p">:</span><span class="n">ENSG00000000005</span><span class="o">.</span><span class="mi">5</span>    <span class="mf">1.0715</span>         <span class="mf">0.04074</span>        <span class="mf">1.1209</span>         <span class="mf">0.052269</span>       <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Examples<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<section id="dese-based-on-physical-distance">
+<h4>DESE based on physical distance<a class="headerlink" href="#dese-based-on-physical-distance" title="Permalink to this headline"></a></h4>
+<p>In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with FDR&lt;0.05 will be retained for fine-mapping.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-finemapping <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--neargene <span class="m">10000</span> <span class="se">\</span>
+--multiple-testing benfdr <span class="se">\</span>
+--p-value-cutoff <span class="m">0</span>.05 <span class="se">\</span>
+--expression-file GTEx_v8_gene_meanSE.tsv.gz <span class="se">\</span>
+--out t2.1
+</pre></div>
+</div>
+</section>
+<section id="edese-based-on-gene-level-eqtls">
+<h4>eDESE based on gene-level eQTLs<a class="headerlink" href="#edese-based-on-gene-level-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, eQTLs of a gene will be considered as a unit for a gene-based association test. The top 100 significant genes by ECS with nominal p&lt;0.05 will be retained for fine-mapping. Significant genes by eDESE will be tested if they are enriched in the C5. ontology gene sets of <a class="reference external" href="http://www.gsea-msigdb.org/gsea/msigdb/index.jsp">MSigDB</a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-finemapping <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--multiple-testing fixed <span class="se">\</span>
+--p-value-cutoff <span class="m">0</span>.05 <span class="se">\</span>
+--top-gene <span class="m">100</span> <span class="se">\</span>
+--expression-file GTEx_v8_gene_meanSE.tsv.gz <span class="se">\</span>
+--geneset-db onto <span class="se">\</span>
+--out t2.2
+</pre></div>
+</div>
+</section>
+<section id="seldp-based-on-gene-level-eqtls">
+<h4>SelDP based on gene-level eQTLs<a class="headerlink" href="#seldp-based-on-gene-level-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">--expression-file</span></code> specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP estimates the drug selective perturbation effect on the phenotype-associated genes’ expression to aid the drug repositioning for complex diseases.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--gene-finemapping <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_genet_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--expression-file drug-induced_expression_change_profile <span class="se">\</span>
+--out t2.3
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h3>Outputs<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<p>The three files with suffixes of <code class="docutils literal notranslate"><span class="pre">.gene.pvalue.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">.gene.var.pvalue.txt.gz</span></code>, and <code class="docutils literal notranslate"><span class="pre">.qq.png</span></code> are the same as their counterparts output by <a class="reference internal" href="#detail-ecs"><span class="std std-ref">Gene-based association tests</span></a>.</p>
+<p>In addition, results of conditional gene-based association tests are saved in a file with a suffix of <code class="docutils literal notranslate"><span class="pre">.finemapping.gene.ecs.txt</span></code>. Columns of the file are as follow:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gene</p></td>
+<td><p>Gene symbol</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chrom</p></td>
+<td><p>Chromosome of the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>StartPos</p></td>
+<td><p>Start position of the gene</p></td>
+</tr>
+<tr class="row-odd"><td><p>EndPos</p></td>
+<td><p>End position of the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>#Var</p></td>
+<td><p>Number of variants within the gene</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group</p></td>
+<td><p>LD group number. Conditional ECS tests were performed for genes within the same LD group.</p></td>
+</tr>
+<tr class="row-even"><td><p>ECSP</p></td>
+<td><p>p-value of ECS</p></td>
+</tr>
+<tr class="row-odd"><td><p>CondiECSP</p></td>
+<td><p>p-value of conditional gene-based association tests by conditional ECS</p></td>
+</tr>
+<tr class="row-even"><td><p>GeneScore</p></td>
+<td><p>The gene’s selective expression score in all tissues. A gene with a high score will be given higher priority to enter the conditioning procedure.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Results of phenotype-tissue associations are saved in a file with a suffix of <code class="docutils literal notranslate"><span class="pre">.celltype.txt</span></code>. Columns of the file are as follow:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TissueName</p></td>
+<td><p>Name of the tissue being tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>p</p></td>
+<td><p>p-values of phenotype-tissue associations. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue.</p></td>
+</tr>
+<tr class="row-even"><td><p>Log(p)</p></td>
+<td><p>The negative logarithm (base 10) of p-values of phenotype-tissue association</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">--geneset-db</span></code> or <code class="docutils literal notranslate"><span class="pre">--geneset-file</span></code> is specified, results of enrichment tests are saved in a file with a suffix of <code class="docutils literal notranslate"><span class="pre">.geneset.txt</span></code>. Columns of the file are as follow:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GeneSet_ID</p></td>
+<td><p>Gene-set ID in the first column of the gene-set file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enrichment_PValue_Hypergeometric</p></td>
+<td><p>p-values of the hypergeometric tests.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsSignificant_Hypergeometric</p></td>
+<td><p>If the conditional significant genes are significantly enriched in the gene set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total_GeneSet_Gene#</p></td>
+<td><p>The total number of genes in the gene set.</p></td>
+</tr>
+<tr class="row-even"><td><p>GeneSet_URL</p></td>
+<td><p>Gene-set URL in the second column of the gene-set file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gene_PValue</p></td>
+<td><p>p-values of conditional significant genes within the gene set.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="emic">
+<span id="detail-emic"></span><h2>3. EMIC<a class="headerlink" href="#emic" title="Permalink to this headline"></a></h2>
+<p>EMIC (<strong>E</strong>ffective-median-based <strong>M</strong>endelian randomization framework for <strong>I</strong>nferring the <strong>C</strong>ausal genes of complex phenotypes) inferences gene expressions’ causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. The effective-median method solved the high false-positive issue in the existing MR methods due to either correlation among instrumental variables or noises in approximated linkage disequilibrium (LD). EMIC can further perform a pleiotropy fine-mapping analysis to remove possible false-positive estimates (<a class="reference external" href="https://doi.org/10.1016/j.ajhg.2022.04.004">the EMIC paper</a>).</p>
+<section id="id6">
+<h3>Synopsis<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xms16g -Xmx16g -jar kggsee.jar
+--emic
+--out &lt;prefix&gt;
+--vcf-ref &lt;file&gt;
+--sum-file &lt;file&gt;
+--chrom-col &lt;header&gt;  <span class="c1"># default: CHR</span>
+--pos-col &lt;header&gt;  <span class="c1"># default: BP</span>
+--a1-col &lt;header&gt;  <span class="c1"># default: A1</span>
+--a2-col &lt;header&gt;  <span class="c1"># default: A2</span>
+--freq-a1-col &lt;header&gt;  <span class="c1"># default: FRQ_U</span>
+--beta-col &lt;header&gt;
+--beta-type &lt;<span class="m">0</span><span class="p">|</span><span class="m">1</span><span class="p">|</span><span class="m">2</span>&gt;
+--se-col &lt;header&gt;  <span class="c1"># default: SE</span>
+--eqtl-file &lt;file&gt;
+--filter-eqtl-p &lt;pval&gt;  <span class="c1"># default: 1E-4</span>
+--ld-pruning-mr  &lt;r2&gt;  <span class="c1"># default: 0.5</span>
+--emic-pfm-p &lt;pval&gt;  <span class="c1"># default: 2.5E-6</span>
+--emic-plot-p &lt;pval&gt;  <span class="c1"># default: 2.5E-3</span>
+</pre></div>
+</div>
+<p>When performing EMIC (triggered by <code class="docutils literal notranslate"><span class="pre">--emic</span></code>), a GWAS summary statistic file (specified by <code class="docutils literal notranslate"><span class="pre">--sum-file</span></code>) and an eQTL summary statistic file (specified by <code class="docutils literal notranslate"><span class="pre">eqtl-file</span></code>) are needed. The GWAS summary statistic file must have columns of SNP coordinates (specified by <code class="docutils literal notranslate"><span class="pre">--chrom-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--pos-col</span></code>), the two alleles (specified by <code class="docutils literal notranslate"><span class="pre">--a1-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--a2-col</span></code>), frequencies of the allele specified by <code class="docutils literal notranslate"><span class="pre">--a1-col</span></code> (specified by <code class="docutils literal notranslate"><span class="pre">--freq-a1-col</span></code>), the effect sizes and its standard errors (specified by <code class="docutils literal notranslate"><span class="pre">--beta-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--se-col</span></code>). The type of effect sizes is specified by <code class="docutils literal notranslate"><span class="pre">--beta-type</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> for linear regression coefficient of a quantitative phenotype; <code class="docutils literal notranslate"><span class="pre">1</span></code> for the logarithm of odds ratio or logistic regression coefficient of a qualitative phenotype; <code class="docutils literal notranslate"><span class="pre">2</span></code> for an odds ratio of a qualitative phenotype). <code class="docutils literal notranslate"><span class="pre">--filter-eqtl-p</span></code> specifies the p-value threshold of eQTLs; only eQTLs with a p-value lower than the threshold will be considered; we note here that the default value is <code class="docutils literal notranslate"><span class="pre">1E-4</span></code> for EMIC, which is different from the other analyses. <code class="docutils literal notranslate"><span class="pre">--ld-pruning-mr</span></code> specifies the threshold of LD coefficient when pruning variants; for each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned. <code class="docutils literal notranslate"><span class="pre">--emic-pfm-p</span></code> specifies the p-value threshold to further perform an EMIC pleiotropy fine-mapping (EMIC-PFM) analysis; if the EMIC p-value of a gene is lower than the threshold, an EMIC-PFM will be performed to control the false-positive caused by pleiotropy. <code class="docutils literal notranslate"><span class="pre">--emic-plot-p</span></code> specifies the p-value threshold for plotting a scatter plot; genes with an EMIC p-value lower than the threshold will be plotted. <a class="reference internal" href="#eqtl-file"><span class="std std-ref">A description of the eQTL file format</span></a> is near the beginning of the page.</p>
+</section>
+<section id="id7">
+<h3>Examples<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<section id="emic-based-on-gene-level-eqtl">
+<h4>EMIC based on gene-level eQTL<a class="headerlink" href="#emic-based-on-gene-level-eqtl" title="Permalink to this headline"></a></h4>
+<p>This is an example of gene-level EMIC. Only eQTLs with a p-value lower than 1E-6 will be considered IVs. Genes with a p-value of EMIC lower than 0.05 will also undergo EMIC-PFM. Genes with a p-value of EMIC lower than 0.01 will be plotted.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--beta-col OR <span class="se">\</span>
+--beta-type <span class="m">2</span> <span class="se">\</span>
+--emic <span class="se">\</span>
+--filter-eqtl-p 1e-6 <span class="se">\</span>
+--emic-pfm-p <span class="m">0</span>.05 <span class="se">\</span>
+--emic-plot-p <span class="m">0</span>.01 <span class="se">\</span>
+--out t3.1
+</pre></div>
+</div>
+</section>
+<section id="emic-based-on-transcript-level-eqtl">
+<h4>EMIC based on transcript-level eQTL<a class="headerlink" href="#emic-based-on-transcript-level-eqtl" title="Permalink to this headline"></a></h4>
+<p>This is an example of transcript-level EMIC. Only eQTLs with a p-value lower than 1E-6 will be considered IVs. Transcripts with a p-value of EMIC lower than 0.05 will also undergo EMIC-PFM. Transcripts with a p-value of EMIC lower than 0.01 will be plotted.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--beta-col OR <span class="se">\</span>
+--beta-type <span class="m">2</span> <span class="se">\</span>
+--emic <span class="se">\</span>
+--filter-eqtl-p 1e-6 <span class="se">\</span>
+--emic-pfm-p <span class="m">0</span>.05 <span class="se">\</span>
+--emic-plot-p <span class="m">0</span>.01 <span class="se">\</span>
+--out t3.2
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h3>Outputs<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<p>The numeric results of EMIC are saved in a file with a suffix of <code class="docutils literal notranslate"><span class="pre">.emic.gene.txt</span></code>. There are nine columns in the file:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gene</p></td>
+<td><p>The gene symbol</p></td>
+</tr>
+<tr class="row-odd"><td><p>#Var</p></td>
+<td><p>Number of IVs within the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>minP_EMIC</p></td>
+<td><p>p-value of EMIC. When a transcript-leveled EMIC is performed, this is the minimum p-value among all transcripts of the gene.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Details_EMIC</p></td>
+<td><p>Detailed results of EMIC-PFM separated by semicolons. Each result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC is performed, results for each transcript are listed.</p></td>
+</tr>
+<tr class="row-even"><td><p>Chrom</p></td>
+<td><p>Chromosome of the gene</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos</p></td>
+<td><p>The coordinate of the IV with the lowest GWAS p-value</p></td>
+</tr>
+<tr class="row-even"><td><p>GWAS_Var_P</p></td>
+<td><p>GWAS p-value of the IV</p></td>
+</tr>
+<tr class="row-odd"><td><p>GWAS_Var_Beta</p></td>
+<td><p>The phenotype association effect size of the IV</p></td>
+</tr>
+<tr class="row-even"><td><p>GWAS_Var_SE</p></td>
+<td><p>Standard error of the effect size</p></td>
+</tr>
+</tbody>
+</table>
+<p>The numeric results of EMIC-PFM are saved in a file with a suffix of <code class="docutils literal notranslate"><span class="pre">.emic.gene.PleiotropyFinemapping.txt</span></code>. Only genes with a p-value lower than the threshold specified by <code class="docutils literal notranslate"><span class="pre">--emic-pfm-p</span></code> are saved. The file has thirteen columns, in which nine are the same as columns of <code class="docutils literal notranslate"><span class="pre">*.emic.gene.txt</span></code>. The other four columns are:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Group</p></td>
+<td><p>IDs of a group of genes that share eQTLs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>minP_EMIC_PFM</p></td>
+<td><p>p-value of EMIC-PFM. When a transcript-leveled EMIC-PFM is performed, this is the minimum p-value among all transcripts of the gene.</p></td>
+</tr>
+<tr class="row-even"><td><p>DetailsEMIC_PFM</p></td>
+<td><p>Detailed results of EMIC-PFM separated by semicolons. Each result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC-PFM is performed, results for each transcript are listed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CochransQ</p></td>
+<td><p>The p-value of an extended Cochran’s Q test. The significance (p&lt;1E-3) means that the causal effect is more likely to be false-positive. At this point, KGGSEE excludes its eQTLs which are also the eQTLs of other significant genes, and redoes EMIC. In this case, results in the columns of minP_EMIC_PFM and DetailsEMIC_PFM will be different from in the columns of minP_EMIC and Details_EMIC.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Columns of the file with a suffix of <code class="docutils literal notranslate"><span class="pre">.emic.gene.var.tsv.gz</span></code> are the same as <code class="docutils literal notranslate"><span class="pre">*.emic.gene.txt</span></code>. The difference is that, for each gene, in <code class="docutils literal notranslate"><span class="pre">*.emic.gene.txt</span></code>, only the eQTL with the lowest GWAS p-value is output, while in <code class="docutils literal notranslate"><span class="pre">*.emic.gene.var.tsv.gz</span></code>, all eQTLs are output. The file with a suffix of <code class="docutils literal notranslate"><span class="pre">.qq.png</span></code> saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of <code class="docutils literal notranslate"><span class="pre">.emic.qq.png</span></code> saves the Q-Q plot for EMIC p-values. The file with a suffix of <code class="docutils literal notranslate"><span class="pre">.scatterplots.emic.pdf</span></code> saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by <code class="docutils literal notranslate"><span class="pre">--emic-plot-p</span></code> is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.</p>
+</section>
+</section>
+<section id="gene-based-heritability-estimation">
+<span id="detail-h2"></span><h2>4. Gene-based heritability estimation<a class="headerlink" href="#gene-based-heritability-estimation" title="Permalink to this headline"></a></h2>
+<p>This analysis estimates the heritability of each gene and performs gene-based association tests at the same time.</p>
+<section id="id9">
+<h3>Synopsis<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xms16g -Xmx16g -jar kggsee.jar
+--estimate-heritability
+--out &lt;prefix&gt;
+--vcf-ref &lt;file&gt;
+--sum-file &lt;file&gt;
+--chrom-col &lt;header&gt;  <span class="c1"># default: CHR</span>
+--pos-col &lt;header&gt;  <span class="c1"># default: BP</span>
+--p-col &lt;header&gt;  <span class="c1"># default: P</span>
+--nmiss-col &lt;header&gt;  <span class="c1"># default: Neff</span>
+--case-col &lt;header&gt;
+--control-col &lt;header&gt;
+--neargene &lt;basepair&gt;  <span class="c1"># default: 5000</span>
+--eqtl-file &lt;file&gt;
+--filter-eqtl-p &lt;pval&gt;  <span class="c1"># default: 0.01</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--estimate-heritability</span></code> triggers gene-based association tests and estimation of gene heritability. <code class="docutils literal notranslate"><span class="pre">--sum-file</span></code> specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by <code class="docutils literal notranslate"><span class="pre">--chrom-col</span></code>, <code class="docutils literal notranslate"><span class="pre">--pos-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--p-col</span></code> separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by <code class="docutils literal notranslate"><span class="pre">--nmiss-col</span></code>; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by <code class="docutils literal notranslate"><span class="pre">--case-col</span></code> and <code class="docutils literal notranslate"><span class="pre">--control-col</span></code> separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and <code class="docutils literal notranslate"><span class="pre">--neargene</span></code> is overridden. When <code class="docutils literal notranslate"><span class="pre">--eqtl-file</span></code> is specified, <code class="docutils literal notranslate"><span class="pre">--filter-eqtl-p</span></code> can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. <a class="reference internal" href="#eqtl-file"><span class="std std-ref">A description of the eQTL file format</span></a> is near the beginning of the page.</p>
+</section>
+<section id="id10">
+<h3>Examples<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<section id="gene-heritability-based-on-physical-distance">
+<h4>Gene heritability based on physical distance<a class="headerlink" href="#gene-heritability-based-on-physical-distance" title="Permalink to this headline"></a></h4>
+<p>In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped to estimate heritability.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--estimate-heritability <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--case-col Nca <span class="se">\</span>
+--control-col Nco <span class="se">\</span>
+--neargene <span class="m">10000</span> <span class="se">\</span>
+--out t4.1
+</pre></div>
+</div>
+</section>
+<section id="gene-heritability-based-on-eqtls">
+<h4>Gene heritability based on eQTLs<a class="headerlink" href="#gene-heritability-based-on-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, eQTLs of a gene will be grouped to estimate heritability.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--estimate-heritability <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--case-col Nca <span class="se">\</span>
+--control-col Nco <span class="se">\</span>
+--eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--out t4.2
+</pre></div>
+</div>
+</section>
+<section id="transcript-heritability-based-on-eqtls">
+<h4>Transcript heritability based on eQTLs<a class="headerlink" href="#transcript-heritability-based-on-eqtls" title="Permalink to this headline"></a></h4>
+<p>In this example, eQTLs of a transcript will be grouped to estimate heritability.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java -Xmx4g -jar ../kggsee.jar <span class="se">\</span>
+--estimate-heritability <span class="se">\</span>
+--vcf-ref 1kg_hg19_eur_chr1.vcf.gz <span class="se">\</span>
+--sum-file scz_gwas_eur_chr1.tsv.gz <span class="se">\</span>
+--case-col Nca <span class="se">\</span>
+--control-col Nco <span class="se">\</span>
+--eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz <span class="se">\</span>
+--out t4.3
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h3>Outputs<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<p>The file with a suffix of <code class="docutils literal notranslate"><span class="pre">.gene.pvalue.txt</span></code> saves the results of gene-based heritability estimates and association tests. Columns of the file are as follow:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gene</p></td>
+<td><p>Gene symbol</p></td>
+</tr>
+<tr class="row-odd"><td><p>#Var</p></td>
+<td><p>Number of variants within the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>ECSP</p></td>
+<td><p>p-value of ECS</p></td>
+</tr>
+<tr class="row-odd"><td><p>GATESP</p></td>
+<td><p>p-value of GATES</p></td>
+</tr>
+<tr class="row-even"><td><p>Herit</p></td>
+<td><p>Heritability estimate</p></td>
+</tr>
+<tr class="row-odd"><td><p>HeritSE</p></td>
+<td><p>Standard error of the heritability estimate</p></td>
+</tr>
+<tr class="row-even"><td><p>Chrom</p></td>
+<td><p>Chromosome of the gene</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos</p></td>
+<td><p>The coordinate of the variant with the lowest p-value within the gene</p></td>
+</tr>
+<tr class="row-even"><td><p>GWAS_Var_P</p></td>
+<td><p>p-value of the variant</p></td>
+</tr>
+</tbody>
+</table>
+<p>Columns of the file with the suffix of <code class="docutils literal notranslate"><span class="pre">.gene.var.pvalue.txt.gz</span></code> are the same as <code class="docutils literal notranslate"><span class="pre">*.gene.pvalue.txt</span></code>. The difference is that, for each gene, in <code class="docutils literal notranslate"><span class="pre">*.gene.pvalue.txt</span></code>, only the variant with the lowest p-value is output, while in <code class="docutils literal notranslate"><span class="pre">*.gene.var.pvalue.txt.gz</span></code>, all variants are output. The file with the suffix of <code class="docutils literal notranslate"><span class="pre">.qq.png</span></code> is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick_tutorials.html" class="btn btn-neutral float-left" title="Quick tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="options.html" class="btn btn-neutral float-right" title="Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019, Miaoxin Li.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
