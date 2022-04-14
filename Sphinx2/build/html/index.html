@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGGSEE User Manual &mdash; KGGSEE  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/kggsee.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Setup" href="setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> KGGSEE
+          </a>
+              <div class="version">
+                v1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_tutorials.html">Quick tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed_document.html">Detailed Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">KGGSEE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>KGGSEE User Manual</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kggsee-user-manual">
+<h1>KGGSEE User Manual<a class="headerlink" href="#kggsee-user-manual" title="Permalink to this headline"></a></h1>
+<p>Miaoxin Li, Lin Jiang, Xiangyi Li, Lin Miao</p>
+<p><strong>KGGSEE</strong> (a biological <strong>K</strong>nowledge-based mining platform for <strong>G</strong>enomic and <strong>G</strong>enetic association <strong>S</strong>ummary statistics using g<strong>E</strong>ne <strong>E</strong>xpression) is a standalone Java application for knowledge-based mining of GWAS summary statistics. It performs:</p>
+<ol class="arabic simple">
+<li><p>Phenotype-gene/transcript association test;</p></li>
+<li><p>Phenotype’s driver cell type/tissue estimation;</p></li>
+<li><p>Gene/transcript expression causal effect estimation;</p></li>
+<li><p>Gene/transcript heritability estimation.</p></li>
+</ol>
+<p>More functions will be added to KGGSEE in the future.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#setup-the-java-runtime-environment-jre">Setup the Java Runtime Environment (JRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#setup-kggsee">Setup KGGSEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_tutorials.html">Quick tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick_tutorials.html#gene-based-association-tests">1. Gene-based association tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_tutorials.html#dese">2. DESE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_tutorials.html#emic">3. EMIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_tutorials.html#gene-based-heritability-estimation">4. Gene-based heritability estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="detailed_document.html">Detailed Document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="detailed_document.html#gene-based-association-tests">1. Gene-based association tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#synopsis">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#gene-based-association-tests-based-on-physical-distance">Gene-based association tests based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#gene-based-association-tests-based-on-eqtls">Gene-based association tests based on eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#transcript-based-association-tests-based-on-eqtls">Transcript-based association tests based on eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_document.html#dese">2. DESE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id2">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id3">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#dese-based-on-physical-distance">DESE based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#edese-based-on-gene-level-eqtls">eDESE based on gene-level eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#seldp-based-on-gene-level-eqtls">SelDP based on gene-level eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id5">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_document.html#emic">3. EMIC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id6">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id7">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#emic-based-on-gene-level-eqtl">EMIC based on gene-level eQTL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#emic-based-on-transcript-level-eqtl">EMIC based on transcript-level eQTL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id8">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_document.html#gene-based-heritability-estimation">4. Gene-based heritability estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id9">Synopsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id10">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#gene-heritability-based-on-physical-distance">Gene heritability based on physical distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#gene-heritability-based-on-eqtls">Gene heritability based on eQTLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detailed_document.html#transcript-heritability-based-on-eqtls">Transcript heritability based on eQTLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="detailed_document.html#id11">Outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="options.html#reference-population-genotypes">Reference population genotypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#gwas-summary-statistics">GWAS summary statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#gene-based-association-and-heritability">Gene-based association and heritability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#dese">DESE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#emic">EMIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#miscellaneous-global-options">Miscellaneous global options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="setup.html" class="btn btn-neutral float-right" title="Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019, Miaoxin Li.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
