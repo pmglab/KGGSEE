@@ -464,7 +464,7 @@ The numeric results of EMIC are saved in a file with a suffix of ``.emic.gene.tx
    * - #Var
      - Number of IVs within the gene
    * - minP_EMIC
-     - p-value of EMIC. When a transcript-leveled EMIC is performed, this is the minimum p-value among all transcripts of the gene.
+     - p-value of EMIC. When a transcript-level EMIC is performed, this is the minimum p-value among all transcripts of the gene.
    * - Details_EMIC
      - Detailed results of EMIC-PFM separated by semicolons. Each result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC is performed, results for each transcript are listed.
    * - Chrom
@@ -491,7 +491,7 @@ The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gen
    * - Group
      - IDs of a group of genes that share eQTLs.
    * - minP_EMIC_PFM
-     - p-value of EMIC-PFM. When a transcript-leveled EMIC-PFM is performed, this is the minimum p-value among all transcripts of the gene.
+     - p-value of EMIC-PFM. When a transcript-level EMIC-PFM is performed, this is the minimum p-value among all transcripts of the gene.
    * - DetailsEMIC_PFM
      - Detailed results of EMIC-PFM separated by semicolons. Each result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC-PFM is performed, results for each transcript are listed.
    * - CochransQ
