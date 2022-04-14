@@ -4,7 +4,7 @@
 Quick tutorials
 ===============
 
-We provide four quick tutorials; each shows a function of KGGSEE. In each tutorial, we provide the command line and a brief explanation of flags and output files. Please refer to :ref:`Detailed Document <detailed_document>` and :ref:`Options <options>` for details. The first tutorial (:ref:`1. GATES and ECS <t1>`) should be done first, then there is no need to do the following in order.
+We provide four quick tutorials; each shows one function of KGGSEE. In each tutorial, we provide the command line and a brief explanation of flags and output files. Please refer to :ref:`Detailed Document <detailed_document>` and :ref:`Options <options>` for details. The first tutorial (:ref:`1. GATES and ECS <t1>`) should be done first, then there is no need to do the following in order.
 
 Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data folder ``resources/``, and the tutorial data folder ``tutorials/`` are under the same folder. For convenience, enter the ``tutorials/`` directory first.
 
