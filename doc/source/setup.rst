@@ -37,7 +37,7 @@ Setup KGGSEE
 
 1. Download the `KGGSEE Java archive <http://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, and save it as ``kggsee.jar``)
 
-2. Download the `running resource dataset <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/ESO0a08VRuFPq7YOxEdsMU8BaEX9c-wbhyBP537Qdg-EKw?e=tyQhhz>`_, unzip and save the folder as ``resources/`` (in the same folder with ``kggsee.jar``), the dataset includes:
+2. Download the `running resource dataset <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/ESO0a08VRuFPq7YOxEdsMU8BaEX9c-wbhyBP537Qdg-EKw?e=tyQhhz>`_, unzip and save the folder as ``resources/`` (in the same folder with ``kggsee.jar``). The dataset includes:
 
 
 .. list-table::
@@ -67,7 +67,7 @@ Setup KGGSEE
      - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
  
 
-3. For running Quick tutorials, download the `tutorial dataset <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EcQbomHELXVNrKdxqWvzOg4BVYoqsYpLU-wWy3_0ewgHiA?e=CRjYmq>`_, unzip and save the folder as ``tutorials/`` (in the same folder with ``kggsee.jar``), the dataset includes:
+3. For running Quick tutorials, download the `tutorial dataset <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EcQbomHELXVNrKdxqWvzOg4BVYoqsYpLU-wWy3_0ewgHiA?e=CRjYmq>`_, unzip and save the folder as ``tutorials/`` (in the same folder with ``kggsee.jar``). The dataset includes:
 
 
 .. list-table::
@@ -82,16 +82,16 @@ Setup KGGSEE
      - Genotypes of chr1 SNPs sampled from the 1000 Genome Project European population.
    
    * - ``tutorials/GTEx_v8_gene_meanSE.tsv.gz``
-     - The gene-leveled expression profile of GTEx v8 tissues.
+     - The gene-level expression profile of GTEx v8 tissues.
    
    * - ``tutorials/GTEx_v8_transcript_meanSE.tsv.gz``
-     - The transcript-leveled expression profile of GTEx v8 tissues.
+     - The transcript-level expression profile of GTEx v8 tissues.
    
    * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
-     - Summary statistics of eQTLs calculated from gene-leveled expression profile of GTEx v8 brain BA9.
+     - Summary statistics of eQTLs calculated from gene-level expression profile of GTEx v8 brain BA9.
 
    * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
-     - Summary statistics of eQTLs calculated from transcript-leveled expression profile of GTEx v8 brain BA9.
+     - Summary statistics of eQTLs calculated from transcript-level expression profile of GTEx v8 brain BA9.
 
 
 4. For running customized analyses, the following data is needed, refer to :ref:`Detailed Document <detailed_document>` for descriptions of file formats.
@@ -100,7 +100,7 @@ Setup KGGSEE
 
    * VCF files of genotypes sampled from the population of the GWAS to be studied. Genotypes of the 1000 Genomes Project Phase3 v5 can be downloaded from the `NCBI FTP site <ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502>`_ or the `1000 Genomes Project FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`_.
 
-   * If running DESE, a file of multiple-tissue gene expression profile is needed. We provide tissue-leveled and cell type-leveled expression profiles available for download on `OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_.
+   * If running DESE, a file of multiple-tissue gene expression profile is needed. We provide tissue-level and cell type-level expression profiles available for download on `OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_.
 
    * For all analyses, a file of eQTL summary statistics calculated from target tissues may be used. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for download on `OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_.
 
