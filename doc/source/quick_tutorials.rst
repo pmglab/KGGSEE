@@ -109,7 +109,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
    * - ``--saved-ref``
      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
    * - ``--expression-file``
-     - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues. Here ``GTEx_v8_gene_meanSE.tsv.gz`` is for gene-leveled DESE. Try ``GTEx_v8_transcript_meanSE.tsv.gz`` for transcript-leveled DESE.
+     - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues. Here ``GTEx_v8_gene_meanSE.tsv.gz`` is for gene-level DESE. Try ``GTEx_v8_transcript_meanSE.tsv.gz`` for transcript-level DESE.
    * - ``--gene-finemapping``
      - Triggers the DESE analysis.
    * - ``--out``
@@ -199,7 +199,7 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
    * - ``--saved-ref``
      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
    * - ``--eqtl-file``
-     - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` for gene-leveled EMIC. Try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for transcript-leveled EMIC.
+     - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` for gene-level EMIC. Try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for transcript-level EMIC.
    * - ``--beta-col``
      - Specifies the column name of effect sizes in the GWAS file.
    * - ``--beta-type``
@@ -226,9 +226,9 @@ The numeric results of EMIC are saved in ``t3.emic.gene.txt``. There are nine co
    * - #Var
      - Number of IVs within the gene
    * - minP_EMIC
-     - p-value of EMIC. When a transcript-leveled EMIC is performed, this is the minimum p-value among all transcripts of the gene.
+     - p-value of EMIC. When a transcript-level EMIC is performed, this is the minimum p-value among all transcripts of the gene.
    * - Details_EMIC
-     - Each detailed result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-leveled EMIC is performed, results for each transcript are listed.
+     - Each detailed result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC is performed, results for each transcript are listed.
    * - Chrom
      - Chromosome of the gene
    * - Pos
