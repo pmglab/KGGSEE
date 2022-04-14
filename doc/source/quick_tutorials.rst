@@ -243,9 +243,7 @@ The numeric results of EMIC are saved in ``t3.emic.gene.txt``. There are nine co
 
 The columns of ``t3.emic.gene.var.tsv.gz`` are the same as ``t3.emic.gene.txt``. The difference is that, for each gene, in ``t3.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``turorial_3.emic.gene.var.tsv.gz``, all eQTLs are output. In this tutorial, the file ``t3.emic.gene.PleiotropyFinemapping.txt`` is empty, we ignore it here.
 
-File ``t3.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for EMIC p-values. 
-
-File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
+File ``t3.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for EMIC p-values. File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
 
 
 .. _t4:
