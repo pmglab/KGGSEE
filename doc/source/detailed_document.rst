@@ -38,8 +38,8 @@ The first row starting with ``#`` is the header line. Then, eQTLs of each gene/t
 
 .. _detail_ECS:
 
-1. Gene-based association tests
-===============================
+Gene-based association tests
+============================
 
 KGGSEE performs the gene-based association analysis by GATES (a rapid and powerful **G**\ ene-based **A**\ ssociation **T**\ est using **E**\ xtended **S**\ imes procedure) and ECS (an **E**\ ffective **C**\ hi-square **S** \tatistics). The ``--gene-assoc`` flag trigers both.
 
@@ -156,8 +156,8 @@ Columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same 
 
 .. _detail_DESE:
 
-2. DESE
-=======
+DESE
+====
 
 DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `the DESE paper <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
 
@@ -250,7 +250,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
    --neargene 10000 \
    --multiple-testing benfdr \
    --p-value-cutoff 0.05 \
-   --expression-file GTEx_v8_gene_meanSE.tsv.gz \
+   --expression-file ../resources/gtex.v8.gene.mean.tsv.gz \
    --out t2.1
 
 
@@ -269,7 +269,7 @@ In this example, eQTLs of a gene will be considered as a unit for a gene-based a
    --multiple-testing fixed \
    --p-value-cutoff 0.05 \
    --top-gene 100 \
-   --expression-file GTEx_v8_gene_meanSE.tsv.gz \
+   --expression-file ../resources/gtex.v8.gene.mean.tsv.gz \
    --geneset-db onto \
    --out t2.2
 
@@ -368,8 +368,8 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
 
 .. _detail_EMIC:
 
-3. EMIC
-=======
+EMIC
+====
 
 EMIC (**E**\ ffective-median-based **M**\ endelian randomization framework for **I**\ nferring the **C**\ ausal genes of complex phenotypes) inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. The effective-median method solved the high false-positive issue in the existing MR methods due to either correlation among instrumental variables or noises in approximated linkage disequilibrium (LD). EMIC can further perform a pleiotropy fine-mapping analysis to remove possible false-positive estimates (`the EMIC paper <https://doi.org/10.1016/j.ajhg.2022.04.004>`_).
 
@@ -449,7 +449,6 @@ This is an example of transcript-level EMIC. Only eQTLs with a p-value lower tha
 Outputs
 -------
 
-
 The numeric results of EMIC are saved in a file with a suffix of ``.emic.gene.txt``. There are nine columns in the file:
 
 .. list-table::
@@ -498,16 +497,13 @@ The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gen
      - The p-value of an extended Cochran's Q test. The significance (p<1E-3) means that the causal effect is more likely to be false-positive. At this point, KGGSEE excludes its eQTLs which are also the eQTLs of other significant genes, and redoes EMIC. In this case, results in the columns of minP_EMIC_PFM and DetailsEMIC_PFM will be different from in the columns of minP_EMIC and Details_EMIC.
 
 
-
-
 Columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as ``*.emic.gene.txt``. The difference is that, for each gene, in ``*.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``*.emic.gene.var.tsv.gz``, all eQTLs are output. The file with a suffix of ``.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of ``.emic.qq.png`` saves the Q-Q plot for EMIC p-values. The file with a suffix of ``.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by ``--emic-plot-p`` is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
-
 
 
 .. _detail_h2:
 
-4. Gene-based heritability estimation
-=====================================
+Gene-based heritability estimation
+==================================
 
 This analysis estimates the heritability of each gene and performs gene-based association tests at the same time.
 
