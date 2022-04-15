@@ -62,7 +62,7 @@ The running resource dataset includes:
    * - ``resources/gtex.v8.transcript.mean.tsv.gz``
      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
    * - ``resources/HCL_scRNA_cluster_mean.tsv.gz`` 
-     - The expression profile of cell clusters generated from the `Human Cell Landscape <bis.zju.edu.cn/HCL/>`_
+     - The expression profile of cell clusters generated from scRNA-seq dataset of the `Human Cell Landscape <bis.zju.edu.cn/HCL/>`_
    * - ``resources/*.symbols.gmt.gz``
      - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
 
