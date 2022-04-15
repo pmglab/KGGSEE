@@ -90,4 +90,4 @@ For running customized analyses, the following data is needed, refer to :ref:`De
 
 * VCF files of genotypes sampled from the population of the GWAS to be studied. Genotypes of the 1000 Genomes Project Phase3 v5 can be downloaded from the `NCBI FTP site <ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502>`_ or the `1000 Genomes Project FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`_.
 
-* A file of eQTL summary statistics calculated from target tissues may be used. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for download on `OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_.
+* A file of eQTL summary statistics calculated from target tissues may be used. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for download (refer to `the download page <http://pmglab.top/kggsee/#/download>`_).
