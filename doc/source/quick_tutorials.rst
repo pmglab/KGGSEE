@@ -11,8 +11,8 @@ Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data fold
 
 .. _t1:
 
-1. Gene-based association tests
-===============================
+Gene-based association tests
+============================
 
 GATES and ECS are two statistical methods combining the p-values of a group of SNPs into one p-value. This analysis inputs p-values of SNPs and outputs p-values of genes. The command is:
 
@@ -80,8 +80,8 @@ The Q-Q plots for p-values of inputted GWAS file (inside or outside of gene) and
 
 .. _t2:
 
-2. DESE
-=======
+DESE
+====
    
 DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues; outputs p-values of phenotype-tissue associations and conditional p-values of genes. The command is:
 
@@ -90,7 +90,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
    java -Xmx4g -jar ../kggsee.jar \
    --sum-file scz_gwas_eur_chr1.tsv.gz \
    --saved-ref VCFRefhg19 \
-   --expression-file GTEx_v8_gene_meanSE.tsv.gz \
+   --expression-file ../resources/gtex.v8.gene.mean.tsv.gz \
    --gene-finemapping \
    --out t2
 
@@ -109,7 +109,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
    * - ``--saved-ref``
      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
    * - ``--expression-file``
-     - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues. Here ``GTEx_v8_gene_meanSE.tsv.gz`` is for gene-level DESE. Try ``GTEx_v8_transcript_meanSE.tsv.gz`` for transcript-level DESE.
+     - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``../resources/gtex.v8.gene.mean.tsv.gz`` is for gene-level DESE. Try ``../resources/gtex.v8.transcript.mean.tsv.gz`` for transcript-level DESE; try ``../resources/HCL_scRNA_cluster_mean.tsv.gz`` for cell-cluster based DESE.
    * - ``--gene-finemapping``
      - Triggers the DESE analysis.
    * - ``--out``
@@ -166,8 +166,8 @@ Results of phenotype-tissue associations are in ``t2.celltype.txt``. This is bas
 
 .. _t3:
 
-3. EMIC
-=======
+EMIC
+====
 
 EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis inputs effect sizes of SNPs on the phenotype and genes' expressions; outputs effect sizes and p-values of genes' expression effects on the phenotype. The command is:
 
@@ -250,8 +250,8 @@ File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association
 
 .. _t4:
 
-4. Gene-based heritability estimation
-=====================================
+Gene-based heritability estimation
+==================================
    
 Heritability is a measure of how well differences in people's genes account for differences in their phenotypes. This tutorial estimates the heritability of each gene with GWAS summary statistics. The command is:
 
