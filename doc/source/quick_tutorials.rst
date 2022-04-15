@@ -158,7 +158,7 @@ Results of phenotype-tissue associations are in ``t2.celltype.txt``. This is bas
      - Description
    * - TissueName
      - Name of the tissue being tested
-   * - p
+   * - PValue
      - p-values of phenotype-tissue associations. 
    * - Log(p)
      - The negative logarithm (base 10) of p-values of phenotype-tissue associations
