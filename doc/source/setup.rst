@@ -36,7 +36,7 @@ Check the JRE by entering ``java -version`` in a Terminal of Linux or MacOS, or 
 Setup KGGSEE
 ============
 
-Download the zip file of ``kggsee.jar``, running resource dataset and quick tutorial dataset from `the download page <http://pmglab.top/kggsee/#/download>`_ and unzip.
+Download the bundled file of ``kggsee.jar``, running resource dataset and quick tutorial dataset from `the download page <http://pmglab.top/kggsee/#/download>`_ and unzip.
 
 The running resource dataset includes:
 
