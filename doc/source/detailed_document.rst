@@ -336,7 +336,7 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
      - Description
    * - TissueName
      - Name of the tissue being tested
-   * - p
+   * - PValue
      - p-values of phenotype-tissue associations. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue.
    * - Log(p)
      - The negative logarithm (base 10) of p-values of phenotype-tissue association
