@@ -11,7 +11,7 @@ Miaoxin Li, Lin Jiang, Xiangyi Li, Lin Miao
 3. Gene/transcript expression causal effect estimation;
 4. Gene/transcript heritability estimation.
 
-More functions will be added to KGGSEE in the future.
+More functions will be added to KGGSEE in the future. Here is `a PDF file of this manual <https://github.com/pmglab/KGGSEE/blob/main/doc/KGGSEE_User_Manual.pdf>`_.
 
 .. toctree::
    :maxdepth: 4
