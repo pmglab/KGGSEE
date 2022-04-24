@@ -9,20 +9,20 @@ System requirements
 ===================
 
 .. list-table::
-   :widths: 3 7
-   :header-rows: 0
-   :class: tight-table
+    :widths: 3 7
+    :header-rows: 0
+    :class: tight-table
 
-   * - Operating system
-     - KGGSEE runs in a Java Virtual Machine. It does not matter which operating system it runs in.
-   * - Java Runtime Environment
-     - A Java SE Runtime Environment of version 1.8 or higher is needed.
-   * - CPU
-     - A CPU with four cores or more is recommended.
-   * - Memory
-     - 16 GB RAM or higher is recommended.
-   * - Free space
-     - KGGSEE and related datasets may take up to 10 GB.
+    * - Operating system
+      - KGGSEE runs in a Java Virtual Machine. It does not matter which operating system it runs in.
+    * - Java Runtime Environment
+      - A Java SE Runtime Environment of version 1.8 or higher is needed.
+    * - CPU
+      - A CPU with four cores or more is recommended.
+    * - Memory
+      - 16 GB RAM or higher is recommended.
+    * - Free space
+      - KGGSEE and related datasets may take up to 10 GB.
 
 
 Setup the Java Runtime Environment (JRE)
@@ -41,47 +41,47 @@ Download the bundled file of ``kggsee.jar``, running resource dataset and quick 
 The running resource dataset includes:
 
 .. list-table::
-   :widths: 1 1
-   :header-rows: 0
-   :class: tight-table
+    :widths: 1 1
+    :header-rows: 0
+    :class: tight-table
 
-   * - ``resources/hg19/kggseqv1.1_hg19_GEncode.txt.gz``
-     - hg19 `GENCODE <https://www.gencodegenes.org>`_ annotation
-   * - ``resources/hg19/kggseqv1.1_hg19_refGene.txt.gz``
-     - hg19 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
-   * - ``resources/hg38/kggseqv1.1_hg38_GEncode.txt.gz``
-     - hg38 `GENCODE <https://www.gencodegenes.org>`_ annotation
-   * - ``resources/hg38/kggseqv1.1_hg38_refGene.txt.gz``
-     - hg38 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
-   * - ``resources/HgncGene.txt.gz``
-     - `HGNC <https://www.genenames.org>`_ gene ID
-   * - ``resources/ENSTGene.gz``
-     - `Ensembl <https://www.ensembl.org/index.html>`_ gene ID and transcript ID
-   * - ``resources/gtex.v8.gene.mean.tsv.gz``
-     - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
-   * - ``resources/gtex.v8.transcript.mean.tsv.gz``
-     - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
-   * - ``resources/HCL_scRNA_cluster_mean.tsv.gz`` 
-     - The expression profile of cell clusters generated from the scRNA-seq dataset of the `Human Cell Landscape <bis.zju.edu.cn/HCL/>`_
-   * - ``resources/*.symbols.gmt.gz``
-     - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
+    * - ``resources/hg19/kggseqv1.1_hg19_GEncode.txt.gz``
+      - hg19 `GENCODE <https://www.gencodegenes.org>`_ annotation
+    * - ``resources/hg19/kggseqv1.1_hg19_refGene.txt.gz``
+      - hg19 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
+    * - ``resources/hg38/kggseqv1.1_hg38_GEncode.txt.gz``
+      - hg38 `GENCODE <https://www.gencodegenes.org>`_ annotation
+    * - ``resources/hg38/kggseqv1.1_hg38_refGene.txt.gz``
+      - hg38 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
+    * - ``resources/HgncGene.txt.gz``
+      - `HGNC <https://www.genenames.org>`_ gene ID
+    * - ``resources/ENSTGene.gz``
+      - `Ensembl <https://www.ensembl.org/index.html>`_ gene ID and transcript ID
+    * - ``resources/gtex.v8.gene.mean.tsv.gz``
+      - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
+    * - ``resources/gtex.v8.transcript.mean.tsv.gz``
+      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
+    * - ``resources/HCL_scRNA_cluster_mean.tsv.gz`` 
+      - The expression profile of cell clusters generated from the scRNA-seq dataset of the `Human Cell Landscape <bis.zju.edu.cn/HCL/>`_
+    * - ``resources/*.symbols.gmt.gz``
+      - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
 
 
 The tutorial dataset includes:
 
 .. list-table::
-   :widths: 1 1
-   :header-rows: 0
-   :class: tight-table
-   
-   * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
-     - Summary statistics of chr1 SNPs for a GWAS of schizophrenia on the European population
-   * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
-     - Genotypes of chr1 SNPs sampled from the 1000 Genome Project European population
-   * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
-     - Summary statistics of eQTLs calculated from gene-level expression profile of GTEx v8 brain BA9
-   * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
-     - Summary statistics of eQTLs calculated from transcript-level expression profile of GTEx v8 brain BA9
+    :widths: 1 1
+    :header-rows: 0
+    :class: tight-table
+    
+    * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
+      - Summary statistics of chr1 SNPs for a GWAS of schizophrenia on the European population
+    * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
+      - Genotypes of chr1 SNPs sampled from the 1000 Genome Project European population
+    * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
+      - Summary statistics of eQTLs calculated from gene-level expression profile of GTEx v8 brain BA9
+    * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
+      - Summary statistics of eQTLs calculated from transcript-level expression profile of GTEx v8 brain BA9
 
 
 For running customized analyses, the following data is needed, refer to :ref:`Detailed Document <detailed_document>` for descriptions of file formats.

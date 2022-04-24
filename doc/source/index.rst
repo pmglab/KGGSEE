@@ -14,11 +14,11 @@ Miaoxin Li, Lin Jiang, Xiangyi Li, Lin Miao
 More functions will be added to KGGSEE in the future. Here is `a PDF file of this manual <https://raw.githubusercontent.com/pmglab/KGGSEE/main/doc/KGGSEE_User_Manual.pdf>`_.
 
 .. toctree::
-   :maxdepth: 4
-   :caption: Contents:
+    :maxdepth: 4
+    :caption: Contents:
 
-   setup
-   quick_tutorials
-   detailed_document
-   options
+    setup
+    quick_tutorials
+    detailed_document
+    options
 
