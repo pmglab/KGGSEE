@@ -250,7 +250,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
     --neargene 10000 \
     --multiple-testing benfdr \
     --p-value-cutoff 0.05 \
-    --expression-file ./GTEx_v8_TMM.gene.meanSE.txt.gz \
+    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
     --out t2.1
 
 
@@ -269,7 +269,7 @@ In this example, eQTLs of a gene will be considered as a unit for a gene-based a
     --multiple-testing fixed \
     --p-value-cutoff 0.05 \
     --top-gene 100 \
-    --expression-file ./GTEx_v8_TMM.gene.meanSE.txt.gz \
+    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
     --geneset-db onto \
     --out t2.2
 

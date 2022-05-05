@@ -90,7 +90,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
     java -Xmx4g -jar ../kggsee.jar \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --saved-ref VCFRefhg19 \
-    --expression-file ./GTEx_v8_TMM.gene.meanSE.txt.gz \
+    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
     --gene-finemapping \
     --out t2
 
@@ -109,7 +109,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
     * - ``--saved-ref``
       - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
-      - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``gtex.v8.gene.mean.tsv.gz`` is for gene-level DESE. Try ``gtex.v8.transcript.mean.tsv.gz`` for transcript-level DESE; try ``HCL_scRNA_cluster_mean.tsv.gz`` for cell-cluster based DESE.
+      - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE; try ``HCL_scRNA_cluster_mean.tsv.gz`` for cell-cluster based DESE.
     * - ``--gene-finemapping``
       - Triggers the DESE analysis.
     * - ``--out``
