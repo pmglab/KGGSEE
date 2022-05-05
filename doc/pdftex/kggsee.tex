@@ -200,14 +200,14 @@ hg38 \sphinxhref{https://www.ncbi.nlm.nih.gov/refseq/rsg}{RefGene} annotation
 \\
 \hline
 \sphinxAtStartPar
-\sphinxcode{\sphinxupquote{GTEx_v8_TMM.gene.meanSE.txt.gz}}
+\sphinxcode{\sphinxupquote{GTEx\_v8\_TMM.gene.meanSE.txt.gz}}
 &
 \sphinxAtStartPar
 The gene\sphinxhyphen{}level expression profile of the \sphinxhref{https://www.gtexportal.org/home/}{GTEx v8} tissues
 \\
 \hline
 \sphinxAtStartPar
-\sphinxcode{\sphinxupquote{GTEx_v8_TMM.transcript.meanSE.txt}}
+\sphinxcode{\sphinxupquote{GTEx\_v8\_TMM.transcript.meanSE.txt}}
 &
 \sphinxAtStartPar
 The transcript\sphinxhyphen{}level expression profile of the \sphinxhref{https://www.gtexportal.org/home/}{GTEx v8} tissues
@@ -459,7 +459,7 @@ DESE performs phenotype\sphinxhyphen{}tissue association tests and conditional g
 java \PYGZhy{}Xmx4g \PYGZhy{}jar ../kggsee.jar \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}sum\PYGZhy{}file scz\PYGZus{}gwas\PYGZus{}eur\PYGZus{}chr1.tsv.gz \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}saved\PYGZhy{}ref VCFRefhg19 \PYG{l+s+se}{\PYGZbs{}}
-  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx_v8_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx\_v8\_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}gene\PYGZhy{}finemapping \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}out t2
 \end{sphinxVerbatim}
@@ -498,7 +498,7 @@ Specifies the folder of genotypes of reference population in KGGSEE object forma
 \sphinxcode{\sphinxupquote{\sphinxhyphen{}\sphinxhyphen{}expression\sphinxhyphen{}file}}
 &
 \sphinxAtStartPar
-Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here \sphinxcode{\sphinxupquote{GTEx_v8_TMM.gene.meanSE.txt.gz}} is for gene\sphinxhyphen{}level DESE. Try \sphinxcode{\sphinxupquote{GTEx_v8_TMM.transcript.meanSE.txt}} for transcript\sphinxhyphen{}level DESE; try \sphinxcode{\sphinxupquote{HCL\_scRNA\_cluster\_mean.tsv.gz}} for cell\sphinxhyphen{}cluster based DESE.
+Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here \sphinxcode{\sphinxupquote{GTEx\_v8\_TMM.gene.meanSE.txt.gz}} is for gene\sphinxhyphen{}level DESE. Try \sphinxcode{\sphinxupquote{GTEx\_v8\_TMM.transcript.meanSE.txt}} for transcript\sphinxhyphen{}level DESE; try \sphinxcode{\sphinxupquote{HCL\_scRNA\_cluster\_mean.tsv.gz}} for cell\sphinxhyphen{}cluster based DESE.
 \\
 \hline
 \sphinxAtStartPar
@@ -1237,7 +1237,7 @@ java \PYGZhy{}Xmx4g \PYGZhy{}jar ../kggsee.jar \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}neargene 10000 \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}multiple\PYGZhy{}testing benfdr \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}p\PYGZhy{}value\PYGZhy{}cutoff 0.05 \PYG{l+s+se}{\PYGZbs{}}
-  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx_v8_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx\_v8\_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}out t2.1
 \end{sphinxVerbatim}
 
@@ -1256,7 +1256,7 @@ java \PYGZhy{}Xmx4g \PYGZhy{}jar ../kggsee.jar \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}multiple\PYGZhy{}testing fixed \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}p\PYGZhy{}value\PYGZhy{}cutoff 0.05 \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}top\PYGZhy{}gene 100 \PYG{l+s+se}{\PYGZbs{}}
-  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx_v8_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}expression\PYGZhy{}file GTEx\_v8\_TMM.gene.meanSE.txt.gz \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}geneset\PYGZhy{}db onto \PYG{l+s+se}{\PYGZbs{}}
   \PYGZhy{}\PYGZhy{}out t2.2
 \end{sphinxVerbatim}
