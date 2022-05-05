@@ -90,7 +90,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
     java -Xmx4g -jar ../kggsee.jar \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --saved-ref VCFRefhg19 \
-    --expression-file ../resources/gtex.v8.gene.mean.tsv.gz \
+    --expression-file ./GTEx_v8_TMM.gene.meanSE.txt.gz \
     --gene-finemapping \
     --out t2
 
