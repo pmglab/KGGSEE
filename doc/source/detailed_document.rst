@@ -236,59 +236,124 @@ A transcript-level expression file looks like this:
 Examples
 --------
 
-DESE based on physical distance
+1. DESE based on physical distance (or eDESE:dist)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with FDR<0.05 will be retained for fine-mapping.
+In this example, SNPs inside a gene and its  +/-5kb adjacent regions will be considered as belonging to a gene (variants in MHC regions are not considered). Significant genes by ECS with FDR<0.05 will be retained for fine-mapping.
 
 .. code:: shell
 
-    java -Xmx4g -jar ../kggsee.jar \
+    java -Xmx20g -jar ../kggsee.jar \
+    --nt 10 \
+    --pos-col BP \
+    --p-col P \
+    --db-gene refgene,gencode \
+    --regions-out chr6:27477797-34448354 \
+    --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --neargene 10000 \
-    --multiple-testing benfdr \
+    --multiple-testing bonf \
     --p-value-cutoff 0.05 \
     --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --out t2.1
+    --out geneAssoc
 
 
-eDESE based on gene-level eQTLs
+2. DESE guided by eQTLs (eDESE:gene and eDESE:isoform)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, eQTLs of a gene will be considered as a unit for a gene-based association test. The top 100 significant genes by ECS with nominal p<0.05 will be retained for fine-mapping. Significant genes by eDESE will be tested if they are enriched in the C5. ontology gene sets of `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_:
+To perform conditional gene-based association analysis using another two different strategies to map variants to genes (variants in MHC regions are not considered), i.e., gene-level and isoform-level eQTLs (also are variants). The two strategies correspond to two models, i.e., eDESE:gene and eDESE:isoform, respectively.
+
+eDESE:gene
 
 .. code:: shell
 
-    java -Xmx4g -jar ../kggsee.jar \
+    java -Xmx20g -jar ../kggsee.jar \
+    --nt 10 \
+    --pos-col BP \
+    --p-col P \
+    --db-gene refgene,gencode \
+    --regions-out chr6:27477797-34448354 \
+    --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --multiple-testing fixed \
+    --filter-eqtl-p 0.01 \
+    --multiple-testing bonf \
     --p-value-cutoff 0.05 \
-    --top-gene 100 \
     --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --geneset-db onto \
-    --out t2.2
+    --out geneAssoceQTL
 
+eDESE:isoform
 
-SelDP based on gene-level eQTLs
+.. code:: shell
+
+    java -Xmx20g -jar ../kggsee.jar \
+    --nt 10 \
+    --pos-col BP \
+    --p-col P \
+    --db-gene refgene,gencode \
+    --regions-out chr6:27477797-34448354 \
+    --only-hgnc-gene \
+    --gene-finemapping \
+    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+    --sum-file scz_gwas_eur_chr1.tsv.gz \
+    --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
+    --filter-eqtl-p 0.01 \
+    --multiple-testing bonf \
+    --p-value-cutoff 0.05 \
+    --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
+    --out geneAssocIsoformeQTL
+
+3. eDESE for "disease-gene" association analysis (SelDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP estimates the drug selective perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
+SelDP
+
 .. code:: shell
 
-    java -Xmx4g -jar ../kggsee.jar \
+    java -Xmx20g -jar ../kggsee.jar \
+    --nt 10 \
+    --pos-col BP \
+    --p-col P \
+    --db-gene refgene,gencode \
+    --regions-out chr6:27477797-34448354 \
+    --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_genet_BrainBA9.eqtl.txt.gz \
+    --neargene 10000 \
+    --multiple-testing bonf \
+    --p-value-cutoff 0.05 \
     --expression-file drug-induced_expression_change_profile \
-    --out t2.3
+    --out Selective_Perturbed_Drugs
 
+SelDP guided by eQTLs
+
+.. code:: shell
+
+    java -Xmx20g -jar ../kggsee.jar \
+    --nt 10 \
+    --pos-col BP \
+    --p-col P \
+    --db-gene refgene,gencode \
+    --regions-out chr6:27477797-34448354 \
+    --only-hgnc-gene \
+    --gene-finemapping \
+    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+    --sum-file scz_gwas_eur_chr1.tsv.gz \
+    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+    --filter-eqtl-p 0.01 \
+    --multiple-testing bonf \
+    --p-value-cutoff 0.05 \
+    --expression-file drug-induced_expression_change_profile \
+    --out Selective_Perturbed_Drugs
+
+**Note**: 1) The pre-parsed data used for "--vcf-ref" can be download from `here <http://pmglab.top/kggsee/#/download>`_. You can use the reference genome data on a certain chrosome (such as chr 1) or the whole genome using ("--vcf-ref ./eur/1kg.phase3.v5.shapeit2.eur.hg19.chr_CHROM_.vcf.gz"). 2) For "--expression-file", we have provided the dataset based on the gene-expression profiles of ~50 tissues in GTEX(v8) and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +".SE". Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).3) Our pre-calculated gene/isoform-level eQTLs based on GTEx(v8) can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
 Outputs
 -------
