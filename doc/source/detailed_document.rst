@@ -307,7 +307,7 @@ eDESE:isoform
     --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
     --out geneAssocIsoformeQTL
 
-3. eDESE for "disease-gene" association analysis (SelDP)
+3. eDESE for "disease-drug" association analysis (SelDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP estimates the drug selective perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
