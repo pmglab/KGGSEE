@@ -38,6 +38,8 @@ Setup KGGSEE
 
 Download the bundled file of ``kggsee.jar``, running resource dataset and quick tutorial dataset from `the download page <http://pmglab.top/kggsee/#/download>`_ and unzip.
 
+On Linux, libgfortran3 is needed to perform EMIC. For example, for Ubuntu 18.04, type ``sudo apt install libgfortran3`` to install; for Ubuntu 20.04, refer to `the multi-step process on Stack Overflow <https://stackoverflow.com/questions/62908955/how-to-install-libgfortran-so-3-on-ubuntu-20-04>`_ to install.
+
 The running resource dataset includes:
 
 .. list-table::
