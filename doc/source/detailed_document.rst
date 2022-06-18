@@ -609,18 +609,22 @@ Examples
 Gene heritability based on physical distance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped to estimate heritability.
+In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped to estimate heritability. The prevalence of affected individuals is set to 0.01.
 
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
     --estimate-heritability \
+    --prevalence 0.01 \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --case-col Nca \
     --control-col Nco \
     --neargene 10000 \
     --out t4.1
+
+.. note::
+    Note: When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
 
 
 Gene heritability based on eQTLs
