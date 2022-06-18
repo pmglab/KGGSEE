@@ -624,7 +624,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
     --out t4.1
 
 .. note::
-    Note: When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
+    When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
 
 
 Gene heritability based on eQTLs
