@@ -239,7 +239,7 @@ Examples
 1. DESE based on physical distance (or eDESE:dist)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping.
+In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping. Adjustment for selection bias and multiple testing will be performed by 100 permutations. 
 
 .. code:: shell
 
@@ -253,6 +253,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
     --multiple-testing bonf \
     --p-value-cutoff 0.05 \
     --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+    --dese-permu-num 100 \
     --out geneAssoc
 
 
