@@ -147,7 +147,7 @@ The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``
       - The gene's selective expression score in all tissues. A gene with a high socre will be given higher priority to enter the conditioning procedure.
        
 
-Results of phenotype-tissue associations are in ``t2.celltype.txt``. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The file contains three columns:
+Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The file contains three columns:
 
 .. list-table::
     :widths: 1 4
@@ -158,10 +158,8 @@ Results of phenotype-tissue associations are in ``t2.celltype.txt``. This is bas
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - PValue
-      - p-values of phenotype-tissue associations. 
-    * - Log(p)
-      - The negative logarithm (base 10) of p-values of phenotype-tissue associations
+    * - Unadjusted(p)
+      - These p-values are for tissue prioritization but NOT for hypothesis test.
 
 
 .. _t3:
