@@ -244,10 +244,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
 
 .. code:: shell
 
-    java -Xmx20g -jar ./kggsee.jar \
-    --nt 10 \
-    --pos-col BP \
-    --p-col P \
+    java -Xmx4g -jar ../kggsee.jar \
     --db-gene refgene,gencode \
     --only-hgnc-gene \
     --gene-finemapping \
@@ -269,10 +266,7 @@ eDESE:gene
 
 .. code:: shell
 
-    java -Xmx20g -jar ./kggsee.jar \
-    --nt 10 \
-    --pos-col BP \
-    --p-col P \
+    java -Xmx4g -jar ../kggsee.jar \
     --db-gene refgene,gencode \
     --only-hgnc-gene \
     --gene-finemapping \
@@ -289,10 +283,7 @@ eDESE:isoform
 
 .. code:: shell
 
-    java -Xmx20g -jar ./kggsee.jar \
-    --nt 10 \
-    --pos-col BP \
-    --p-col P \
+    java -Xmx4g -jar ../kggsee.jar \
     --db-gene refgene,gencode \
     --only-hgnc-gene \
     --gene-finemapping \
@@ -314,10 +305,7 @@ SelDP
 
 .. code:: shell
 
-    java -Xmx20g -jar ./kggsee.jar \
-    --nt 10 \
-    --pos-col BP \
-    --p-col P \
+    java -Xmx4g -jar ../kggsee.jar \
     --db-gene refgene,gencode \
     --only-hgnc-gene \
     --gene-finemapping \
@@ -333,10 +321,7 @@ SelDP guided by eQTLs
 
 .. code:: shell
 
-    java -Xmx20g -jar ./kggsee.jar \
-    --nt 10 \
-    --pos-col BP \
-    --p-col P \
+    java -Xmx4g -jar ../kggsee.jar \
     --db-gene refgene,gencode \
     --only-hgnc-gene \
     --gene-finemapping \
@@ -349,11 +334,10 @@ SelDP guided by eQTLs
     --expression-file drug-induced_expression_change_profile \
     --out Selective_Perturbed_Drugs
 
-**Tips for DESE series**: 
 
-1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of ~50 tissues in GTEX(v8) and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +".SE". Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
-
-2) Our pre-calculated gene/isoform-level eQTLs based on GTEx(v8) can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
+.. Note::
+1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
+2) Our pre-calculated gene/isoform-level eQTLs based on GTEx v8 can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
 
 Outputs
