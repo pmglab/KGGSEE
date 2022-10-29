@@ -73,7 +73,6 @@ Examples
 --------
 
 
-
 Gene-based association tests based on physical distance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -335,8 +334,8 @@ SelDP guided by eQTLs
     --out Selective_Perturbed_Drugs
 
 
-.. Note::
-1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
+.. note::
+    1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +  ``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
 2) Our pre-calculated gene/isoform-level eQTLs based on GTEx v8 can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
 
