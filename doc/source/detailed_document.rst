@@ -186,11 +186,12 @@ Synopsis
     --expression-file <file>
     --geneset-db <cura|cgp|cano|cmop|onto|onco|immu>
     --geneset-file <file>
+    --dese-permu-num <number>
 
 
 The flag ``--gene-finemapping`` triggers DESE. First, KGGSEE performs gene-based association tests, which is the same as the analyses triggered by ``--gene-assoc``. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, eDESE is evoked; KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
 
-Second, after the gene-based association tests, significant genes by ECS are retained for fine-mapping. ``--multiple-testing`` specifies the method for multiple testing correction: ``bonf`` denotes Bonferroni correction; ``benfdr`` denotes Benjamini–Hochberg FDR; ``fixed`` denotes no correction. ``--p-value-cutoff`` specifies the threshold of the adjusted p-value. ``--top-gene`` specifies the maximum number of genes retained for fine-mapping. So, only genes (no more than the specified maximum number) with adjusted p-values lower than the specified threshold are retained for fine-mapping. Then, KGGSEE reads the expression file specified by ``--expression-file`` and performs iterative estimation of driver tissues.
+Second, after the gene-based association tests, significant genes by ECS are retained for fine-mapping. ``--multiple-testing`` specifies the method for multiple testing correction: ``bonf`` denotes Bonferroni correction; ``benfdr`` denotes Benjamini–Hochberg FDR; ``fixed`` denotes no correction. ``--p-value-cutoff`` specifies the threshold of the adjusted p-value. ``--top-gene`` specifies the maximum number of genes retained for fine-mapping. So, only genes (no more than the specified maximum number) with adjusted p-values lower than the specified threshold are retained for fine-mapping. Then, KGGSEE reads the expression file specified by ``--expression-file`` and performs iterative estimation of driver tissues. When ``--dese-permu-num`` is omitted, only unadjusted p-values are output. The unadjusted p-values are inflated due to selection bias in the iterations, which is only valid for tissue prioritization. For phenotype-tissue association tests, add ``--dese-permu-num 100`` for an adjustment by permutation for selection bias and multiple testing.
 
 Finally, if ``--geneset-db`` is specified, KGGSEE tests if the conditional significant genes are enriched in gene sets of `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_. The abbreviations of gene sets are as follow:
 
@@ -239,7 +240,7 @@ Examples
 1. DESE based on physical distance (or eDESE:dist)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, SNPs inside a gene and its  +/-5kb adjacent regions will be considered as belonging to a gene (variants in MHC regions are not considered). Significant genes by ECS with FDR<0.05 will be retained for fine-mapping.
+In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping.
 
 .. code:: shell
 
@@ -248,7 +249,6 @@ In this example, SNPs inside a gene and its  +/-5kb adjacent regions will be con
     --pos-col BP \
     --p-col P \
     --db-gene refgene,gencode \
-    --regions-out chr6:27477797-34448354 \
     --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
@@ -263,7 +263,7 @@ In this example, SNPs inside a gene and its  +/-5kb adjacent regions will be con
 2. DESE guided by eQTLs (eDESE:gene and eDESE:isoform)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To perform conditional gene-based association analysis using another two different strategies to map variants to genes (variants in MHC regions are not considered), i.e., gene-level and isoform-level eQTLs (also are variants). The two strategies correspond to two models, i.e., eDESE:gene and eDESE:isoform, respectively.
+To perform conditional gene-based association analysis using another two different strategies to map variants to genes, i.e., gene-level and isoform-level eQTLs (also are variants). The two strategies correspond to two models, i.e., eDESE:gene and eDESE:isoform, respectively.
 
 eDESE:gene
 
@@ -274,7 +274,6 @@ eDESE:gene
     --pos-col BP \
     --p-col P \
     --db-gene refgene,gencode \
-    --regions-out chr6:27477797-34448354 \
     --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
@@ -295,7 +294,6 @@ eDESE:isoform
     --pos-col BP \
     --p-col P \
     --db-gene refgene,gencode \
-    --regions-out chr6:27477797-34448354 \
     --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
@@ -321,7 +319,6 @@ SelDP
     --pos-col BP \
     --p-col P \
     --db-gene refgene,gencode \
-    --regions-out chr6:27477797-34448354 \
     --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
@@ -341,7 +338,6 @@ SelDP guided by eQTLs
     --pos-col BP \
     --p-col P \
     --db-gene refgene,gencode \
-    --regions-out chr6:27477797-34448354 \
     --only-hgnc-gene \
     --gene-finemapping \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
@@ -355,11 +351,10 @@ SelDP guided by eQTLs
 
 **Tips for DESE series**: 
 
-1) The pre-parsed data used for "--vcf-ref" can be download from `here <http://pmglab.top/kggsee/#/download>`_. You can use the reference genome data on a certain chrosome (such as chr 1 using "--vcf-ref 1kg.phase3.v5.shapeit2.eur.hg19.chr1.vcf.gz") or the whole genome (using "--vcf-ref ./eur/1kg.phase3.v5.shapeit2.eur.hg19.chr_CHROM_.vcf.gz"). 
+1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of ~50 tissues in GTEX(v8) and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +".SE". Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
 
-2) For "--expression-file", we have provided the dataset based on the gene-expression profiles of ~50 tissues in GTEX(v8) and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +".SE". Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
+2) Our pre-calculated gene/isoform-level eQTLs based on GTEx(v8) can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
-3) Our pre-calculated gene/isoform-level eQTLs based on GTEx(v8) can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
 Outputs
 -------
@@ -407,10 +402,10 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - PValue
-      - p-values of phenotype-tissue associations. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue.
-    * - Log(p)
-      - The negative logarithm (base 10) of p-values of phenotype-tissue association
+    * - Unadjusted(p)
+      - This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The unadjusted p-values are inflated due to selection bias in the iterations, and are only valid for tissue prioritizations
+    * - Adjusted(p)
+      - The Adjusted(p) values are adjusted by permutations for selection bias and multiple testing, and are valid for hypothesis tests.
 
 
 If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. Columns of the file are as follow:
@@ -598,9 +593,10 @@ Synopsis
     --neargene <basepair>  # default: 5000
     --eqtl-file <file>
     --filter-eqtl-p <pval>  # default: 0.01
+    --gene-finemapping
 
 
-``--estimate-heritability`` triggers gene-based association tests and estimation of gene heritability. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by ``--nmiss-col``; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by ``--case-col`` and ``--control-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
+``--estimate-heritability`` triggers gene-based association tests and estimation of gene heritability. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by ``--nmiss-col``; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by ``--case-col`` and ``--control-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. When ``--gene-finemapping`` is specified, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <detail_DESE>`. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
 
 
 Examples
@@ -659,6 +655,28 @@ In this example, eQTLs of a transcript will be grouped to estimate heritability.
     --control-col Nco \
     --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
     --out t4.3
+    
+
+Gene conditional heritability based on physical distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped to estimate heritability. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping and then calculating conditional heritability.
+
+.. code:: shell
+
+    java -Xmx4g -jar ../kggsee.jar \
+    --estimate-heritability \
+    --prevalence 0.01 \
+    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+    --sum-file scz_gwas_eur_chr1.tsv.gz \
+    --case-col Nca \
+    --control-col Nco \
+    --neargene 10000 \
+    --multiple-testing bonf \
+    --p-value-cutoff 0.05 \
+    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+    --out t4.4
+
 
 
 Outputs
@@ -695,4 +713,23 @@ The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based h
 
 
 Columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same as ``*.gene.pvalue.txt``. The difference is that, for each gene, in ``*.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``*.gene.var.pvalue.txt.gz``, all variants are output. The file with the suffix of ``.qq.png`` is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.
+
+
+When ``--gene-finemapping`` is specified, a file with a suffix of ``.finemapping.gene.ecs.txt`` is also output. This file has the following four more columns in addition to its counterpart output by :ref:`DESE <detail_DESE>`.
+
+.. list-table::
+    :widths: 1 4
+    :header-rows: 1
+    :class: tight-table
+
+    * - Header
+      - Description
+    * - Herit
+      - Unconditional heritability estimate
+    * - HeritSE
+      - Standard error of the unconditional heritability estimate
+    * - CondiHerit
+      - Conditional heritability estimate
+    * - CondiHeritSE
+      - Standard error of the conditional heritability estimate
 
