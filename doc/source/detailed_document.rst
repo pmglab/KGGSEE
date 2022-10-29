@@ -552,8 +552,8 @@ Columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as `
 
 .. _detail_h2:
 
-Gene-based heritability estimation
-==================================
+Gene-based (conditional) heritability estimation
+================================================
 
 This analysis estimates the heritability of each gene and performs gene-based association tests at the same time.
 
