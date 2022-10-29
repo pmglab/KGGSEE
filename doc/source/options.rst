@@ -194,6 +194,9 @@ DESE
     * - ``--filter-eqtl-p``
       - Specifies the threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be used. The default is ``0.01`` when performing DESE.
       - ``0.01``
+    * - ``--dese-permu-num``
+      - The number of permutations for an adjustment of selection bias and multiple testing
+      - null
 
 
 .. _option_emic:
