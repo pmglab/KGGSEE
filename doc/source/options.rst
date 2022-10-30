@@ -6,7 +6,7 @@ Options
 
 The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Miscellaneous global options <option_misc>` act on all analyses. For clarity, we have categorized the other parameters by :ref:`Gene-based association <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`Gene-based (conditional) heritability <option_h2>`, although this has resulted in some duplication of parameters.
 
-In the "Default" columns of the following tables, "null" denotes that the flag works with an argument but there is no default value; "n/a" denotes that the flag works without an argument.
+In the "Default" columns of the following tables, "null" denotes that the flag works with an argument but there is no default value; "n/a" denotes that the flag works without any argument.
 
 
 .. _option_vcf:
@@ -246,7 +246,7 @@ Gene-based (conditional) heritability
     * - ``--estimate-heritability``
       - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`Gene-based association <option_assoc>`.
       - n/a
-    * - ``--case-col``, ``--control-col`` and ``--nmiss-col``
+    * - ``--case-col``, ``--control-col``, ``--nmiss-col``
       - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
       - ``--nmiss-col Neff``
     * - ``--gene-finemapping``
