@@ -4,7 +4,7 @@
 Options
 =======
 
-The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Miscellaneous global options <option_misc>` act on all analyses. For clarity, we have categorized the other parameters by :ref:`Gene-based association and heritability <option_assoc>`, :ref:`DESE <option_dese>` and :ref:`EMIC <option_emic>`, although this has resulted in some duplication of parameters.
+The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Miscellaneous global options <option_misc>` act on all analyses. For clarity, we have categorized the other parameters by :ref:`Gene-based association <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`Gene-based (conditional) heritability <option_h2>`, although this has resulted in some duplication of parameters.
 
 In the "Default" columns of the following tables, "null" denotes that the flag works with an argument but there is no default value; "n/a" denotes that the flag works without an argument.
 
@@ -102,8 +102,8 @@ These options work on the GWAS summary statistics and act on all analyses.
 
 .. _option_assoc:
 
-Gene-based association and heritability
-=======================================
+Gene-based association
+======================
 
 
 .. list-table::
@@ -118,14 +118,8 @@ Gene-based association and heritability
     * - ``--gene-assoc``
       - Triggers gene-based association tests.
       - n/a
-    * - ``--estimate-heritability``
-      - Triggers gene-based association tests and estimation of gene heritability.
-      - n/a
-    * - ``--prevalence``
-      - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
-      - 0.01
     * - ``--neargene``
-      - Specifies the number of basepairs to extend at both ends of a gene, when considering SNPs belonging to the gene. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
+      - One number sets the basepair to extend at both sides of a gene, when considering SNPs belonging to the gene, e.g., ``--neargene 5000``. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
       - ``5000``
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of eQTL summary statistics. If this flag is used, ``--neargene`` is overridden, and eQTLs of a gene or transcript will be grouped and tested.
@@ -186,7 +180,7 @@ DESE
       - Specifies a user-defined file of gene sets for enrichment analysis.
       - null
     * - ``--neargene``
-      - Specifies the number of basepairs to extend at both ends of a gene, when considering SNPs belonging to the gene.
+      - One number sets the basepair to extend at both sides of a gene, when considering SNPs belonging to the gene, e.g., ``--neargene 5000``. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
       - ``5000``
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of eQTL summary statistics. If this flag is used, ``--neargene`` is overridden, and eQTLs of a gene or transcript will be grouped and tested.
@@ -231,7 +225,36 @@ EMIC
       - ``2.5E-6``
     * - ``--emic-plot-p``
       - Specifies the p-value threshold for plotting a scatter plot. Genes with an EMIC p-value lower than the threshold will be plotted.
-      - ``2.5E-3``
+      - ``2.5E-3``      
+
+
+.. _option_h2:
+
+Gene-based (conditional) heritability
+=====================================
+
+
+.. list-table::
+    :widths: 3 8 1
+    :header-rows: 1
+    :class: tight-table
+
+
+    * - Flag
+      - Description
+      - Default
+    * - ``--estimate-heritability``
+      - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`Gene-based association <option_assoc>`.
+      - n/a
+    * - ``--case-col``, ``--control-col`` and ``--nmiss-col``
+      - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
+      - ``--nmiss-col Neff``
+    * - ``--gene-finemapping``
+      - When ``--gene-finemapping`` is specified in addition to ``--estimate-heritability``, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
+      - n/a
+    * - ``--prevalence``
+      - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
+      - 0.01
 
 
 .. _option_misc:
