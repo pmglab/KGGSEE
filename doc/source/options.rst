@@ -125,7 +125,7 @@ Gene-based association and heritability
       - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
       - 0.01
     * - ``--neargene``
-      - Specifies the number of basepairs to extend at both ends of a gene, when considering SNPs belonging to the gene.
+      - Specifies the number of basepairs to extend at both ends of a gene, when considering SNPs belonging to the gene. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
       - ``5000``
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of eQTL summary statistics. If this flag is used, ``--neargene`` is overridden, and eQTLs of a gene or transcript will be grouped and tested.
