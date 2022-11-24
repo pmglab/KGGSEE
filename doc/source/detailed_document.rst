@@ -299,7 +299,7 @@ eDESE:isoform
 3. eDESE for "disease-drug" association analysis (SelDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP (based on Java8, `kggsee v1.0 < https://pmglab.top/kggsee/download/lib/v1/kggsee1.0.jar>`_)estimates the drug selective perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
+In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP (based on Java8, `kggsee v1.0 <https://pmglab.top/kggsee/download/lib/v1/kggsee1.0.jar>`_)estimates the drug selective perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
 SelDP
 
