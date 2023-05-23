@@ -144,7 +144,7 @@ DESE
     * - Flag
       - Description
       - Default
-    * - ``--gene-finemapping``
+    * - ``--gene-condi``
       - Trigers the DESE, eDESE or SelDP.
       - n/a
     * - ``--expression-file``
@@ -243,14 +243,14 @@ Gene-based (conditional) heritability
     * - Flag
       - Description
       - Default
-    * - ``--estimate-heritability``
+    * - ``--gene-herit``
       - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`Gene-based association <option_assoc>`.
       - n/a
     * - ``--case-col``, ``--control-col``, ``--nmiss-col``
       - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
       - ``--nmiss-col Neff``
-    * - ``--gene-finemapping``
-      - When ``--gene-finemapping`` is specified in addition to ``--estimate-heritability``, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
+    * - ``--gene-condi``
+      - When ``--gene-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
       - n/a
     * - ``--prevalence``
       - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
