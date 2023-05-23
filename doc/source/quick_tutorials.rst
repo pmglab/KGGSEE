@@ -91,7 +91,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
     --sum-file scz_gwas_eur_chr1.tsv.gz \
     --saved-ref VCFRefhg19 \
     --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --gene-finemapping \
+    --gene-condi \
     --out t2
 
 
@@ -110,7 +110,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
       - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
       - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE; try ``HCL_scRNA_cluster_mean.tsv.gz`` for cell-cluster based DESE.
-    * - ``--gene-finemapping``
+    * - ``--gene-condi``
       - Triggers the DESE analysis.
     * - ``--out``
       - Specifies the prefix of output files.
@@ -260,7 +260,7 @@ Heritability is a measure of how well differences in people's genes account for 
     --saved-ref VCFRefhg19 \
     --case-col Nca \
     --control-col Nco \
-    --estimate-heritability \
+    --gene-herit \
     --out t4
 
 
@@ -281,7 +281,7 @@ Heritability is a measure of how well differences in people's genes account for 
       - Specifies the column name of the case sample size.
     * - ``--control-col``
       - Specifies the column name of the control sample size.
-    * - ``--estimate-heritability``
+    * - ``--gene-herit``
       - Triggers gene-based association tests and estimation of gene heritability.
     * - ``--out``
       - Specifies the prefix of output files.
