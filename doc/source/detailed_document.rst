@@ -296,25 +296,26 @@ eDESE:isoform
     --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
     --out geneAssocIsoformeQTL
 
-3. eDESE for "disease-drug" association analysis (SelDP)
+3. DESE for drug repositioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as a gene expression file. SelDP (based on Java8, `kggsee v1.0 <https://pmglab.top/kggsee/download/lib/v1/kggsee1.0.jar>`_)estimates the drug selective perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
+In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as the gene expression file. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
 SelDP
 
 .. code:: shell
 
-    java -Xmx4g -jar ../kggsee.jar \
-    --db-gene refgene,gencode \
+    java -Xmx10g -jar ../kggsee.jar \
+    --db-gene refgene \
     --only-hgnc-gene \
     --gene-condi \
     --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
     --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --neargene 10000 \
+    --neargene 5000 \
     --multiple-testing bonf \
     --p-value-cutoff 0.05 \
     --expression-file drug-induced_expression_change_profile \
+    --dese-permu-num 100 \
     --out Selective_Perturbed_Drugs
 
 SelDP guided by eQTLs
