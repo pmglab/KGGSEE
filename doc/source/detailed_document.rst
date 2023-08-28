@@ -301,7 +301,6 @@ eDESE:isoform
 
 In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as the gene expression file. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
-SelDP
 
 .. code:: shell
 
@@ -317,24 +316,6 @@ SelDP
     --expression-file drug-induced_expression_change_profile \
     --dese-permu-num 100 \
     --out Selective_Perturbed_Drugs
-
-SelDP guided by eQTLs
-
-.. code:: shell
-
-    java -Xmx4g -jar ../kggsee.jar \
-    --db-gene refgene,gencode \
-    --only-hgnc-gene \
-    --gene-condi \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --filter-eqtl-p 0.01 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file drug-induced_expression_change_profile \
-    --out Selective_Perturbed_Drugs
-
 
 .. note::
     1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +  ``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
