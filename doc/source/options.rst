@@ -41,6 +41,9 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
     * - ``--hwe-all``
       - Filter SNPs with a p-value of rejecting Hardy-Weinberg equilibrium lower than the setting.
       - ``1E-5``
+    * - ``--chrom``
+      - Specify chromosome labels. By default, KGGSEE assumes that the input follows standard human chromosome labels, namely 1-22, X, Y, and M. Here's an illustrative example: ``--chrom NC_052532.1, NW_024095932.1, NW_024095933.1, NW_024095934.1, NW_024095935.1``.
+      - ``null``
 
 .. _option_gwas:
 
