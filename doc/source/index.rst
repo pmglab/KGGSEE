@@ -13,17 +13,6 @@ Miaoxin Li, Lin Jiang, Xiangyi Li, Lin Miao
 
 More functions will be added to KGGSEE in the future. 
 
-.. Here is `a PDF file of this manual <https://raw.githubusercontent.com/pmglab/KGGSEE/main/doc/pdftex/kggsee.pdf>`_.
-
-.. toctree::
-    :maxdepth: 4
-    :caption: Contents:
-
-    setup
-    quick_tutorials
-    detailed_document
-    options
-
 =========
 Citations
 =========
@@ -55,3 +44,15 @@ Hongsheng Gui, Johnny S Kwan,  Pak C Sham et al. Sharing of Genes and Pathways A
 7. Webtool for phenotype-associated cell-types estimation
 =========================================================
 Chao Xue, Lin Jiang, Miao Zhou, et al. PCGA: a comprehensive web server for phenotype-cell-gene association analysis. Nucleic Acids Research, 2022, gkac425. https://doi.org/10.1093/nar/gkac425
+
+
+.. Here is `a PDF file of this manual <https://raw.githubusercontent.com/pmglab/KGGSEE/main/doc/pdftex/kggsee.pdf>`_.
+
+.. toctree::
+    :maxdepth: 4
+    :caption: Contents:
+
+    setup
+    quick_tutorials
+    detailed_document
+    options
