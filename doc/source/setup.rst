@@ -38,7 +38,7 @@ Setup KGGSEE
 
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. In addition, resource datasets, such as gene annotations and eQTL summary statistics are needed to perfrom the corresponding analyses. To run through all the analyses quickly, a tutorial dataset is provided.
 
-From `the download page <http://pmglab.top/kggsee/#/download>`_, download ``kggsee.jar`` and ``resources_tutorials.zip`` and unzip ``resources_tutorials.zip``. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` in the same directory, and then, it's ready.
+From `the download page <http://pmglab.top/kggsee/#/download>`_, download ``kggsee.jar`` and ``resources_tutorials.zip`` and unzip ``resources_tutorials.zip``. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` in the same directory. Now, it's ready to run the tutorial analyses.
 
 
 Files in ``resources`` are:
@@ -81,7 +81,7 @@ Files in ``tutorials`` are:
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
 
-For running customized analyses, the following data is needed, refer to :ref:`Detailed Document <detailed_document>`_ for descriptions of the file formats.
+For running customized analyses, the following files are needed, refer to :ref:`Detailed Document <detailed_document>`_ for descriptions of the file formats.
 
 * A file of GWAS summary statistics of the phenotype to be studied.
 * VCF files of genotypes sampled from the population of the GWAS to be studied.
