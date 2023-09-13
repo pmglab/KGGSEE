@@ -28,13 +28,13 @@ System requirements
 Setup the Java Runtime Environment (JRE)
 ========================================
 
-KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE. After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if Java is in the system PATH.
+KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE. After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if Java is in the system PATH.
 
 
 Setup KGGSEE
 ============
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. In addition, resource datasets, such as gene annotations and eQTL summary statistics, are needed to perfrom the corresponding analyses. A tutorial dataset is also prepared to go through all four KGGSEE analyses.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. In addition, resource datasets, such as gene annotations and eQTL summary statistics are needed to perfrom the corresponding analyses. A tutorial dataset is also provided to fast go through all KGGSEE analyses.
 
 From `the download page <http://pmglab.top/kggsee/#/download>`_, download ``kggsee.jar`` and ``kggsee_resource_tutorial.zip`` and unzip ``kggsee_resource_tutorial.zip``. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` in the same directory, and then, it's ready.
 
