@@ -74,7 +74,7 @@ Files in ``tutorials`` are:
     * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
       - Summary statistics of chr1 SNPs for a GWAS of schizophrenia on the European population
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
-      - Genotypes of chr1 SNPs sampled from the 1000 Genome Project European population
+      - Genotypes of the chr1 SNPs of the 1000 Genome Project European panel
     * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
       - eQTL summary statistics calculated from the gene-level brain BA9 expression profile of the GTEx v8 dataset
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
@@ -97,6 +97,6 @@ VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genom
     * - ``resources/{hg19,hg38}/*.vcf.gz``
       - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
     * - ``resources/{hg19,hg38}/eqtl_gene/*.gene.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Cis-eQTL summary statistics calculated from the gene-level expression profile of the GTEx v8 dataset
+      - cis-eQTL summary statistics calculated from the gene-level expression profile of the GTEx v8 dataset
     * - ``resources/{hg19,hg38}/eqtl_transcript/*.transcript.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Cis-eQTL summary statistics calculated from the transcript-level expression profile of the GTEx v8 dataset
+      - cis-eQTL summary statistics calculated from the transcript-level expression profile of the GTEx v8 dataset
