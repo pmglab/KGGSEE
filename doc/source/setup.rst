@@ -81,13 +81,13 @@ Files in ``tutorials`` are:
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
 
-For running customized analyses, the following files are needed, refer to :ref:`Detailed Document <detailed_document>`_ for descriptions of the file formats.
+For running customized analyses, the following files are needed, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats:
 
 * A file of GWAS summary statistics of the phenotype to be studied.
 * VCF files of genotypes sampled from the population of the GWAS to be studied.
 * A file of eQTL summary statistics calculated from target tissues may be used.
 
-VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ and eQTL summary statistics of `GTEx v8 <https://www.gtexportal.org/home/>`_  tissues are available from `our OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_ 
+VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ and eQTL summary statistics of the `GTEx v8 <https://www.gtexportal.org/home/>`_  tissues are available from `our OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_ 
 
 .. list-table::
     :widths: 1 1
@@ -97,6 +97,6 @@ VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genom
     * - ``resources/{hg19,hg38}/*.vcf.gz``
       - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
     * - ``resources/{hg19,hg38}/eqtl_gene/*.gene.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Summary statistics of cis-eQTLs calculated from the gene-level expression profile of the GTEx v8 dataset
+      - Cis-eQTL summary statistics calculated from the gene-level expression profile of the GTEx v8 dataset
     * - ``resources/{hg19,hg38}/eqtl_transcript/*.transcript.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Summary statistics of cis-eQTLs calculated from the transcript-level expression profile of the GTEx v8 dataset
+      - Cis-eQTL summary statistics calculated from the transcript-level expression profile of the GTEx v8 dataset
