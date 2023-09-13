@@ -28,19 +28,18 @@ System requirements
 Setup the Java Runtime Environment (JRE)
 ========================================
 
-KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE. Please follow the instructions on the websites to complete the installation and also add Java to the system PATH.
-
-Check the JRE by entering ``java -version`` in a Terminal of Linux or MacOS, or CMD or PowerShell of Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if Java is in the system PATH.
+KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE. After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if Java is in the system PATH.
 
 
 Setup KGGSEE
 ============
 
-Download the bundled file of ``kggsee.jar``, running resource dataset and quick tutorial dataset from `the download page <http://pmglab.top/kggsee/#/download>`_ and unzip.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. In addition, resource datasets, such as gene annotations and eQTL summary statistics, are needed to perfrom the corresponding analyses. A tutorial dataset is also prepared to go through all four KGGSEE analyses.
 
-On Linux, libgfortran3 is needed to perform EMIC. For example, for Ubuntu 18.04, type ``sudo apt install libgfortran3`` to install; for Ubuntu 20.04, refer to `the multi-step process on Stack Overflow <https://stackoverflow.com/questions/62908955/how-to-install-libgfortran-so-3-on-ubuntu-20-04>`_ to install.
+From `the download page <http://pmglab.top/kggsee/#/download>`_, download ``kggsee.jar`` and ``kggsee_resource_tutorial.zip`` and unzip ``kggsee_resource_tutorial.zip``. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` in the same directory, and then, it's ready.
 
-The running resource dataset includes:
+
+Files in ``resources/`` are:
 
 .. list-table::
     :widths: 1 1
@@ -59,17 +58,15 @@ The running resource dataset includes:
       - `HGNC <https://www.genenames.org>`_ gene ID
     * - ``resources/ENSTGene.gz``
       - `Ensembl <https://www.ensembl.org/index.html>`_ gene ID and transcript ID
-    * - ``resources/gtex.v8.gene.mean.tsv.gz``
-      - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
-    * - ``resources/gtex.v8.transcript.mean.tsv.gz``
-      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
-    * - ``resources/HCL_scRNA_cluster_mean.tsv.gz`` 
-      - The expression profile of cell clusters generated from the scRNA-seq dataset of the `Human Cell Landscape <bis.zju.edu.cn/HCL/>`_
     * - ``resources/*.symbols.gmt.gz``
       - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
+    * - ``resources/GTEx_v8_TMM.gene.meanSE.txt.gz``
+      - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
+    * - ``resources/GTEx_v8_TMM.transcript.meanSE.txt.gz``
+      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
 
 
-The tutorial dataset includes:
+Files in ``tutorials/`` are:
 
 .. list-table::
     :widths: 1 1
@@ -81,15 +78,27 @@ The tutorial dataset includes:
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
       - Genotypes of chr1 SNPs sampled from the 1000 Genome Project European population
     * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
-      - Summary statistics of eQTLs calculated from gene-level expression profile of GTEx v8 brain BA9
+      - Summary statistics of cis-eQTLs calculated from the gene-level brain BA9 expression profile of the GTEx v8 dataset
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
-      - Summary statistics of eQTLs calculated from transcript-level expression profile of GTEx v8 brain BA9
+      - Summary statistics of cis-eQTLs calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
 
 For running customized analyses, the following data is needed, refer to :ref:`Detailed Document <detailed_document>` for descriptions of file formats.
 
 * A file of GWAS summary statistics of the phenotype to be studied.
+* VCF files of genotypes sampled from the population of the GWAS to be studied.
+* A file of eQTL summary statistics calculated from target tissues may be used.
 
-* VCF files of genotypes sampled from the population of the GWAS to be studied. Genotypes of the 1000 Genomes Project Phase3 v5 can be downloaded from the `NCBI FTP site <ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502>`_ or the `1000 Genomes Project FTP site <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`_.
+VCF files of the 1000 Genomes Project and eQTL summary statistics of GTEx v8 tissues are available in the ``resources/`` folder in `the download page <http://pmglab.top/kggsee/#/download>`_: 
 
-* A file of eQTL summary statistics calculated from target tissues may be used. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for download (refer to `the download page <http://pmglab.top/kggsee/#/download>`_).
+.. list-table::
+    :widths: 1 1
+    :header-rows: 0
+    :class: tight-table
+    
+    * - ``resources/{hg19,hg38}/*.vcf.gz``
+      - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
+    * - ``resources/{hg19,hg38}/eqtl_gene/*.gene.{hg19,hg38}.cov.eqtl.txt.gz``
+      - Summary statistics of cis-eQTLs calculated from the gene-level expression profile of the GTEx v8 dataset
+    * - ``resources/{hg19,hg38}/eqtl_transcript/*.transcript.{hg19,hg38}.cov.eqtl.txt.gz``
+      - Summary statistics of cis-eQTLs calculated from the transcript-level expression profile of the GTEx v8 dataset
