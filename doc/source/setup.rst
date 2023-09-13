@@ -96,7 +96,6 @@ VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genom
     
     * - ``resources/{hg19,hg38}/*.vcf.gz``
       - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
-    * - ``resources/{hg19,hg38}/eqtl_gene/*.gene.{hg19,hg38}.cov.eqtl.txt.gz``
-      - cis-eQTL summary statistics calculated from the gene-level expression profile of the GTEx v8 dataset
-    * - ``resources/{hg19,hg38}/eqtl_transcript/*.transcript.{hg19,hg38}.cov.eqtl.txt.gz``
-      - cis-eQTL summary statistics calculated from the transcript-level expression profile of the GTEx v8 dataset
+    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz``
+      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
+
