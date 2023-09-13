@@ -46,14 +46,10 @@ Files in ``resources/`` are:
     :header-rows: 0
     :class: tight-table
 
-    * - ``resources/hg19/kggseqv1.1_hg19_GEncode.txt.gz``
-      - hg19 `GENCODE <https://www.gencodegenes.org>`_ annotation
-    * - ``resources/hg19/kggseqv1.1_hg19_refGene.txt.gz``
-      - hg19 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
-    * - ``resources/hg38/kggseqv1.1_hg38_GEncode.txt.gz``
-      - hg38 `GENCODE <https://www.gencodegenes.org>`_ annotation
-    * - ``resources/hg38/kggseqv1.1_hg38_refGene.txt.gz``
-      - hg38 `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotation
+    * - ``resources/{hg19,hg38}/kggseqv1.1_{hg19,hg38}_GEncode.txt.gz``
+      - `GENCODE <https://www.gencodegenes.org>`_ annotations
+    * - ``resources/{hg19,hg38}/kggseqv1.1_{hg19,hg38}_refGene.txt.gz``
+      - `RefGene <https://www.ncbi.nlm.nih.gov/refseq/rsg>`_ annotations
     * - ``resources/HgncGene.txt.gz``
       - `HGNC <https://www.genenames.org>`_ gene ID
     * - ``resources/ENSTGene.gz``
@@ -89,7 +85,7 @@ For running customized analyses, the following data is needed, refer to :ref:`De
 * VCF files of genotypes sampled from the population of the GWAS to be studied.
 * A file of eQTL summary statistics calculated from target tissues may be used.
 
-VCF files of the 1000 Genomes Project and eQTL summary statistics of GTEx v8 tissues are available in the ``resources/`` folder in `the download page <http://pmglab.top/kggsee/#/download>`_: 
+VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ and eQTL summary statistics of `GTEx v8 <https://www.gtexportal.org/home/>`_  tissues are available in the ``resources/`` folder in `the download page <http://pmglab.top/kggsee/#/download>`_: 
 
 .. list-table::
     :widths: 1 1
@@ -99,6 +95,6 @@ VCF files of the 1000 Genomes Project and eQTL summary statistics of GTEx v8 tis
     * - ``resources/{hg19,hg38}/*.vcf.gz``
       - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
     * - ``resources/{hg19,hg38}/eqtl_gene/*.gene.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Summary statistics of cis-eQTLs calculated from the gene-level expression profile of the GTEx v8 dataset
+      - Summary statistics of cis-eQTLs calculated from the gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
     * - ``resources/{hg19,hg38}/eqtl_transcript/*.transcript.{hg19,hg38}.cov.eqtl.txt.gz``
-      - Summary statistics of cis-eQTLs calculated from the transcript-level expression profile of the GTEx v8 dataset
+      - Summary statistics of cis-eQTLs calculated from the transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
