@@ -49,15 +49,15 @@ KGGSEE and its running resources
       - The KGGSEE program
       - 46 MB
       - Sep 2023
-    * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_
+    * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
       - All running resource files in our OneDrive
       - 7.0 GB
       - Sep 2023
-    * - `resources.zip <>`_
+    * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
       - Sep 2023
-    * - `tutorials.zip <>`_
+    * - `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
       - A tutorial dataset to run through :ref:`the four analyses <four_analyses>`
       - 155 MB
       - Apr 2022
@@ -65,11 +65,11 @@ KGGSEE and its running resources
 
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding resource files are needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
 
-A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is to download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; unzip ``resources.zip`` and ``tutorials.zip``; put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
+A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is to (1) download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; (2) unzip ``resources.zip`` and ``tutorials.zip``; (3) put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
 
-A straightforward way to set up an environment for customized analyses is to download ``kggsee.jar`` and ``resources.zip``; unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; download the reference genotypes of the population that matches your GWAS. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
+A straightforward way to set up an environment for customized analyses is to (1) download ``kggsee.jar`` and ``resources.zip``; (2) unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; (3) download the reference genotypes of the population that matches your GWAS; (4) for gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
-The running resource files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_ are described in the following, where gene annotations and eQTL summary statistics are provided by both hg19 and hg38 coordinates.
+The files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_ are described in the following, where gene annotations, genotypes of the 1000 genomes project and eQTL summary statistics are provided by both hg19 and hg38 coordinates.
 
 .. list-table::
     :widths: 1 1
