@@ -65,11 +65,12 @@ KGGSEE and its running resources
 
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
 
-A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is to (1) download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; (2) unzip ``resources.zip`` and ``tutorials.zip``; (3) put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
+A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>`:
+#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
+#. Unzip ``resources.zip`` and ``tutorials.zip``
+#. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
 
-A straightforward way to set up an environment for customized analyses is to (1) download ``kggsee.jar`` and ``resources.zip``; (2) unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; (3) download the reference genotypes of the population that matches your GWAS; (4) for gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
-
-The files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_ are described in the following, where gene annotations, genotypes of the 1000 genomes project and eQTL summary statistics are provided by both hg19 and hg38 coordinates.
+`resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ contains:
 
 .. list-table::
     :widths: 1 1
@@ -90,13 +91,9 @@ The files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal
       - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
     * - ``resources/GTEx_v8_TMM.transcript.meanSE.txt.gz``
       - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
-    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz`` (not included in ``resources.zip``)
-      - VCF files of each super population panel of `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ including biallelic variants with MAF>0.01
-    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz`` (not included in ``resources.zip``)
-      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
 
 
-On top of already downloading ``resources.zip``, ``tutorials/scz_gwas_eur_chr1.tsv.gz`` and ``tutorials/1kg_hg19_eur_chr1.vcf.gz`` are sufficient to go through gene-based association test (ECS and GATES) and heritability estimation (EHE). In addition, ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is needed for driver-tissue estimation (DESE); ``tutorials/GTEx_v8_{gene,transcript}_BrainBA9.eqtl.txt.gz`` is needed for gene/transcript expression causal effect estimation (EMIC).
+`tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_ contains:
 
 .. list-table::
     :widths: 1 1
@@ -111,4 +108,30 @@ On top of already downloading ``resources.zip``, ``tutorials/scz_gwas_eur_chr1.t
       - eQTL summary statistics calculated from the gene-level brain BA9 expression profile of the GTEx v8 dataset
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
+
+
+where ``tutorials/scz_gwas_eur_chr1.tsv.gz`` and ``tutorials/1kg_hg19_eur_chr1.vcf.gz`` are needed to go through gene-based association test (ECS and GATES) and heritability estimation (EHE). In addition, ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is needed for driver-tissue estimation (DESE); ``tutorials/GTEx_v8_{gene,transcript}_BrainBA9.eqtl.txt.gz`` is needed for gene/transcript expression causal effect estimation (EMIC).
+
+
+In addition to files packaged in 
+The files in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, our OneDrive folder `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_ also provides:
+
+.. list-table::
+    :widths: 1 1
+    :header-rows: 0
+    :class: tight-table
+
+    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz`` (not included in ``resources.zip``)
+      - VCF files of each super population panel of `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ including biallelic variants with MAF>0.01
+    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz`` (not included in ``resources.zip``)
+      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
+
+
+A straightforward way to set up an environment for customized analyses:
+#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
+#. Unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory
+#. Download the reference genotypes (`resources/hg19/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `resources/hg38/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS. We recommend that put the files under ``resources/{hg19,hg38}/gty``.
+#. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics (resources/hg19/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-related tissues. We recommend that put the files under ``resources/{hg19,hg38}/eqtl``.
+
+To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
