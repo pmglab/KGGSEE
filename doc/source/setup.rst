@@ -30,7 +30,7 @@ Setup the Java Runtime Environment (JRE)
 
 KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE.
 
-After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
+After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 17.0.4.1+1-LTS-2)`` or ``OpenJDK Runtime Environment (build 17.0.8.1+1-Ubuntu-0ubuntu122.04)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
 
 
 KGGSEE and its running resources
@@ -134,8 +134,8 @@ Then, a straightforward way to set up an environment for customized analyses is
 
 #. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
 #. Unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory
-#. Download the reference genotypes (`resources/hg19/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `resources/hg38/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS.
-#. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics (`resources/hg19/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues.
+#. Download the reference genotypes (`resources/hg19/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `resources/hg38/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS.
+#. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics (`resources/hg19/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues.
 
 There are limitations to these running resources that we provide. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
