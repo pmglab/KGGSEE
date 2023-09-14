@@ -36,6 +36,8 @@ After installing a JRE, check by entering ``java -version`` in a Terminal of Lin
 KGGSEE and its running resources
 ================================
 
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association test (GATES and EHE) and heritability estimation (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed.
+
 .. list-table::
     :widths: 2 5 2 2
     :header-rows: 1
@@ -63,7 +65,8 @@ KGGSEE and its running resources
       - Apr 2022
 
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed. For example, reference genotypes and gene annotations are needed for gene-based association test (GATES and EHE) and heritability estimation (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC).
+Set up an environment for the Quick tutorials 
+=============================================
 
 A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is
 
@@ -110,6 +113,9 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
+
+Set up an environment for customized analyses 
+=============================================
 
 In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of 5 super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
