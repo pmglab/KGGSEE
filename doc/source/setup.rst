@@ -111,16 +111,16 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
 
-In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, our OneDrive folder `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_ also provides:
+In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of 5 super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
 .. list-table::
     :widths: 1 1
     :header-rows: 0
     :class: tight-table
 
-    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz`` (not included in ``resources.zip``)
-      - VCF files of each super population panel of `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ including biallelic variants with MAF>0.01
-    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz`` (not included in ``resources.zip``)
+    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz``
+      - VCF files of each super population panel of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ including biallelic variants with MAF>0.01
+    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz``
       - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
 
 
