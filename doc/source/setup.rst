@@ -33,15 +33,43 @@ KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/e
 After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 1.8.0_xxx)`` or ``OpenJDK Runtime Environment (build 1.8.0_xxx)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
 
 
-Setup KGGSEE
-============
+KGGSEE and its running resources
+================================
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. In addition, resource datasets, such as gene annotations and eQTL summary statistics are needed to perfrom the corresponding analyses. To run through all the analyses quickly, a tutorial dataset is provided.
+.. list-table::
+    :widths: 2 5 2 2
+    :header-rows: 1
+    :class: tight-table
 
-From `the download page <http://pmglab.top/kggsee/#/download>`_, download ``kggsee.jar`` and ``resources_tutorials.zip`` and unzip ``resources_tutorials.zip``. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` in the same directory. Now, it's ready to run the tutorial analyses.
+    * - File
+      - Description
+      - Size
+      - Updated
+    * - `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_
+      - The KGGSEE program
+      - 46 MB
+      - Sep 2023
+    * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_
+      - All running resource files in our OneDrive
+      - 7.0 GB
+      - Sep 2023
+    * - `resources.zip <>`_
+      - Running resource files except reference genotypes and eQTL summary statistics 
+      - 362 MB
+      - Sep 2023
+    * - `tutorials.zip <>`_
+      - A tutorial dataset to run through :ref:`the four analyses <four_analyses>`
+      - 155 MB
+      - Apr 2022
 
 
-Files in ``resources`` are:
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding resource files are needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
+
+A quick and easy way to setup a :ref:`Quick tutorials <quick_tutorials>` environment is to download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; unzip ``resources.zip`` and ``tutorials.zip``; put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
+
+A straightforward way to setup an environment for customized analyses is to download ``kggsee.jar`` and ``resources.zip``; unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; download the reference genotypes of the population that matches your GWAS (under ``resources/{hg19,hg38}/gty/``). For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues (under ``resources/{hg19,hg38}/eqtl/``). To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
+
+The running resource files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_ are described in the following, where gene annotations and eQTL summary statistics are provided by both hg19 and hg38 coordinates.
 
 .. list-table::
     :widths: 1 1
@@ -61,10 +89,14 @@ Files in ``resources`` are:
     * - ``resources/GTEx_v8_TMM.gene.meanSE.txt.gz``
       - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
     * - ``resources/GTEx_v8_TMM.transcript.meanSE.txt.gz``
-      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues 
+      - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
+    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz`` (not included in ``resources.zip``)
+      - VCF files of each super population panel of `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ including biallelic variants with MAF>0.01
+    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz`` (not included in ``resources.zip``)
+      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
 
 
-Files in ``tutorials`` are:
+On top of already downloading ``resources.zip``, ``tutorials/scz_gwas_eur_chr1.tsv.gz`` and ``tutorials/1kg_hg19_eur_chr1.vcf.gz`` are sufficient to go through gene-based association test (ECS and GATES) and heritability estimation (EHE). In addition, ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is needed for driver-tissue estimation (DESE); ``tutorials/GTEx_v8_{gene,transcript}_BrainBA9.eqtl.txt.gz`` is needed for gene/transcript expression causal effect estimation (EMIC).
 
 .. list-table::
     :widths: 1 1
@@ -74,28 +106,9 @@ Files in ``tutorials`` are:
     * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
       - Summary statistics of chr1 SNPs for a GWAS of schizophrenia on the European population
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
-      - Genotypes of the chr1 SNPs of the 1000 Genome Project European panel
+      - Genotypes of the chr1 SNPs of the 1000 Genomes Project European panel
     * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
       - eQTL summary statistics calculated from the gene-level brain BA9 expression profile of the GTEx v8 dataset
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
-
-
-For running customized analyses, the following files are needed, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats:
-
-* A file of GWAS summary statistics of the phenotype to be studied.
-* VCF files of genotypes sampled from the population of the GWAS to be studied.
-* A file of eQTL summary statistics calculated from target tissues may be used.
-
-VCF files of the `1000 Genomes Project <https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/>`_ and eQTL summary statistics of the `GTEx v8 <https://www.gtexportal.org/home/>`_  tissues are available from `our OneDrive <https://mailsysueducn-my.sharepoint.com/personal/limiaoxin_mail_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flimiaoxin%5Fmail%5Fsysu%5Fedu%5Fcn%2FDocuments%2Ftools%2Fkggsee%2Fresources&ga=1>`_ 
-
-.. list-table::
-    :widths: 1 1
-    :header-rows: 0
-    :class: tight-table
-    
-    * - ``resources/{hg19,hg38}/*.vcf.gz``
-      - Genotypes of super population panels of the 1000 Genomes Project including biallelic variants with MAF>0.01.
-    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz``
-      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the GTEx v8 dataset
 
