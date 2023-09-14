@@ -63,7 +63,7 @@ KGGSEE and its running resources
       - Apr 2022
 
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding resource files are needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
 
 A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is to (1) download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; (2) unzip ``resources.zip`` and ``tutorials.zip``; (3) put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
 
