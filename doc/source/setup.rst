@@ -36,7 +36,7 @@ After installing a JRE, check by entering ``java -version`` in a Terminal of Lin
 KGGSEE and its running resources
 ================================
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association test (GATES and EHE) and heritability estimation (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
 
 .. list-table::
     :widths: 2 5 2 2
