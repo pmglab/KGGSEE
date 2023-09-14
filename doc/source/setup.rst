@@ -50,8 +50,8 @@ KGGSEE and its running resources
       - 46 MB
       - Sep 2023
     * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
-      - All running resource files in our OneDrive
-      - 7.0 GB
+      - A folder containing all running resource files provided by us
+      - 100 GB
       - Sep 2023
     * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
@@ -63,7 +63,7 @@ KGGSEE and its running resources
       - Apr 2022
 
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed. For example, reference genotypes and gene annotations are needed for gene-based association test (GATES and EHE) and heritability estimation (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC).
 
 A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>`:
 #. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
