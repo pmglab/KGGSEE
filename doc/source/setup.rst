@@ -54,7 +54,7 @@ KGGSEE and its running resources
       - 7.0 GB
       - Sep 2023
     * - `resources.zip <>`_
-      - Running resource files except reference genotypes and eQTL summary statistics 
+      - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
       - Sep 2023
     * - `tutorials.zip <>`_
@@ -65,9 +65,9 @@ KGGSEE and its running resources
 
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding resource files are needed. For example, reference genotypes and gene annotations are needed for gene-based association test and heritability estimation; in addition, eQTL summary statistics is needed for gene-expression causal effect estimation.
 
-A quick and easy way to setup a :ref:`Quick tutorials <quick_tutorials>` environment is to download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; unzip ``resources.zip`` and ``tutorials.zip``; put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
+A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is to download ``kggsee.jar``, ``resources.zip`` and ``tutorials.zip``; unzip ``resources.zip`` and ``tutorials.zip``; put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
 
-A straightforward way to setup an environment for customized analyses is to download ``kggsee.jar`` and ``resources.zip``; unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; download the reference genotypes of the population that matches your GWAS (under ``resources/{hg19,hg38}/gty/``). For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues (under ``resources/{hg19,hg38}/eqtl/``). To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
+A straightforward way to set up an environment for customized analyses is to download ``kggsee.jar`` and ``resources.zip``; unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory; download the reference genotypes of the population that matches your GWAS. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics of phenotype-related tissues. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
 The running resource files in `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_ are described in the following, where gene annotations and eQTL summary statistics are provided by both hg19 and hg38 coordinates.
 
@@ -104,7 +104,7 @@ On top of already downloading ``resources.zip``, ``tutorials/scz_gwas_eur_chr1.t
     :class: tight-table
     
     * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
-      - Summary statistics of chr1 SNPs for a GWAS of schizophrenia on the European population
+      - Summary statistics of chr1 SNPs for a GWAS of schizophrenia in the European population
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
       - Genotypes of the chr1 SNPs of the 1000 Genomes Project European panel
     * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
