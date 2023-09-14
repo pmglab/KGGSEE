@@ -105,13 +105,13 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
     :class: tight-table
     
     * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
-      - Summary statistics of chr1 SNPs for a GWAS of schizophrenia in the European population
+      - Chromosome 1 summary statistics of a schizophrenia GWAS with a European sample.
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
-      - Genotypes of the chr1 SNPs of the 1000 Genomes Project European panel
+      - Chromosome 1 genotypes of the European panel of the 1000 Genomes Project
     * - ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz``
-      - eQTL summary statistics calculated from the gene-level brain BA9 expression profile of the GTEx v8 dataset
+      - eQTL summary statistics calculated from the brain BA9 gene-level expression profile of GTEx v8
     * - ``tutorials/GTEx_v8_transcript_BrainBA9.eqtl.txt.gz``
-      - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
+      - eQTL summary statistics calculated from the brain BA9 transcript-level expression profile of GTEx v8
 
 
 Set up an environment for customized analyses 
