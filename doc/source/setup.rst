@@ -111,11 +111,7 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
       - eQTL summary statistics calculated from the transcript-level brain BA9 expression profile of the GTEx v8 dataset
 
 
-where ``tutorials/scz_gwas_eur_chr1.tsv.gz`` and ``tutorials/1kg_hg19_eur_chr1.vcf.gz`` are needed to go through gene-based association test (ECS and GATES) and heritability estimation (EHE). In addition, ``tutorials/GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is needed for driver-tissue estimation (DESE); ``tutorials/GTEx_v8_{gene,transcript}_BrainBA9.eqtl.txt.gz`` is needed for gene/transcript expression causal effect estimation (EMIC).
-
-
-In addition to files packaged in 
-The files in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, our OneDrive folder `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_ also provides:
+In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, our OneDrive folder `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_ also provides:
 
 .. list-table::
     :widths: 1 1
