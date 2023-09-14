@@ -36,31 +36,31 @@ After installing a JRE, check by entering ``java -version`` in a Terminal of Lin
 KGGSEE and its running resources
 ================================
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics is needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
 
 .. list-table::
-    :widths: 2 5 2 2
+    :widths: 1 3 1 1
     :header-rows: 1
     :class: tight-table
 
     * - File
       - Description
       - Size
-      - Updated
+      - Update time
     * - `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_
       - The KGGSEE program
       - 46 MB
       - Sep 2023
     * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
-      - A folder containing all running resource files provided by us
+      - A OneDrive folder containing all running resource files provided by us
       - 100 GB
-      - Sep 2023
+      - refer to the date on OneDrive
     * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
       - Sep 2023
     * - `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
-      - A tutorial dataset to run through :ref:`the four analyses <four_analyses>`
+      - A tutorial dataset to run through :ref:`the four types of analyses <four_analyses>`
       - 155 MB
       - Apr 2022
 
@@ -68,7 +68,7 @@ KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To p
 Set up an environment for the Quick tutorials 
 =============================================
 
-A quick and easy way to set up an environment for :ref:`Quick tutorials <quick_tutorials>` is
+A quick and easy way to set up an environment for the :ref:`Quick tutorials <quick_tutorials>` is
 
 #. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
 #. Unzip ``resources.zip`` and ``tutorials.zip``
@@ -117,7 +117,7 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
 Set up an environment for customized analyses 
 =============================================
 
-In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of 5 super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
+In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of five 1000 Genomes Project super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
 .. list-table::
     :widths: 1 1
@@ -135,7 +135,7 @@ Then, a straightforward way to set up an environment for customized analyses is
 #. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
 #. Unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory
 #. Download the reference genotypes (`resources/hg19/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `resources/hg38/gty <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS. We recommend that put the files under ``resources/{hg19,hg38}/gty``.
-#. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics (resources/hg19/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-related tissues. We recommend that put the files under ``resources/{hg19,hg38}/eqtl``.
+#. For gene/transcript expression causal effect estimation (EMIC), also download the eQTL summary statistics (`resources/hg19/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues. We recommend that put these files under ``resources/{hg19,hg38}/eqtl``.
 
 There are limitations to these running resources that we provide. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
