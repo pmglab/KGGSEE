@@ -54,7 +54,7 @@ KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To p
     * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
       - A OneDrive folder containing all running resource files provided by us
       - 100 GB
-      - refer to the date on OneDrive
+      - Refer to OneDrive
     * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
