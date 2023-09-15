@@ -83,7 +83,7 @@ The Q-Q plots for p-values of inputted GWAS file (inside or outside of gene) and
 DESE
 ====
     
-DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues; outputs p-values of phenotype-tissue associations and conditional p-values of genes. The command is:
+DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues and outputs p-values of phenotype-tissue associations and conditional p-values of genes. The command is:
 
 .. code:: shell
 
@@ -138,16 +138,16 @@ The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``
     * - #Var
       - Number of variants within the gene
     * - Group
-      - LD group number. Conditional ECS tests were performed for genes within a same LD group.
+      - LD group number. Conditional ECS tests were performed for genes within the same LD group.
     * - ECSP
       - p-value of ECS
     * - CondiECSP
       - p-value of conditional gene-based association tests by conditional ECS
     * - GeneScore
-      - The gene's selective expression score in all tissues. A gene with a high socre will be given higher priority to enter the conditioning procedure.
+      - The gene's selective expression score in all tissues. A gene with a high score will be given higher priority to enter the conditioning procedure.
        
 
-Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The file contains three columns:
+Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The file contains three columns:
 
 .. list-table::
     :widths: 1 4
@@ -169,7 +169,7 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is bas
 EMIC
 ====
 
-EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis inputs effect sizes of SNPs on the phenotype and genes' expressions; outputs effect sizes and p-values of genes' expression effects on the phenotype. The command is:
+EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis inputs effect sizes of SNPs on the phenotype and genes' expressions and outputs effect sizes and p-values of genes' expression effects on the phenotype. The command is:
 
 .. code:: shell
 
