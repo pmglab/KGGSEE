@@ -329,10 +329,6 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
     --dese-permu-num 100 \
     --out Selective_Perturbed_Drugs
 
-.. note::
-    1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene names, and the column name is tissue name and tissue name +  ``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
-    2) Our pre-calculated gene/isoform-level eQTLs based on GTEx v8 can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
-
 
 Outputs
 -------
@@ -389,7 +385,7 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
 If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. The columns of the file are as follows:
 
 .. list-table::
-    :widths: 1 4
+    :widths: 1 2
     :header-rows: 1
     :class: tight-table
 
