@@ -553,9 +553,10 @@ Synopsis
     --chrom-col <header>  # default: CHR
     --pos-col <header>  # default: BP
     --p-col <header>  # default: P
-    --nmiss-col <header>  # default: Neff
+    --nmiss-col <header>
     --case-col <header>
     --control-col <header>
+    --prevalence <value>  # default: 0.01
     --neargene <basepair>  # default: 5000
     --eqtl-file <file>
     --filter-eqtl-p <pval>  # default: 0.01
