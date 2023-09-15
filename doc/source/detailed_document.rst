@@ -236,8 +236,8 @@ A transcript-level expression file looks like this:
 Examples
 --------
 
-1. DESE based on physical distance (or eDESE:dist)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESE based on physical distance (or eDESE:dist)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping. Adjustment for selection bias and multiple testing will be carried out by 100 permutations. 
 
@@ -257,8 +257,8 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
     --out geneAssoc
 
 
-2. DESE guided by eQTLs (eDESE:gene and eDESE:isoform)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESE guided by eQTLs (eDESE:gene and eDESE:isoform)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To perform conditional gene-based association analysis using another two different strategies to map variants to genes, i.e., gene-level and isoform-level eQTLs (also are variants). The two strategies correspond to two models, i.e., eDESE:gene and eDESE:isoform, respectively.
 
@@ -296,8 +296,8 @@ eDESE:isoform
     --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
     --out geneAssocIsoformeQTL
 
-3. DESE for drug repositioning
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESE for drug repositioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as the gene expression file. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
