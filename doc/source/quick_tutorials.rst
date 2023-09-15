@@ -19,11 +19,11 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --keep-ref \
-    --gene-assoc \
-    --out t1
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --keep-ref \
+      --gene-assoc \
+      --out t1
 
 
 **Explanation of the flags and input files:**
@@ -88,11 +88,11 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --saved-ref VCFRefhg19 \
-    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --gene-condi \
-    --out t2
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref VCFRefhg19 \
+      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --gene-condi \
+      --out t2
 
 
 **Explanation of the flags and input files:**
@@ -174,13 +174,13 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --saved-ref VCFRefhg19 \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --beta-col OR \
-    --beta-type 2 \
-    --emic \
-    --out t3
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref VCFRefhg19 \
+      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --beta-col OR \
+      --beta-type 2 \
+      --emic \
+      --out t3
 
 
 **Explanation of the flags and input files:**
@@ -256,12 +256,12 @@ Heritability is a measure of how well differences in people's genes account for 
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --saved-ref VCFRefhg19 \
-    --case-col Nca \
-    --control-col Nco \
-    --gene-herit \
-    --out t4
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref VCFRefhg19 \
+      --case-col Nca \
+      --control-col Nco \
+      --gene-herit \
+      --out t4
 
 
 **Explanation of the flags and input files:**
