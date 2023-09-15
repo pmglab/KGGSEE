@@ -119,13 +119,13 @@ In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sh
     :header-rows: 0
     :class: tight-table
 
-    * - `resources/hg19/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=TftaGO>`_
+    * - `resources/hg19/gty/*.vcf.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=TftaGO>`_
       - VCF files of each super-population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ using hg19 coordinates. Each VCF file includes biallelic variants with MAF>0.01 of the super population. The VCF files include autosomes and chrX.
-    * - `resources/hg38/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=sJyI59>`_
+    * - `resources/hg38/gty/*.vcf.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=sJyI59>`_
       - VCF files of each super-population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ using hg38 coordinates. Each VCF file includes biallelic variants with MAF>0.01 of the super population.  The VCF files include only autosomes.
-    * - `resources/hg19/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=JhXZh1>`_
+    * - `resources/hg19/eqtl/*.eqtl.txt.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=JhXZh1>`_
       - cis-eQTL summary statistics using hg19 coordinates calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
-    * - `resources/hg38/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=oCg45g>`_
+    * - `resources/hg38/eqtl/*.eqtl.txt.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=oCg45g>`_
       - cis-eQTL summary statistics using hg38 coordinates calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
 
 
@@ -133,7 +133,7 @@ Then, a straightforward way to set up an environment for customized analyses is
 
 #. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
 #. Unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory
-#. Download the reference genotypes (`resources/hg19/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `resources/hg38/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS.
-#. For running EMIC or eDESE, also download the eQTL summary statistics (`resources/hg19/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `resources/hg38/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues.
+#. Download the reference genotypes (`hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS.
+#. For running EMIC or eDESE, also download the eQTL summary statistics (`hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues.
 #. To prepare customized resource files, refer to :ref:`Detailed Document <detailed_document>` for descriptions of the file formats.
 
