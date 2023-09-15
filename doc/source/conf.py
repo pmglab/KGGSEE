@@ -4,7 +4,7 @@
 
 project = 'KGGSEE'
 copyright = '2019 PMGLab'
-author = 'Miaoxin Li, Lin Jiang, Xiangyi Li and Lin Miao'
+author = 'Miaoxin Li, Lin Jiang, Xiangyi Li, and Lin Miao'
 
 # release = ''
 version = 'v1.1'
