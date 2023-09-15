@@ -10,9 +10,11 @@ System requirements
 
 .. list-table::
     :widths: 3 7
-    :header-rows: 0
+    :header-rows: 1
     :class: tight-table
 
+    * - Hardware
+      - Requirement
     * - Operating system
       - KGGSEE runs in a Java Virtual Machine. It does not matter which operating system it runs in.
     * - Java Runtime Environment
@@ -72,10 +74,12 @@ A quick and easy way to set up an environment for the :ref:`Quick tutorials <qui
 where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ contains
 
 .. list-table::
-    :widths: 1 1
-    :header-rows: 0
+    :widths: 1 2
+    :header-rows: 1
     :class: tight-table
 
+    * - File
+      - Description
     * - ``resources/{hg19,hg38}/kggseqv1.1_{hg19,hg38}_GEncode.txt.gz``
       - `GENCODE <https://www.gencodegenes.org>`_ annotations
     * - ``resources/{hg19,hg38}/kggseqv1.1_{hg19,hg38}_refGene.txt.gz``
@@ -95,10 +99,12 @@ where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/lim
 and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_ contains
 
 .. list-table::
-    :widths: 1 1
-    :header-rows: 0
+    :widths: 1 2
+    :header-rows: 1
     :class: tight-table
-    
+
+    * - File
+      - Description
     * - ``tutorials/scz_gwas_eur_chr1.tsv.gz``
       - Chromosome 1 summary statistics of a schizophrenia GWAS with a European sample.
     * - ``tutorials/1kg_hg19_eur_chr1.vcf.gz``
@@ -115,10 +121,12 @@ Set up an environment for customized analyses
 In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of five 1000 Genomes Project super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
 .. list-table::
-    :widths: 1 3
-    :header-rows: 0
+    :widths: 1 2
+    :header-rows: 1
     :class: tight-table
 
+    * - File
+      - Description
     * - `resources/hg19/gty/*.vcf.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=TftaGO>`_
       - VCF files of each super-population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ using hg19 coordinates. Each VCF file includes biallelic variants with MAF>0.01 of the super population. The VCF files include autosomes and chrX.
     * - `resources/hg38/gty/*.vcf.gz <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=sJyI59>`_
