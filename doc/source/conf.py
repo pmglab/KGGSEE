@@ -37,7 +37,7 @@ epub_show_urls = 'footnote'
 latex_elements = {
     'extraclassoptions': 'openany,oneside',
     'papersize': 'a4paper',
-    'pointsize': '8pt',
+    'pointsize': '9pt',
 }
 
 html_static_path = ['_static']
