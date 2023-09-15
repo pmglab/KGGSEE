@@ -289,5 +289,5 @@ Heritability is a measure of how well differences in people's genes account for 
 
 **Explanation of the output files:**
 
-The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named Herit and HeritSE, which are the estimate and its standard error of the gene heritability.
+The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named ``Herit`` and ``HeritSE``, which are the estimate and its standard error of the gene heritability.
 
