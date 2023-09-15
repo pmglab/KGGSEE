@@ -183,7 +183,7 @@ DESE
       - Specifies a user-defined file of gene sets for enrichment analysis.
       - null
     * - ``--neargene``
-      - One number sets the basepair to extend at both sides of a gene, when considering SNPs belonging to the gene, e.g., ``--neargene 5000``. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
+      - One number sets the basepair to extend at both sides of a gene when considering SNPs belonging to the gene, e.g., ``--neargene 5000``. This flag can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``.
       - ``5000``
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of eQTL summary statistics. If this flag is used, ``--neargene`` is overridden, and eQTLs of a gene or transcript will be grouped and tested.
@@ -221,7 +221,7 @@ EMIC
       - Specifies the threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be used. The default is ``1E-4`` when performing EMIC.
       - ``1E-4``
     * - ``--ld-pruning-mr``
-      - Specifies the threshold of LD coefficient when pruning variants. For each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned.
+      - Specifies the threshold of LD coefficients when pruning variants. For each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned.
       - 0.5
     * - ``--emic-pfm-p``
       - Specifies the p-value threshold to further perform an EMIC pleiotropy fine-mapping (EMIC-PFM) analysis. If the EMIC p-value of a gene is lower than the threshold, an EMIC-PFM will be performed to control the false-positive caused by pleiotropy. 
@@ -296,7 +296,7 @@ These options act on all analyses.
       - Specifies the output prefix of results.
       - ``./kggsee1``
     * - ``--regions-bed``
-      - Specifies a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinate and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
+      - Specify a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
       - null
     * - ``--regions-out``
       - Specifies genomic regions to be excluded in analyses, e.g. ``chr1,chr2:2323-34434,chr2:43455-345555``. 
