@@ -119,10 +119,14 @@ In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sh
     :header-rows: 0
     :class: tight-table
 
-    * - ``resources/{hg19,hg38}/gty/{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz``
-      - VCF files of each super population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ including biallelic variants with MAF>0.01. In VCF files of hg19, autosomes and chrX are included; in VCF files of hg38, only autosomes are included.
-    * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz``
-      - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
+    * - `resources/hg19/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=TftaGO>`_
+      - VCF files of each super-population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ using hg19 coordinates. Each VCF file includes biallelic variants with MAF>0.01 of the super population. The VCF files include autosomes and chrX.
+    * - `resources/hg38/gty/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=sJyI59>`_
+      - VCF files of each super-population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ using hg38 coordinates. Each VCF file includes biallelic variants with MAF>0.01 of the super population.  The VCF files include only autosomes.
+    * - `resources/hg19/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=JhXZh1>`_
+      - cis-eQTL summary statistics using hg19 coordinates calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
+    * - `resources/hg38/eqtl/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=oCg45g>`_
+      - cis-eQTL summary statistics using hg38 coordinates calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
 
 
 Then, a straightforward way to set up an environment for customized analyses is
