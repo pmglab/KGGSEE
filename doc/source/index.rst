@@ -2,6 +2,8 @@
 KGGSEE User Manual
 ##################
 
+Miaoxin Li, Lin Jiang, Xiangyi Li, and Lin Miao
+
 .. _four_analyses:
 
 **KGGSEE** (a biological **K**\ nowledge-based mining platform for **G**\ enomic and **G**\ enetic association **S**\ ummary statistics using g\ **E**\ ne **E**\ xpression) is a standalone Java application for knowledge-based mining of GWAS summary statistics. It performs:
@@ -10,8 +12,6 @@ KGGSEE User Manual
 2. Phenotype's driver cell type/tissue estimation: DESE (`Jiang et al. 2019 <https://doi.org/10.1186/s13059-019-1801-5>`_) and eDESE (`Li et al. 2022 <https://doi.org/10.7554/elife.70779>`_)
 3. Gene/transcript expression causal effect estimation: EMIC (`Jiang et al. 2022 <https://doi.org/10.1016/j.ajhg.2022.04.004>`_)
 4. Gene/transcript heritability estimation: EHE (`Miao et al. 2023 <https://doi.org/10.1016/j.ajhg.2023.08.006>`_)
-
-The manual authors are Miaoxin Li, Lin Jiang, Xiangyi Li, and Lin Miao.
 
 .. toctree::
     :maxdepth: 4
