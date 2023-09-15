@@ -6,9 +6,9 @@ Detailed Document
 
 We first describe the general aspects of all analyses and then describe details for each analysis. KGGSEE performs analysis according to the following procedure:
 
-1. Reads genotypes of an ancestrally matched reference population, e.g., a super population panel of the 1000 Genomes Project. The genotype VCF file is specified by ``--vcf-ref``, and if ``--keep-ref`` is also specified, KGGSEE  saves the parsed VCF file in KGGSEE object format in the folder of ``path/to/outputs/VCFRefhg{19,38}/``. In a following run, specifying the folder by ``--keep-ref``, KGGSEE reads genotypes from the object format files, which is faster than re-parsing the VCF files. KGGSEE calculates the minor allele frequency (MAF) of each SNP and filters out SNPs with an MAF lower than the threshold specified by ``--filter-maf-le`` (default: ``0.05``). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by ``--hwe-all`` (default: ``1E-5``). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.
+1. Reads genotypes of an ancestrally matched reference population, e.g., a super population panel of the 1000 Genomes Project. The genotype VCF file is specified by ``--vcf-ref``, and if ``--keep-ref`` is also specified, KGGSEE  saves the parsed VCF file in KGGSEE object format in the folder of ``path/to/outputs/VCFRef{hg19,hg38}/``. In a following run, specifying the folder by ``--keep-ref``, KGGSEE reads genotypes from the object format files, which is faster than re-parsing the VCF files. KGGSEE calculates the minor allele frequency (MAF) of each SNP and filters out SNPs with an MAF lower than the threshold specified by ``--filter-maf-le`` (default: ``0.05``). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by ``--hwe-all`` (default: ``1E-5``). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.
 
-2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For all analyses, an eQTL summary statistic file specified by ``--eqtl-file`` may be read. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for downloading on OneDrive `hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_.
+2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For gene/transcript expression causal effect estimation, an eQTL summary statistic file has to be specified by ``--eqtl-file``. For the other gene-based analyses, a gene is a set of SNPs within a genomic region. By default, KGGSEE reads gene annotations (``resources/{hg19,hg38}/*{GEncode,refGene}.txt.gz``) to find out which SNPs should be considered as one SNP set. Instead, an eQTL summary statistic file can also be specified to let KGGSEE consider eQTLs of a gene as a SNP set. In addition to this, a user can also specify a genomic range file by ``--regions-bed`` to let KGGSEE consider SNPs in each range as a gene. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for downloading on OneDrive `hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_.
 
 3. Based on the flag specified, KGGSEE reads more needed files and performs the corresponding analysis.
 
@@ -35,17 +35,29 @@ The KGGSEE format of eQTL summary statistics is fasta-styled. An example is as f
 
 The first row starting with ``#`` is the header line. Then, eQTLs of each gene/transcript are chunked. For each gene/transcript, the first row has three columns of (1) the gene symbol prefixed by ``>``, (2) Ensembl gene/transcript ID, and (3) chromosome; the second and following rows have nine columns of (4) the eQTL coordinate, (5) the reference allele, (6) the alternative allele, (7) the frequency of the alternative allele, (8) the effect size, (9) the standard error of the effect size, (10) the p-value of nonzero effect size, (11) the effective sample size and (12) coefficient of determination.
 
+A BED file specified ``--regions-bed`` defines customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like chr1:100-200 will be allocated.
+
+.. code::
+
+    1       59091     80008     OR4F5
+    1       850260    889955    SAMD11
+    1       869584    904689    NOC2L
+    1       885967    911095    KLHL17
+    2       28814     56870     FAM110C
+    2       207730    276398    SH3YL1
+    2       254140    288283    ACP1
+
 
 .. _detail_ECS:
 
 Gene-based association tests
 ============================
 
-KGGSEE performs the gene-based association analysis by GATES (a rapid and powerful **G**\ ene-based **A**\ ssociation **T**\ est using **E**\ xtended **S**\ imes procedure) and ECS (an **E**\ ffective **C**\ hi-square **S** \tatistics). The ``--gene-assoc`` flag trigers both.
+KGGSEE performs the gene-based association analysis by GATES (a rapid and powerful **G**\ ene-based **A**\ ssociation **T**\ est using **E**\ xtended **S**\ imes procedure) and ECS (an **E**\ ffective **C**\ hi-square **S** \tatistics). The ``--gene-assoc`` flag triggers both.
 
-GATES (`the GATES paper <https://doi.org/10.1016/j.ajhg.2011.01.019>`_) is basically an extension of the Simes procedure to dependent tests, as the individual GWAS tests are dependent due to LD. GATES calculates an effective number of independent p-values which is then used by a Simes procedure.
+GATES (`Li et al. 2011 <https://doi.org/10.1016/j.ajhg.2011.01.019>`_) is basically an extension of the Simes procedure to dependent tests, as the individual GWAS tests are dependent due to LD. GATES calculates an effective number of independent p-values which is then used by a Simes procedure.
 
-ECS (`the ECS paper <https://doi.org/10.1093/bioinformatics/bty682>`_) first converts the p-values of a gene to chi-square statistics(one degree of freedom). Then, merges all chi-square statistics of a gene after correcting the redundancy of the statistics due to LD. The merged statistic is called an ECS which is used to calculate the p-value of the gene. 
+ECS (`Li et al. 2019 <https://doi.org/10.1093/bioinformatics/bty682>`_) first converts the p-values of a gene to chi-square statistics(one degree of freedom). Then, merges all chi-square statistics of a gene after correcting the redundancy of the statistics due to LD. The merged statistic is called an ECS which is used to calculate the p-value of the gene. 
 
 
 Synopsis
@@ -123,7 +135,7 @@ Outputs
 -------
 
 
-The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based association tests. Columns of the file are as follow:
+The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based association tests. The columns of the file are as follows:
 
 
 .. list-table::
@@ -158,9 +170,9 @@ Columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same 
 DESE
 ====
 
-DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `the DESE paper <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
+DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `Jiang et al. 2019 <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
 
-DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the **e**\ QTL-guided **DESE** eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (`the eDESE paper <https://doi.org/10.7554/eLife.70779>`_).
+DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the **e**\ QTL-guided **DESE** eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (`Li et al. 2022 <https://doi.org/10.7554/eLife.70779>`_).
 
 
 Synopsis
@@ -192,7 +204,7 @@ The flag ``--gene-condi`` triggers DESE. First, KGGSEE performs gene-based assoc
 
 Second, after the gene-based association tests, significant genes by ECS are retained for fine-mapping. ``--multiple-testing`` specifies the method for multiple testing correction: ``bonf`` denotes Bonferroni correction; ``benfdr`` denotes Benjamini–Hochberg FDR; ``fixed`` denotes no correction. ``--p-value-cutoff`` specifies the threshold of the adjusted p-value. ``--top-gene`` specifies the maximum number of genes retained for fine-mapping. So, only genes (no more than the specified maximum number) with adjusted p-values lower than the specified threshold are retained for fine-mapping. Then, KGGSEE reads the expression file specified by ``--expression-file`` and performs iterative estimation of driver tissues. When ``--dese-permu-num`` is omitted, only unadjusted p-values are output. The unadjusted p-values are inflated due to selection bias in the iterations, which is only valid for tissue prioritization. For phenotype-tissue association tests, add ``--dese-permu-num 100`` for an adjustment by 100 permutations for selection bias and multiple testing.
 
-Finally, if ``--geneset-db`` is specified, KGGSEE tests if the conditional significant genes are enriched in gene sets of `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_. The abbreviations of gene sets are as follow:
+Finally, if ``--geneset-db`` is specified, KGGSEE tests if the conditional significant genes are enriched in gene sets of `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_. The abbreviations of gene sets are as follows:
 
     | ``cura``: C2. curated gene sets;
     | ``cgp`` : C2. chemical and genetic perturbations;
@@ -205,7 +217,7 @@ Finally, if ``--geneset-db`` is specified, KGGSEE tests if the conditional signi
 Customized gene sets for enrichment tests can be specified by ``--geneset-file``. Please refer to ``resources/*.symbols.gmt.gz`` under the KGGSEE directory for file formats.
 
 
-Expression files should be tab or comma delimitated. The first column is gene/transcript IDs. The IDs should be Ensembl gene IDs, Ensembl transcript IDs or HGNC symbols. The version of Ensembl IDs will be trimed by KGGSEE. For transcript-level expression profile,  a transcript label should be an Ensembl transcript ID and an ID of another type joint by ``:``.  Headers of the same tissue must have the same prefix. Headers of mean values must end with ``.mean``. Headers of standard errors must end with ``.SE``. All standard error values must be positive. The following columns are means and standard errors of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:
+Expression files should be tab or comma-delimitated. The first column is gene/transcript IDs. The IDs should be Ensembl gene IDs, Ensembl transcript IDs, or HGNC symbols. The version of Ensembl IDs will be trimmed by KGGSEE. For transcript-level expression profile,  a transcript label should be an Ensembl transcript ID and an ID of another type joint by ``:``.  Headers of the same tissue must have the same prefix. Headers of mean values must end with ``.mean``. Headers of standard errors must end with ``.SE``. All standard error values must be positive. The following columns are means and standard errors of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:
 
 .. code::
 
@@ -318,7 +330,7 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
     --out Selective_Perturbed_Drugs
 
 .. note::
-    1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene name, and the column name is tissue name and tissue name +  ``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
+    1) For ``--expression-file``, we have provided the dataset based on the gene-expression profiles of 50 tissues in GTEx v8 and has been packaged this file in the download of `KGGSEE+Resources <http://pmglab.top/kggsee/#/download>`_. Users can also use their own gene expression profiles. The row index is gene names, and the column name is tissue name and tissue name +  ``.SE``. Each tissue has two columns, one representing the average expression value of all samples of the tissue and the other representing the standard error of the mean (SE).
     2) Our pre-calculated gene/isoform-level eQTLs based on GTEx v8 can be downloaded from `gene-level eQTLs <https://figshare.com/articles/dataset/EUR_gene_eqtl_hg19_tar_gz/16959604>`_ and `isoform-level eQTLs <https://figshare.com/articles/dataset/EUR_transcript_eqtl_hg19_tar_gz/16959616>`_.
 
 
@@ -357,7 +369,7 @@ In addition, results of conditional gene-based association tests are saved in a 
 
 
 
-Results of phenotype-tissue associations are saved in a file with a suffix of ``.celltype.txt``. Columns of the file are as follow:
+Results of phenotype-tissue associations are saved in a file with a suffix of ``.celltype.txt``. The columns of the file are as follows:
 
 .. list-table::
     :widths: 1 4
@@ -369,12 +381,12 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
     * - TissueName
       - Name of the tissue being tested
     * - p
-      - This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The unadjusted p-values are inflated due to selection bias in the iterations, and are only valid for tissue prioritizations
+      - This is a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The unadjusted p-values are inflated due to selection bias in the iterations and are only valid for tissue prioritizations
     * - BHFDRq
-      - The Benjamini-Hochberg adjusted p-values are adjusted by permutations for selection bias and multiple testing, and are valid for hypothesis tests.
+      - The Benjamini-Hochberg adjusted p-values are adjusted by permutations for selection bias and multiple testing and are valid for hypothesis tests.
 
 
-If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. Columns of the file are as follow:
+If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. The columns of the file are as follows:
 
 .. list-table::
     :widths: 1 4
@@ -403,7 +415,7 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
 EMIC
 ====
 
-EMIC (**E**\ ffective-median-based **M**\ endelian randomization framework for **I**\ nferring the **C**\ ausal genes of complex phenotypes) inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. The effective-median method solved the high false-positive issue in the existing MR methods due to either correlation among instrumental variables or noises in approximated linkage disequilibrium (LD). EMIC can further perform a pleiotropy fine-mapping analysis to remove possible false-positive estimates (`the EMIC paper <https://doi.org/10.1016/j.ajhg.2022.04.004>`_).
+EMIC (**E**\ ffective-median-based **M**\ endelian randomization framework for **I**\ nferring the **C**\ ausal genes of complex phenotypes) inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. The effective-median method solved the high false-positive issue in the existing MR methods due to either correlation among instrumental variables or noises in approximated linkage disequilibrium (LD). EMIC can further perform a pleiotropy fine-mapping analysis to remove possible false-positive estimates (`Jiang et al. 2022 <https://doi.org/10.1016/j.ajhg.2022.04.004>`_).
 
 
 Synopsis
@@ -431,7 +443,7 @@ Synopsis
     --emic-plot-p <pval>  # default: 2.5E-3
 
 
-When performing EMIC (triggered by ``--emic``), a GWAS summary statistic file (specified by ``--sum-file``) and an eQTL summary statistic file (specified by ``eqtl-file``) are needed. The GWAS summary statistic file must have columns of SNP coordinates (specified by ``--chrom-col`` and ``--pos-col``), the two alleles (specified by ``--a1-col`` and ``--a2-col``), frequencies of the allele specified by ``--a1-col`` (specified by ``--freq-a1-col``), the effect sizes and its standard errors (specified by ``--beta-col`` and ``--se-col``). The type of effect sizes is specified by ``--beta-type`` (``0`` for linear regression coefficient of a quantitative phenotype; ``1`` for the logarithm of odds ratio or logistic regression coefficient of a qualitative phenotype; ``2`` for an odds ratio of a qualitative phenotype). ``--filter-eqtl-p`` specifies the p-value threshold of eQTLs; only eQTLs with a p-value lower than the threshold will be considered; we note here that the default value is ``1E-4`` for EMIC, which is different from the other analyses. ``--ld-pruning-mr`` specifies the threshold of LD coefficient when pruning variants; for each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned. ``--emic-pfm-p`` specifies the p-value threshold to further perform an EMIC pleiotropy fine-mapping (EMIC-PFM) analysis; if the EMIC p-value of a gene is lower than the threshold, an EMIC-PFM will be performed to control the false-positive caused by pleiotropy. ``--emic-plot-p`` specifies the p-value threshold for plotting a scatter plot; genes with an EMIC p-value lower than the threshold will be plotted. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
+When performing EMIC (triggered by ``--emic``), a GWAS summary statistic file (specified by ``--sum-file``) and an eQTL summary statistic file (specified by ``eqtl-file``) are needed. The GWAS summary statistic file must have columns of SNP coordinates (specified by ``--chrom-col`` and ``--pos-col``), the two alleles (specified by ``--a1-col`` and ``--a2-col``), frequencies of the allele specified by ``--a1-col`` (specified by ``--freq-a1-col``), the effect sizes and its standard errors (specified by ``--beta-col`` and ``--se-col``). The type of effect sizes is specified by ``--beta-type`` (``0`` for the linear regression coefficients of a quantitative phenotype; ``1`` for the logarithm of odds ratio or logistic regression coefficient of a qualitative phenotype; ``2`` for an odds ratio of a qualitative phenotype). ``--filter-eqtl-p`` specifies the p-value threshold of eQTLs; only eQTLs with a p-value lower than the threshold will be considered; we note here that the default value is ``1E-4`` for EMIC, which is different from the other analyses. ``--ld-pruning-mr`` specifies the threshold of LD coefficient when pruning variants; for each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned. ``--emic-pfm-p`` specifies the p-value threshold to further perform an EMIC pleiotropy fine-mapping (EMIC-PFM) analysis; if the EMIC p-value of a gene is lower than the threshold, an EMIC-PFM will be performed to control the false-positive caused by pleiotropy. ``--emic-plot-p`` specifies the p-value threshold for plotting a scatter plot; genes with an EMIC p-value lower than the threshold will be plotted. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
 
 
 Examples
@@ -526,7 +538,7 @@ The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gen
     * - DetailsEMIC_PFM
       - Detailed results of EMIC-PFM separated by semicolons. Each result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC-PFM is performed, results for each transcript are listed.
     * - CochransQ
-      - The p-value of an extended Cochran's Q test. The significance (p<1E-3) means that the causal effect is more likely to be false-positive. At this point, KGGSEE excludes its eQTLs which are also the eQTLs of other significant genes, and redoes EMIC. In this case, results in the columns of minP_EMIC_PFM and DetailsEMIC_PFM will be different from in the columns of minP_EMIC and Details_EMIC.
+      - The p-value of an extended Cochran's Q test. The significance (p<1E-3) means that the causal effect is more likely to be false-positive. At this point, KGGSEE excludes its eQTLs which are also the eQTLs of other significant genes, and redoes EMIC. In this case, results in the columns of minP_EMIC_PFM and DetailsEMIC_PFM will be different from those in the columns of minP_EMIC and Details_EMIC.
 
 
 Columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as ``*.emic.gene.txt``. The difference is that, for each gene, in ``*.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``*.emic.gene.var.tsv.gz``, all eQTLs are output. The file with a suffix of ``.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of ``.emic.qq.png`` saves the Q-Q plot for EMIC p-values. The file with a suffix of ``.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by ``--emic-plot-p`` is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
@@ -537,7 +549,7 @@ Columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as `
 Gene-based (conditional) heritability estimation
 ================================================
 
-This analysis estimates the heritability of each gene and performs gene-based association tests at the same time (`the EHE paper <https://doi.org/10.1016/j.ajhg.2023.08.006>`_).
+This analysis estimates the heritability of each gene and performs gene-based association tests at the same time (`Miao et al. 2023 <https://doi.org/10.1016/j.ajhg.2023.08.006>`_).
 
 
 Synopsis
@@ -649,7 +661,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
 Outputs
 -------
 
-The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based heritability estimates and association tests. Columns of the file are as follow:
+The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based heritability estimates and association tests. The columns of the file are as follows:
 
 
 .. list-table::
