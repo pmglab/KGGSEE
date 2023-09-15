@@ -13,7 +13,7 @@ System requirements
     :header-rows: 1
     :class: tight-table
 
-    * - Hardware
+    * - Hardware/Software
       - Requirement
     * - Operating system
       - KGGSEE runs in a Java Virtual Machine. It does not matter which operating system it runs in.
