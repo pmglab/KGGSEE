@@ -53,7 +53,7 @@ KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To p
       - 46 MB
     * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
       - A OneDrive folder containing all running resource files provided by us
-      - Total 10 GB
+      - 
     * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
@@ -74,7 +74,7 @@ A quick and easy way to set up an environment for the :ref:`Quick tutorials <qui
 where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ contains
 
 .. list-table::
-    :widths: 1 2
+    :widths: 1 1
     :header-rows: 1
     :class: tight-table
 
@@ -99,7 +99,7 @@ where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/lim
 and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_ contains
 
 .. list-table::
-    :widths: 1 2
+    :widths: 1 1
     :header-rows: 1
     :class: tight-table
 
