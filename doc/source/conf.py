@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'KGGSEE'
-copyright = '2019, Miaoxin Li'
-author = 'Miaoxin Li'
+copyright = '2019 PMGLab'
+author = 'Miaoxin Li, Lin Jiang, Xiangyi Li and Lin Miao'
 
 # release = ''
-version = 'v1.0'
+version = 'v1.1'
 
 # -- General configuration
 
@@ -32,6 +32,11 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# -- Options for LaTeX output
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}
 
 html_static_path = ['_static']
 def setup(app):
