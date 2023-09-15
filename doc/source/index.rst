@@ -2,7 +2,7 @@
 KGGSEE User Manual
 ##################
 
-Miaoxin Li, Lin Jiang, Xiangyi Li and Lin Miao
+Miaoxin Li, Lin Jiang, Xiangyi Li, and Lin Miao
 
 .. _four_analyses:
 
