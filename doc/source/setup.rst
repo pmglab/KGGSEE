@@ -39,7 +39,7 @@ KGGSEE and its running resources
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
 
 .. list-table::
-    :widths: 1 3 1 
+    :widths: 1 4 1 
     :header-rows: 1
     :class: tight-table
 
@@ -115,7 +115,7 @@ Set up an environment for customized analyses
 In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of five 1000 Genomes Project super populations and eQTL summary statistics of 50 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
 .. list-table::
-    :widths: 1 1
+    :widths: 1 4
     :header-rows: 0
     :class: tight-table
 
