@@ -35,21 +35,11 @@ epub_show_urls = 'footnote'
 
 # -- Options for LaTeX output
 latex_elements = {
-# Don't leave blank pages
-  'extraclassoptions': 'openany,oneside',
-
-# The paper size ('letterpaper' or 'a4paper').
+    'extraclassoptions': 'openany,oneside',
     'papersize': 'a4paper',
-    'pointsize': '9pt',
-
-# Additional stuff for the LaTeX preamble.
-    'preamble': r'''
-        \usepackage{charter}
-        \usepackage[defaultsans]{lato}
-        \usepackage{inconsolata}
-    ''',
+    'fontsize': '9pt',
 }
 
 html_static_path = ['_static']
 def setup(app):
-   app.add_css_file('css/kggsee.css')
+    app.add_css_file('css/kggsee.css')
