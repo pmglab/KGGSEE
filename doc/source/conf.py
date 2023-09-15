@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'KGGSEE'
+project = 'KGGSEE User Manual'
 copyright = '2019 PMGLab'
 author = 'Miaoxin Li, Lin Jiang, Xiangyi Li, and Lin Miao'
 
