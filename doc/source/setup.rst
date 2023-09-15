@@ -30,7 +30,7 @@ Setup the Java Runtime Environment (JRE)
 
 KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE.
 
-After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build 17.0.4.1+1-LTS-2)`` or ``OpenJDK Runtime Environment (build 17.0.8.1+1-Ubuntu-0ubuntu122.04)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
+After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build x)`` or ``OpenJDK Runtime Environment (build x)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
 
 
 KGGSEE and its running resources
@@ -39,30 +39,25 @@ KGGSEE and its running resources
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
 
 .. list-table::
-    :widths: 1 3 1 1
+    :widths: 1 3 1 
     :header-rows: 1
     :class: tight-table
 
     * - File
       - Description
       - Size
-      - Update time
     * - `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_
       - The KGGSEE program
       - 46 MB
-      - Sep 2023
     * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
       - A OneDrive folder containing all running resource files provided by us
-      - 100 GB
-      - Refer to OneDrive
+      - Total 10 GB
     * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
-      - Sep 2023
     * - `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
       - A tutorial dataset to run through :ref:`the four types of analyses <four_analyses>`
       - 155 MB
-      - Apr 2022
 
 
 Set up an environment for the Quick tutorials 
@@ -124,8 +119,8 @@ In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sh
     :header-rows: 0
     :class: tight-table
 
-    * - ``resources/{hg19,hg38}/gty/1KG.{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz``
-      - VCF files of each super population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ including biallelic variants with MAF>0.01
+    * - ``resources/{hg19,hg38}/gty/{AFR,AMR,EAS,EUR,SAS}.{hg19,hg38}.vcf.gz``
+      - VCF files of each super population panel of the `1000 Genomes Project <https://www.internationalgenome.org/>`_ including biallelic variants with MAF>0.01. In VCF files of hg19, autosomes and chrX are included; in VCF files of hg38, only autosomes are included.
     * - ``resources/{hg19,hg38}/eqtl/*.{gene,transcript}.{hg19,hg38}.cov.eqtl.txt.gz``
       - cis-eQTL summary statistics calculated from the gene or transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ dataset
 
