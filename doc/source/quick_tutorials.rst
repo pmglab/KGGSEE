@@ -190,8 +190,6 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
     :header-rows: 1
     :class: tight-table
 
-    * - Header
-      - Description
     * - Flag
       - Description
     * - ``--sum-file``
