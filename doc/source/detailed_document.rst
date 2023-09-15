@@ -66,16 +66,16 @@ Synopsis
 .. code:: shell
 
     java -Xms16g -Xmx16g -jar kggsee.jar
-    --gene-assoc
-    --out <prefix>
-    --vcf-ref <file>
-    --sum-file <file>
-    --chrom-col <header>  # default: CHR
-    --pos-col <header>  # default: BP
-    --p-col <header>  # default: P 
-    --neargene <basepair>  # default: 5000
-    --eqtl-file <file>
-    --filter-eqtl-p <pval>  # default: 0.01
+      --gene-assoc
+      --out <prefix>
+      --vcf-ref <file>
+      --sum-file <file>
+      --chrom-col <header>  # default: CHR
+      --pos-col <header>  # default: BP
+      --p-col <header>  # default: P 
+      --neargene <basepair>  # default: 5000
+      --eqtl-file <file>
+      --filter-eqtl-p <pval>  # default: 0.01
 
 
 The flag ``--gene-assoc`` triggers the gene-based association tests. ``--sum-file`` specifies a white space-delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
@@ -93,11 +93,11 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
 .. code:: shell
 
       java -Xmx4g -jar ../kggsee.jar \
-      --gene-assoc \
-      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-      --sum-file scz_gwas_eur_chr1.tsv.gz \
-      --neargene 10000 \
-      --out t1.1
+        --gene-assoc \
+        --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+        --sum-file scz_gwas_eur_chr1.tsv.gz \
+        --neargene 10000 \
+        --out t1.1
 
 
 Gene-based association tests based on eQTLs
@@ -108,11 +108,11 @@ In this example, eQTLs of a gene will be grouped for association tests.
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-assoc \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --out t1.2
+      --gene-assoc \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --out t1.2
 
 
 Transcript-based association tests based on eQTLs
@@ -123,11 +123,11 @@ In this example, eQTLs of a transcript will be grouped for association tests.
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-assoc \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
-    --out t1.3
+      --gene-assoc \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
+      --out t1.3
 
 
 
@@ -181,23 +181,23 @@ Synopsis
 .. code:: shell
 
     java -Xms16g -Xmx16g -jar kggsee.jar
-    --gene-condi
-    --out <prefix>
-    --vcf-ref <file>
-    --sum-file <file>
-    --chrom-col <header>  # default: CHR
-    --pos-col <header>  # default: BP
-    --p-col <header>  # default: P 
-    --neargene <both-sides-bp|upstream-bp,downstream-bp>  # default: 5000
-    --eqtl-file <file>
-    --filter-eqtl-p <pval>  # default: 0.01
-    --multiple-testing <bonf|benfdr|fixed>  # default: bonf
-    --p-value-cutoff <pval>  # default: 0.05
-    --top-gene <number>
-    --expression-file <file>
-    --geneset-db <cura|cgp|cano|cmop|onto|onco|immu>
-    --geneset-file <file>
-    --dese-permu-num <number>
+      --gene-condi
+      --out <prefix>
+      --vcf-ref <file>
+      --sum-file <file>
+      --chrom-col <header>  # default: CHR
+      --pos-col <header>  # default: BP
+      --p-col <header>  # default: P 
+      --neargene <both-sides-bp|upstream-bp,downstream-bp>  # default: 5000
+      --eqtl-file <file>
+      --filter-eqtl-p <pval>  # default: 0.01
+      --multiple-testing <bonf|benfdr|fixed>  # default: bonf
+      --p-value-cutoff <pval>  # default: 0.05
+      --top-gene <number>
+      --expression-file <file>
+      --geneset-db <cura|cgp|cano|cmop|onto|onco|immu>
+      --geneset-file <file>
+      --dese-permu-num <number>
 
 
 The flag ``--gene-condi`` triggers DESE. First, KGGSEE performs gene-based association tests, which is the same as the analyses triggered by ``--gene-assoc``. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified by one number, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. ``--neargene`` can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``. If ``--eqtl-file`` is specified, eDESE is evoked; KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
@@ -256,17 +256,17 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --db-gene refgene,gencode \
-    --only-hgnc-gene \
-    --gene-condi \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --neargene 10000 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --dese-permu-num 100 \
-    --out geneAssoc
+      --db-gene refgene,gencode \
+      --only-hgnc-gene \
+      --gene-condi \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --neargene 10000 \
+      --multiple-testing bonf \
+      --p-value-cutoff 0.05 \
+      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --dese-permu-num 100 \
+      --out geneAssoc
 
 
 DESE guided by eQTLs (eDESE:gene and eDESE:isoform)
@@ -279,34 +279,34 @@ eDESE:gene
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --db-gene refgene,gencode \
-    --only-hgnc-gene \
-    --gene-condi \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --filter-eqtl-p 0.01 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --out geneAssoceQTL
+      --db-gene refgene,gencode \
+      --only-hgnc-gene \
+      --gene-condi \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --filter-eqtl-p 0.01 \
+      --multiple-testing bonf \
+      --p-value-cutoff 0.05 \
+      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --out geneAssoceQTL
 
 eDESE:isoform
 
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --db-gene refgene,gencode \
-    --only-hgnc-gene \
-    --gene-condi \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
-    --filter-eqtl-p 0.01 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
-    --out geneAssocIsoformeQTL
+      --db-gene refgene,gencode \
+      --only-hgnc-gene \
+      --gene-condi \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
+      --filter-eqtl-p 0.01 \
+      --multiple-testing bonf \
+      --p-value-cutoff 0.05 \
+      --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
+      --out geneAssocIsoformeQTL
 
 DESE for drug repositioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -317,17 +317,17 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
 .. code:: shell
 
     java -Xmx10g -jar ../kggsee.jar \
-    --db-gene refgene \
-    --only-hgnc-gene \
-    --gene-condi \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --neargene 5000 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file drug-induced_expression_change_profile \
-    --dese-permu-num 100 \
-    --out Selective_Perturbed_Drugs
+      --db-gene refgene \
+      --only-hgnc-gene \
+      --gene-condi \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --neargene 5000 \
+      --multiple-testing bonf \
+      --p-value-cutoff 0.05 \
+      --expression-file drug-induced_expression_change_profile \
+      --dese-permu-num 100 \
+      --out Selective_Perturbed_Drugs
 
 
 Outputs
@@ -420,23 +420,23 @@ Synopsis
 .. code:: shell
 
     java -Xms16g -Xmx16g -jar kggsee.jar
-    --emic
-    --out <prefix>
-    --vcf-ref <file>
-    --sum-file <file>
-    --chrom-col <header>  # default: CHR
-    --pos-col <header>  # default: BP
-    --a1-col <header>  # default: A1
-    --a2-col <header>  # default: A2
-    --freq-a1-col <header>  # default: FRQ_U
-    --beta-col <header>
-    --beta-type <0|1|2>
-    --se-col <header>  # default: SE
-    --eqtl-file <file>
-    --filter-eqtl-p <pval>  # default: 1E-4
-    --ld-pruning-mr  <r2>  # default: 0.5
-    --emic-pfm-p <pval>  # default: 2.5E-6
-    --emic-plot-p <pval>  # default: 2.5E-3
+      --emic
+      --out <prefix>
+      --vcf-ref <file>
+      --sum-file <file>
+      --chrom-col <header>  # default: CHR
+      --pos-col <header>  # default: BP
+      --a1-col <header>  # default: A1
+      --a2-col <header>  # default: A2
+      --freq-a1-col <header>  # default: FRQ_U
+      --beta-col <header>
+      --beta-type <0|1|2>
+      --se-col <header>  # default: SE
+      --eqtl-file <file>
+      --filter-eqtl-p <pval>  # default: 1E-4
+      --ld-pruning-mr  <r2>  # default: 0.5
+      --emic-pfm-p <pval>  # default: 2.5E-6
+      --emic-plot-p <pval>  # default: 2.5E-3
 
 
 When performing EMIC (triggered by ``--emic``), a GWAS summary statistic file (specified by ``--sum-file``) and an eQTL summary statistic file (specified by ``eqtl-file``) are needed. The GWAS summary statistic file must have columns of SNP coordinates (specified by ``--chrom-col`` and ``--pos-col``), the two alleles (specified by ``--a1-col`` and ``--a2-col``), frequencies of the allele specified by ``--a1-col`` (specified by ``--freq-a1-col``), the effect sizes and its standard errors (specified by ``--beta-col`` and ``--se-col``). The type of effect sizes is specified by ``--beta-type`` (``0`` for the linear regression coefficients of a quantitative phenotype; ``1`` for the logarithm of odds ratio or logistic regression coefficient of a qualitative phenotype; ``2`` for an odds ratio of a qualitative phenotype). ``--filter-eqtl-p`` specifies the p-value threshold of eQTLs; only eQTLs with a p-value lower than the threshold will be considered; we note here that the default value is ``1E-4`` for EMIC, which is different from the other analyses. ``--ld-pruning-mr`` specifies the threshold of LD coefficient when pruning variants; for each gene or transcript, eQTLs with LD coefficients higher than the threshold will be pruned. ``--emic-pfm-p`` specifies the p-value threshold to further perform an EMIC pleiotropy fine-mapping (EMIC-PFM) analysis; if the EMIC p-value of a gene is lower than the threshold, an EMIC-PFM will be performed to control the false-positive caused by pleiotropy. ``--emic-plot-p`` specifies the p-value threshold for plotting a scatter plot; genes with an EMIC p-value lower than the threshold will be plotted. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
@@ -453,16 +453,16 @@ This is an example of gene-level EMIC. Only eQTLs with a p-value lower than 1E-6
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --beta-col OR \
-    --beta-type 2 \
-    --emic \
-    --filter-eqtl-p 1e-6 \
-    --emic-pfm-p 0.05 \
-    --emic-plot-p 0.01 \
-    --out t3.1
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --beta-col OR \
+      --beta-type 2 \
+      --emic \
+      --filter-eqtl-p 1e-6 \
+      --emic-pfm-p 0.05 \
+      --emic-plot-p 0.01 \
+      --out t3.1
 
 
 
@@ -474,16 +474,16 @@ This is an example of transcript-level EMIC. Only eQTLs with a p-value lower tha
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
-    --beta-col OR \
-    --beta-type 2 \
-    --emic \
-    --filter-eqtl-p 1e-6 \
-    --emic-pfm-p 0.05 \
-    --emic-plot-p 0.01 \
-    --out t3.2
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
+      --beta-col OR \
+      --beta-type 2 \
+      --emic \
+      --filter-eqtl-p 1e-6 \
+      --emic-pfm-p 0.05 \
+      --emic-plot-p 0.01 \
+      --out t3.2
 
 
 Outputs
@@ -554,21 +554,21 @@ Synopsis
 .. code:: shell
 
     java -Xms16g -Xmx16g -jar kggsee.jar
-    --gene-herit
-    --out <prefix>
-    --vcf-ref <file>
-    --sum-file <file>
-    --chrom-col <header>  # default: CHR
-    --pos-col <header>  # default: BP
-    --p-col <header>  # default: P
-    --nmiss-col <header>
-    --case-col <header>
-    --control-col <header>
-    --prevalence <value>  # default: 0.01
-    --neargene <basepair>  # default: 5000
-    --eqtl-file <file>
-    --filter-eqtl-p <pval>  # default: 0.01
-    --gene-condi
+      --gene-herit
+      --out <prefix>
+      --vcf-ref <file>
+      --sum-file <file>
+      --chrom-col <header>  # default: CHR
+      --pos-col <header>  # default: BP
+      --p-col <header>  # default: P
+      --nmiss-col <header>
+      --case-col <header>
+      --control-col <header>
+      --prevalence <value>  # default: 0.01
+      --neargene <basepair>  # default: 5000
+      --eqtl-file <file>
+      --filter-eqtl-p <pval>  # default: 0.01
+      --gene-condi
 
 
 ``--gene-herit`` triggers gene-based association tests and estimation of gene heritability. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by ``--nmiss-col``; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by ``--case-col`` and ``--control-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. When ``--gene-condi`` is specified, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <detail_DESE>`. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
@@ -585,17 +585,17 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-herit \
-    --prevalence 0.01 \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --case-col Nca \
-    --control-col Nco \
-    --neargene 10000 \
-    --out t4.1
+      --gene-herit \
+      --prevalence 0.01 \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --case-col Nca \
+      --control-col Nco \
+      --neargene 10000 \
+      --out t4.1
 
 .. note::
-    When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
+    When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (e.g., height).
 
 
 Gene heritability based on eQTLs
@@ -606,13 +606,13 @@ In this example, eQTLs of a gene will be grouped to estimate heritability.
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-herit \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --case-col Nca \
-    --control-col Nco \
-    --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
-    --out t4.2
+      --gene-herit \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --case-col Nca \
+      --control-col Nco \
+      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --out t4.2
 
 
 Transcript heritability based on eQTLs
@@ -623,13 +623,13 @@ In this example, eQTLs of a transcript will be grouped to estimate heritability.
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-herit \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --case-col Nca \
-    --control-col Nco \
-    --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
-    --out t4.3
+      --gene-herit \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --case-col Nca \
+      --control-col Nco \
+      --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
+      --out t4.3
     
 
 Gene conditional heritability based on physical distance
@@ -640,17 +640,17 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-    --gene-herit \
-    --prevalence 0.01 \
-    --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-    --sum-file scz_gwas_eur_chr1.tsv.gz \
-    --case-col Nca \
-    --control-col Nco \
-    --neargene 10000 \
-    --multiple-testing bonf \
-    --p-value-cutoff 0.05 \
-    --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
-    --out t4.4
+      --gene-herit \
+      --prevalence 0.01 \
+      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
+      --sum-file scz_gwas_eur_chr1.tsv.gz \
+      --case-col Nca \
+      --control-col Nco \
+      --neargene 10000 \
+      --multiple-testing bonf \
+      --p-value-cutoff 0.05 \
+      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --out t4.4
 
 
 
