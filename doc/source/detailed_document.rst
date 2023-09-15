@@ -368,10 +368,10 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - Unadjusted(p)
+    * - p
       - This is basically a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The unadjusted p-values are inflated due to selection bias in the iterations, and are only valid for tissue prioritizations
-    * - Adjusted(p)
-      - The Adjusted(p) values are adjusted by permutations for selection bias and multiple testing, and are valid for hypothesis tests.
+    * - BHFDRq
+      - The Benjamini-Hochberg adjusted p-values are adjusted by permutations for selection bias and multiple testing, and are valid for hypothesis tests.
 
 
 If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. Columns of the file are as follow:
@@ -537,7 +537,7 @@ Columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as `
 Gene-based (conditional) heritability estimation
 ================================================
 
-This analysis estimates the heritability of each gene and performs gene-based association tests at the same time.
+This analysis estimates the heritability of each gene and performs gene-based association tests at the same time (`the EHE paper <https://doi.org/10.1016/j.ajhg.2023.08.006>`_).
 
 
 Synopsis
