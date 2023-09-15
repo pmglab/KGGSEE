@@ -94,7 +94,7 @@ These options work on the GWAS summary statistics and act on all analyses.
       - ``SE``
     * - ``--nmiss-col``
       - Specifies the column of sample sizes for a quantitative phenotype.
-      - ``Neff``
+      - null
     * - ``--case-col``
       - Specifies the column of case sample sizes for a qualitative phenotype.
       - null
@@ -251,7 +251,7 @@ Gene-based (conditional) heritability
       - n/a
     * - ``--case-col``, ``--control-col``, ``--nmiss-col``
       - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (like height).
-      - ``--nmiss-col Neff``
+      - null
     * - ``--gene-condi``
       - When ``--gene-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
       - n/a
@@ -285,7 +285,7 @@ These options act on all analyses.
       - ``hg19``
     * - ``--db-gene``
       - Specifies the database of gene annotations. ``refgene`` for RefSeq Genes; ``gencode`` for GENCODE; ``refgene,gencode`` for both.
-      - ``gencode``
+      - ``refgene``
     * - ``--excel``
       - Output results in Excel format.
       - n/a
@@ -294,7 +294,7 @@ These options act on all analyses.
       - n/a
     * - ``--out``
       - Specifies the output prefix of results.
-      - ``kggsee1``
+      - ``./kggsee1``
     * - ``--regions-bed``
       - Specifies a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinate and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
       - null
