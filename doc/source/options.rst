@@ -18,7 +18,7 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
 
 
 .. list-table:: 
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -54,7 +54,7 @@ These options work on the GWAS summary statistics and act on all analyses.
 
 
 .. list-table:: 
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -110,7 +110,7 @@ Gene-based association
 
 
 .. list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -139,7 +139,7 @@ DESE
 
 
 .. list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -203,7 +203,7 @@ EMIC
 
 
 .. list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -238,7 +238,7 @@ Gene-based (conditional) heritability
 
 
 .. list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -269,7 +269,7 @@ These options act on all analyses.
 
 
 .. list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
@@ -309,7 +309,7 @@ These options act on all analyses.
 .. Compute eQTL summary statistics
     ===============================
     list-table::
-    :widths: 3 8 1
+    :widths: 3 8 2
     :header-rows: 1
     :class: tight-table
 
