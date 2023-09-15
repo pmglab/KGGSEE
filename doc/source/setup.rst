@@ -9,7 +9,7 @@ System requirements
 ===================
 
 .. list-table::
-    :widths: 3 7
+    :widths: 1 2
     :header-rows: 1
     :class: tight-table
 
@@ -41,7 +41,7 @@ KGGSEE and its running resources
 KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed is determined by the analysis performed. We provide the following download links.
 
 .. list-table::
-    :widths: 1 3 1 
+    :widths: 1 2 1 
     :header-rows: 1
     :class: tight-table
 
