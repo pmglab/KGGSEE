@@ -159,7 +159,7 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is bas
     * - TissueName
       - Name of the tissue being tested
     * - p
-      - These p-values are for tissue prioritization but NOT for hypothesis test.
+      - The p-values for tissue-phenotype associations.
     * - BHFDRq
       - The Benjamini-Hochberg adjusted p-values
 
@@ -291,5 +291,5 @@ Heritability is a measure of how well differences in people's genes account for 
 
 **Explanation of the output files:**
 
-The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named SNPHerit and SNPHeritSE, which are the estimate and its standard error of the gene heritability.
+The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named Herit and HeritSE, which are the estimate and its standard error of the gene heritability.
 
