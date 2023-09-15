@@ -4,9 +4,9 @@
 Quick tutorials
 ===============
 
-We provide four quick tutorials; each shows one function of KGGSEE. In each tutorial, we provide the command line and a brief explanation of flags and output files. Please refer to :ref:`Detailed Document <detailed_document>` and :ref:`Options <options>` for details. The first tutorial (:ref:`Gene-based association tests <t1>`) should be done first, then there is no need to do the following in order.
+We provide four quick tutorials; each shows one function of KGGSEE. In each tutorial, we provide the command line and a brief explanation of flags and output files. Please refer to :ref:`Detailed Document <detailed_document>` and :ref:`Options <options>` for details. The first tutorial (:ref:`Gene-based association tests <t1>`) should be done first, then you can run any of the following tutorials.
 
-Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data folder ``resources/``, and the tutorial data folder ``tutorials/`` are under the same folder. For convenience, enter the ``tutorials/`` directory first.
+Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data folder ``resources/``, and the tutorial data folder ``tutorials/`` are under the same directory. Then, we suppose you are under the directory ``tutorials/``.
 
 
 .. _t1:
@@ -158,8 +158,10 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is bas
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - Unadjusted(p)
+    * - p
       - These p-values are for tissue prioritization but NOT for hypothesis test.
+    * - BHFDRq
+      - The Benjamini-Hochberg adjusted p-values
 
 
 .. _t3:
@@ -289,5 +291,5 @@ Heritability is a measure of how well differences in people's genes account for 
 
 **Explanation of the output files:**
 
-The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named Herit and HeritSE, which are the estimate and its standard error of the gene heritability.
+The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named SNPHerit and SNPHeritSE, which are the estimate and its standard error of the gene heritability.
 
