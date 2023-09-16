@@ -172,10 +172,10 @@ DESE
 
 DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `Jiang et al. 2019 <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
 
+DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the **e**\ QTL-guided **DESE** eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (`Li et al. 2022 <https://doi.org/10.7554/eLife.70779>`_).
+
 .. note::
     We have developed an online service called PCGA (https://pmglab.top/pcga; `Xue et al. 2022 <https://doi.org/10.1093/nar/gkac425>`_), which implements DESE and integrates vast amounts of scRNA-seq datasets. PCGA collects and processes expression profile data from 54 tissue types and 6,598 cell types, enabling more convenient hierarchical estimation of the associated tissues and cell types of complex diseases. Additionally, PCGA has analyzed 1,871 public GWASs related to 1,588 unique phenotypes, which can be browsed and searched on the website.
-
-DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the **e**\ QTL-guided **DESE** eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (`Li et al. 2022 <https://doi.org/10.7554/eLife.70779>`_).
 
 
 Synopsis
