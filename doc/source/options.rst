@@ -265,8 +265,6 @@ Gene-based (conditional) heritability
 Miscellaneous global options
 ============================
 
-These options act on all analyses.
-
 
 .. list-table::
     :widths: 3 8 2
@@ -306,23 +304,4 @@ These options act on all analyses.
     * - ``--resource``
       - Specifies the path KGGSEE running resource data.
       - ``path/to/kggsee.jar/resources/``
-
-
-.. Compute eQTL summary statistics
-    ===============================
-    list-table::
-    :widths: 3 8 2
-    :header-rows: 1
-    :class: tight-table
-
-
-    * - ``--gene-expression``
-      - Specifies a gene expression file that contains standardized gene expression levels of multiple subjects. This option is used when calculating eQTL summary statistics.
-      - null
-    * - ``--expression-gty-vcf``
-      - Specifies a VCF file of genotypes of subjects who have gene expression levels in the file specified by ``--gene-expression``.
-      - null
-    * - ``--expression-subjects``
-      - Specifies a file of covariance of subjects who have gene expression levels in the file specified by ``--gene-expression``.
-      - null
 
