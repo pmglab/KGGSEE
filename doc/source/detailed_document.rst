@@ -8,7 +8,7 @@ We first describe the general aspects of all analyses and then describe details 
 
 1. Reads genotypes of an ancestrally matched reference population, e.g., a super population panel of the 1000 Genomes Project. The genotype VCF file is specified by ``--vcf-ref``, and if ``--keep-ref`` is also specified, KGGSEE  saves the parsed VCF file in KGGSEE object format in the folder of ``path/to/outputs/VCFRef{hg19,hg38}/``. In a following run, specifying the folder by ``--keep-ref``, KGGSEE reads genotypes from the object format files, which is faster than re-parsing the VCF files. KGGSEE calculates the minor allele frequency (MAF) of each SNP and filters out SNPs with an MAF lower than the threshold specified by ``--filter-maf-le`` (default: ``0.05``). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by ``--hwe-all`` (default: ``1E-5``). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.
 
-2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For gene/transcript expression causal effect estimation, an eQTL summary statistic file has to be specified by ``--eqtl-file``. For the other gene-based analyses, a gene is a set of SNPs within a genomic region. By default, KGGSEE reads gene annotations (``resources/{hg19,hg38}/*{GEncode,refGene}.txt.gz``) to find out which SNPs should be considered as one SNP set. Instead, an eQTL summary statistic file can also be specified to let KGGSEE consider eQTLs of a gene as a SNP set. In addition to this, a user can also specify a genomic range file by ``--regions-bed`` to let KGGSEE consider SNPs in each range as a gene. We provide gene-based and transcript-based eQTL summary statistics for GTEx v8 tissues available for downloading on OneDrive `hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_.
+2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For gene/transcript expression causal effect estimation, an eQTL summary statistic file has to be specified by ``--eqtl-file``. For the other gene-based analyses, a gene is a set of SNPs within a genomic region. By default, KGGSEE reads gene annotations (``resources/{hg19,hg38}/*{GEncode,refGene}.txt.gz``) to find out which SNPs should be considered as one SNP set. Instead, an eQTL summary statistic file can also be specified to let KGGSEE consider eQTLs of a gene as a SNP set. In addition to this, a user can also specify a genomic range file by ``--regions-bed`` to let KGGSEE consider SNPs in each range as a gene. We provide gene-based and transcript-based eQTL summary statistics for 49 GTEx v8 tissues available for downloading on OneDrive (`hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_).
 
 3. Based on the flag specified, KGGSEE reads more needed files and performs the corresponding analysis.
 
@@ -172,6 +172,10 @@ DESE
 
 DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `Jiang et al. 2019 <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
 
+.. note::
+
+We have developed an online service called PCGA (https://pmglab.top/pcga; `Xue et al. 2022 <https://doi.org/10.1093/nar/gkac425>`_), which implements DESE and integrates vast amounts of scRNA-seq datasets. PCGA collects and processes expression profile data from 54 tissue types and 6,598 cell types, enabling more convenient hierarchical estimation of the associated tissues and cell types of complex diseases. Additionally, PCGA has analyzed 1,871 public GWASs related to 1,588 unique phenotypes, which can be browsed and searched on the website.
+
 DESE initially performed the association analysis by mapping SNPs to genes according to their physical distance. We further demonstrated that grouping eQTLs of a gene or a transcript to perform the association analysis could be more powerful. We named the **e**\ QTL-guided **DESE** eDESE. KGGSEE implements DESE and eDESE with an improved effective chi-squared statistic to control type I error rates and remove redundant associations (`Li et al. 2022 <https://doi.org/10.7554/eLife.70779>`_).
 
 
@@ -218,6 +222,8 @@ Customized gene sets for enrichment tests can be specified by ``--geneset-file``
 
 
 Expression files should be tab or comma-delimitated. The first column is gene/transcript IDs. The IDs should be Ensembl gene IDs, Ensembl transcript IDs, or HGNC symbols. The version of Ensembl IDs will be trimmed by KGGSEE. For transcript-level expression profile,  a transcript label should be an Ensembl transcript ID and an ID of another type joint by ``:``.  Headers of the same tissue must have the same prefix. Headers of mean values must end with ``.mean``. Headers of standard errors must end with ``.SE``. All standard error values must be positive. The following columns are means and standard errors of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:
+
+.. _expression_file:
 
 .. code::
 
@@ -311,7 +317,7 @@ eDESE:isoform
 DESE for drug repositioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile which has the same format as the gene expression file. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
+In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile of which the format is the same as :ref:`the gene expression file <expression_file>`. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
 
 
 .. code:: shell
@@ -517,7 +523,7 @@ The numeric results of EMIC are saved in a file with a suffix of ``.emic.gene.tx
     * - GWAS_Var_SE
       - Standard error of the effect size
 
-The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gene.PleiotropyFinemapping.txt``. Only genes with a p-value lower than the threshold specified by ``--emic-pfm-p`` are saved. The file has thirteen columns, in which nine are the same as columns of ``*.emic.gene.txt``. The other four columns are:
+The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gene.PleiotropyFinemapping.txt``. Only genes with a p-value lower than the threshold specified by ``--emic-pfm-p`` are saved. The file has thirteen columns, of which nine are the same as columns of ``*.emic.gene.txt``. The other four columns are:
 
 
 .. list-table::
