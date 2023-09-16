@@ -281,7 +281,7 @@ These options act on all analyses.
       - Specifies the number of threads.
       - ``4``
     * - ``--lib-update``
-      - Download ``kggsee.jar`` from our project server if it is newer than the current running one.
+      - Download ``kggsee.jar`` from `our project server <http://pmglab.top/kggsee/#/>`_ if it is newer than the current running one.
     * - ``--buildver``
       - Specifies the reference genome version of the coordinates. The supported versions are ``hg19`` and ``hg38``.
       - ``hg19``
