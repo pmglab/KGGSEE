@@ -280,6 +280,7 @@ Miscellaneous global options
       - ``4``
     * - ``--lib-update``
       - Download ``kggsee.jar`` from http://pmglab.top/kggsee if it is newer than the current running one.
+      - n/a
     * - ``--buildver``
       - Specifies the reference genome version of the coordinates. The supported versions are ``hg19`` and ``hg38``.
       - ``hg19``
