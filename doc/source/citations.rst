@@ -37,17 +37,25 @@ PCGA on https://pmglab.top/pcga
 Chao Xue, Lin Jiang, Miao Zhou, Qihan Long, Ying Chen, Xiangyi Li, Wenjie Peng, Qi Yang and Miaoxin Li. PCGA: a comprehensive web server for phenotype-cell-gene association analysis. Nucleic Acids Research (2022). 50:W568–W576. https://doi.org/10.1093/nar/gkac425
 
 
-The gene set enrichment analysis by ``--geneset-db`` or ``--geneset-file``
---------------------------------------------------------------------------
+Gene set enrichment analysis by ``--geneset-db`` or ``--geneset-file``
+----------------------------------------------------------------------
 
 Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
 
 
 Gene/transcript expression causal effect estimation
 ===================================================
-[EMIC by ``--emic``] Lin Jiang, Lin Miao, Guorong Yi, Xiangyi Li, Chao Xue, Mulin Jun Li, Hailiang Huang and Miaoxin Li. Powerful and robust inference of causal genes of complex phenotypes with dependent expression quantitative loci by a novel median-based Mendelian randomization. The American Journal of Human Genetics (2022). 109(5):838-856. https://doi.org/10.1016/j.ajhg.2022.04.004
+
+EMIC by ``--emic``
+------------------
+
+Lin Jiang, Lin Miao, Guorong Yi, Xiangyi Li, Chao Xue, Mulin Jun Li, Hailiang Huang and Miaoxin Li. Powerful and robust inference of causal genes of complex phenotypes with dependent expression quantitative loci by a novel median-based Mendelian randomization. The American Journal of Human Genetics (2022). 109(5):838-856. https://doi.org/10.1016/j.ajhg.2022.04.004
 
 
 Gene/transcript heritability estimation
 =======================================
-[EHE by ``--gene-herit``] Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
+
+EHE by ``--gene-herit``
+-----------------------
+
+Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
