@@ -26,8 +26,8 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
       --out t1
 
 
-**Explanation of the flags and input files:**
-
+Flags and input files
+---------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
@@ -47,8 +47,8 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
       - Specifies the prefix of output files.
 
 
-**Explanation of the output files:**
-
+Output files
+------------
 The numeric results of gene-based association tests are saved in ``t1.gene.pvalue.txt``. There are seven columns in the file:
 
 .. list-table::
@@ -95,8 +95,8 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
       --out t2
 
 
-**Explanation of the flags and input files:**
-
+Flags and input files
+---------------------
 .. list-table::
     :widths: 1 3
     :header-rows: 1
@@ -116,8 +116,8 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
       - Specifies the prefix of output files.
 
 
-**Explanation of the output files:**
-
+Output files
+------------
 The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``t2.qq.png`` are the same as their counterparts with the same suffixes of the first tutorial. In addition, the results of conditional gene-based association tests are in ``t2.finemapping.gene.ecs.txt`` which contains nine columns:
 
 .. list-table::
@@ -183,8 +183,8 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
       --out t3
 
 
-**Explanation of the flags and input files:**
-
+Flags and input files
+---------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
@@ -208,8 +208,8 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
       - Specifies the prefix of output files.
 
 
-**Explanation of the output files:**
-
+Output files
+------------
 The numeric results of EMIC are saved in ``t3.emic.gene.txt``. There are nine columns in the file:
 
 .. list-table::
@@ -264,8 +264,8 @@ Heritability is a measure of how well differences in people's genes account for 
       --out t4
 
 
-**Explanation of the flags and input files:**
-
+Flags and input files
+---------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
@@ -287,7 +287,7 @@ Heritability is a measure of how well differences in people's genes account for 
       - Specifies the prefix of output files.
 
 
-**Explanation of the output files:**
-
+Output files
+------------
 The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named ``Herit`` and ``HeritSE``, which are the estimate and its standard error of the gene heritability.
 
