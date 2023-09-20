@@ -133,8 +133,6 @@ In this example, eQTLs of a transcript will be grouped for association tests.
 
 Outputs
 -------
-
-
 The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based association tests. The columns of the file are as follows:
 
 
@@ -337,7 +335,6 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
 
 Outputs
 -------
-
 The three files with suffixes of ``.gene.pvalue.txt``, ``.gene.var.pvalue.txt.gz``, and ``.qq.png`` are the same as their counterparts output by :ref:`Gene-based association tests <detail_ECS>`.
 
 In addition, results of conditional gene-based association tests are saved in a file with a suffix of ``.finemapping.gene.ecs.txt``. The columns of the file are as follows:
@@ -493,7 +490,6 @@ This is an example of transcript-level EMIC. Only eQTLs with a p-value lower tha
 
 Outputs
 -------
-
 The numeric results of EMIC are saved in a file with a suffix of ``.emic.gene.txt``. There are nine columns in the file:
 
 .. list-table::
@@ -661,7 +657,6 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
 
 Outputs
 -------
-
 The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based heritability estimates and association tests. The columns of the file are as follows:
 
 
