@@ -1,5 +1,1 @@
-# KGGSEE
-KGGSEE: A biological Knowledge-based mining platform for Genomic and Genetic association Summary statistics using gEne Expression
-
-## Get start
-Please go to [http://pmglab.top/kggsee](http://pmglab.top/kggsee).
+KGGSEE is a biological Knowledge-based mining platform for Genomic and Genetic association Summary statistics using gEne Expression. The Project URL is http://pmglab.top/kggsee. This repository contains the codes for building the KGGSEE User Manual on https://kggsee.readthedocs.io
