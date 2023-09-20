@@ -26,8 +26,8 @@ DESE by ``--gene-condi``
 
 Lin Jiang, Chao Xue, Sheng Dai, Shangzhen Chen, Peikai Chen, Pak Chung Sham, Haijun Wang and Miaoxin Li. DESE: estimating driver tissues by selective expression of genes associated with complex diseases or traits. Genome Biology (2019). 20(1):1-19. https://doi.org/10.1186/s13059-019-1801-5
 
-eDESE by ``--gene-condi``
--------------------------
+eDESE by ``--gene-condi`` and ``--eqtl-file``
+---------------------------------------------
 
 Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene-based association framework integrating isoform-level eQTL data reveals new susceptibility genes for schizophrenia. Elife (2022). 10:e70779. https://doi.org/10.7554/elife.70779
 
