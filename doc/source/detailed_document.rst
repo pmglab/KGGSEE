@@ -6,21 +6,21 @@ Detailed Document
 
 We first describe the general aspects of all analyses and then describe details for each analysis. KGGSEE performs analysis according to the following procedure:
 
-1. Reads genotypes of an ancestrally matched reference population, e.g., a super population panel of the 1000 Genomes Project. The genotype VCF file is specified by ``--vcf-ref``, and if ``--keep-ref`` is also specified, KGGSEE saves the parsed VCF files in KGGSEE object format in the specified directory. In a following run, specifying the directory by ``--keep-ref``, KGGSEE reads genotypes from the object format files, which is faster than re-parsing the VCF files. KGGSEE calculates the minor allele frequency (MAF) of each SNP and filters out SNPs with an MAF lower than the threshold specified by ``--filter-maf-le`` (default: ``0.05``). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by ``--hwe-all`` (default: ``1E-5``). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.
+1. Reads genotypes of an ancestrally matched reference population, e.g., a super population panel of the 1000 Genomes Project. The genotype VCF file is specified by ``--vcf-ref``, and if ``--keep-ref`` is used, KGGSEE saves the parsed VCF files in KGGSEE object format in the specified directory. In a following run, specifying the directory by ``--saved-ref``, KGGSEE reads genotypes from the object format files, which is faster than re-parsing the VCF files. KGGSEE calculates the minor allele frequency (MAF) of each SNP and filters out SNPs with an MAF lower than the threshold specified by ``--filter-maf-le`` (default: ``0.05``). KGGSEE also calculates the p-value of rejecting Hardy-Weinberg equilibrium for each SNP and filters out SNPs with a p-value lower than the threshold specified by ``--hwe-all`` (default: ``1E-5``). Only SNPs with genotypes of the reference population and who have passed the two filters will be considered in the following procedures.
 
-2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which we will describe separately below. For gene/transcript expression causal effect estimation, an eQTL summary statistic file has to be specified by ``--eqtl-file``. For the other gene-based analyses, a gene is a set of SNPs within a genomic region. By default, KGGSEE reads gene annotations (``resources/{hg19,hg38}/*{GEncode,refGene}.txt.gz``) to find out which SNPs should be considered as one SNP set. Instead, an eQTL summary statistic file can also be specified to let KGGSEE consider eQTLs of a gene as a SNP set. In addition to this, a user can also specify a genomic range file by ``--regions-bed`` to let KGGSEE consider SNPs in each range as a gene. We provide gene-based and transcript-based eQTL summary statistics for 49 GTEx v8 tissues available for downloading on OneDrive (`hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_).
+2. Reads GWAS summary statistics from a whitespace delimited file specified by ``--sum-file``. Depending on the analysis performed, this file needs to have different columns, which will be described in the corresponding sections. For gene/transcript-expression causal-effect estimation, an eQTL summary statistic file has to be specified by ``--eqtl-file``. For the other gene-based analyses, a gene is a set of SNPs within a genomic region. By default, KGGSEE reads gene annotations (``resources/{hg19,hg38}/*{GEncode,refGene}.txt.gz``) to find out which SNPs should be considered as one SNP set. Instead, an eQTL summary statistic file can also be specified to let KGGSEE consider eQTLs of a gene/transcript as a SNP set. In addition to this, a user can also specify a genomic range file by ``--regions-bed`` to let KGGSEE consider SNPs in each range as a gene. We provide gene and transcript-based eQTL summary statistics for 49 GTEx v8 tissues available for downloading on our OneDrive (`hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_).
 
 3. Based on the flag specified, KGGSEE reads more needed files and performs the corresponding analysis.
 
-    * :ref:`Gene-based association tests <detail_ECS>` trigered by ``--gene-assoc``;
-    * :ref:`DESE <detail_DESE>` trigered by ``--gene-condi``;
-    * :ref:`EMIC <detail_EMIC>` trigered by ``--emic``;
-    * :ref:`Gene-based heritability estimation <detail_h2>` trigered by ``--gene-herit``.
+    * :ref:`GATES and ECS (gene-based association tests) <detail_ECS>` trigered by ``--gene-assoc``;
+    * :ref:`DESE (driver-tissue inference) <detail_DESE>` trigered by ``--gene-condi``;
+    * :ref:`EMIC (gene-expression causal-effect inference) <detail_EMIC>` trigered by ``--emic``;
+    * :ref:`EHE (gene-based heritability estimation) <detail_h2>` trigered by ``--gene-herit``.
 
 
 .. _eqtl_file:
 
-The KGGSEE format of eQTL summary statistics is fasta-styled. An example is as follows:
+The KGGSEE format of eQTL summary statistics is fasta-styled. E.g.,
 
 .. code::
 
@@ -33,7 +33,7 @@ The KGGSEE format of eQTL summary statistics is fasta-styled. An example is as f
     52238	T	G	0.94	-1.77	0.28	5.1E-9	65	0.38
     74681	G	T	0.95	-1.45	0.33	1.1E-5	63	0.23
 
-The first row starting with ``#`` is the header line. Then, eQTLs of each gene/transcript are chunked. For each gene/transcript, the first row has three columns of (1) the gene symbol prefixed by ``>``, (2) Ensembl gene/transcript ID, and (3) chromosome; the second and following rows have nine columns of (4) the eQTL coordinate, (5) the reference allele, (6) the alternative allele, (7) the frequency of the alternative allele, (8) the effect size, (9) the standard error of the effect size, (10) the p-value of nonzero effect size, (11) the effective sample size and (12) coefficient of determination.
+The first row starting with ``#`` is the header line. Then, eQTLs of each gene/transcript are chunked. For each gene/transcript, the first row has three columns: (1) the gene symbol prefixed by ``>``, (2) Ensembl gene/transcript ID, and (3) chromosome. The second and following rows have nine columns: (1) the eQTL coordinate, (2) the reference allele, (3) the alternative allele, (4) the frequency of the alternative allele, (5) the effect size, (6) the standard error of the effect size, (7) the p-value of nonzero effect size, (8) the effective sample size, and (9) coefficient of determination.
 
 A BED file specified by ``--regions-bed`` defines customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like chr1:100-200 will be allocated.
 
@@ -227,7 +227,7 @@ Finally, if ``--geneset-db`` is specified, KGGSEE tests if the conditional signi
 Customized gene sets for enrichment tests can be specified by ``--geneset-file``. Please refer to ``resources/*.symbols.gmt.gz`` under the KGGSEE directory for file formats.
 
 
-Expression files should be tab or comma-delimitated. The first column is gene/transcript IDs. The IDs should be Ensembl gene IDs, Ensembl transcript IDs, or HGNC symbols. The version of Ensembl IDs will be trimmed by KGGSEE. For transcript-level expression profile,  a transcript label should be an Ensembl transcript ID and an ID of another type joint by ``:``.  Headers of the same tissue must have the same prefix. Headers of mean values must end with ``.mean``. Headers of standard errors must end with ``.SE``. All standard error values must be positive. The following columns are means and standard errors of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:
+Expression files should be tab-delimitated. The first column is gene/transcript IDs. The IDs should be Ensembl gene IDs, Ensembl transcript IDs, or HGNC symbols. The version of Ensembl IDs will be trimmed by KGGSEE. For transcript-level expression profile,  a transcript label should be an Ensembl transcript ID and an ID of another type joint by ``:``.  Headers of the same tissue must have the same prefix. Headers of mean values must end with ``.mean``. Headers of SEs must end with ``.SE``. All SE values must be positive. The following columns are means and SEs of expression levels of genes or transcripts in multiple tissues. A gene-level expression file looks like this:
 
 .. _expression_file:
 
@@ -623,7 +623,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
       --out t4.1
 
 .. note::
-    When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (e.g., height).
+    When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a quantitative trait.
 
 
 Gene heritability guided by eQTLs
