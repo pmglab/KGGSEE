@@ -250,7 +250,7 @@ EHE
       - Description
       - Default
     * - ``--gene-herit``
-      - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`Gene-based association <option_assoc>`.
+      - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`GATES and ECS <option_assoc>`.
       - n/a
     * - ``--case-col``, ``--control-col``, ``--nmiss-col``
       - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait.
