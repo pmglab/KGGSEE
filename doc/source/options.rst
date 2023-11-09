@@ -43,7 +43,7 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
       - ``1E-5``
     * - ``--chrom``
       - Specify chromosome labels. e.g., ``--chrom NC_052532.1,NW_024095932.1,NW_024095933.1,NW_024095934.1``.
-      - ``1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y,M``
+      - ``1,...,22,X,Y,M``
     * - ``--ld-block-max-r2``
       - Set the max tolerable LD coefficient between SNPs from two LD blocks. KGGSEE divides SNPs within a genomic region into LD blocks to improve computational efficiency. Any pairwise LD coefficient between SNPs from two LD blocks are always less than the number specified by ``--ld-block-max-r2``. A smaller number leads to larger LD blocks and in turn more RAM and CPU time usage; a larger number may increase the sampling error of LD coefficient estimates. We recommand that only increase the number when the partitioned LD blocks are too big to be analyzed.
       - ``0.15``
