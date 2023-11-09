@@ -30,7 +30,7 @@ Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene
 Chao Xue, Lin Jiang, Miao Zhou, Qihan Long, Ying Chen, Xiangyi Li, Wenjie Peng, Qi Yang and Miaoxin Li. PCGA: a comprehensive web server for phenotype-cell-gene association analysis. Nucleic Acids Research (2022). 50:W568–W576. https://doi.org/10.1093/nar/gkac425
 
 
-**Gene set enrichment analysis**
+**Gene set enrichment**
 
 Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
 
