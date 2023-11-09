@@ -27,8 +27,8 @@ System requirements
       - KGGSEE and related datasets may take up to 10 GB.
 
 
-Setup the Java Runtime Environment (JRE)
-========================================
+Setup a Java Runtime Environment (JRE)
+======================================
 
 KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE.
 
