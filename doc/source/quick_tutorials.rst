@@ -26,8 +26,8 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
       --out t1
 
 
-Flags and input files
----------------------
+Options and input files
+-----------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
@@ -95,8 +95,8 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
       --out t2
 
 
-Flags and input files
----------------------
+Options and input files
+-----------------------
 .. list-table::
     :widths: 1 3
     :header-rows: 1
@@ -183,8 +183,8 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
       --out t3
 
 
-Flags and input files
----------------------
+Options and input files
+-----------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
@@ -264,8 +264,8 @@ Heritability is a measure of how well differences in people's genes account for 
       --out t4
 
 
-Flags and input files
----------------------
+Options and input files
+-----------------------
 .. list-table::
     :widths: 1 4
     :header-rows: 1
