@@ -50,8 +50,8 @@ A BED file specified by ``--regions-bed`` defines customized gene coordinates in
 
 .. _detail_ECS:
 
-Gene-based association tests
-============================
+GATES and ECS (gene-based association tests)
+============================================
 
 KGGSEE performs the gene-based association analysis by GATES (a rapid and powerful **G**\ ene-based **A**\ ssociation **T**\ est using **E**\ xtended **S**\ imes procedure) and ECS (an **E**\ ffective **C**\ hi-square **S** \tatistics). The ``--gene-assoc`` flag triggers both.
 
@@ -174,8 +174,8 @@ The columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the s
 
 .. _detail_DESE:
 
-DESE
-====
+DESE (driver-tissue inference)
+==============================
 
 DESE (**D**\ river-tissue **E**\ stimation by **S**\ elective **E**\ xpression; `Jiang et al. 2019 <https://doi.org/10.1186/s13059-019-1801-5>`_) estimates driver tissues by tissue-selective expression of phenotype-associated genes in GWAS. The assumption is that the tissue-selective expression of causal or susceptibility genes indicates the tissues where complex phenotypes happen primarily, which are called driver tissues. Therefore, a driver tissue is very likely to be enriched with selective expression of susceptibility genes of a phenotype. 
 
@@ -431,8 +431,8 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
 
 .. _detail_EMIC:
 
-EMIC
-====
+EMIC (gene-expression causal-effect inference)
+==============================================
 
 EMIC (**E**\ ffective-median-based **M**\ endelian randomization framework for **I**\ nferring the **C**\ ausal genes of complex phenotypes) inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. The effective-median method solved the high false-positive issue in the existing MR methods due to either correlation among instrumental variables or noises in approximated linkage disequilibrium (LD). EMIC can further perform a pleiotropy fine-mapping analysis to remove possible false-positive estimates (`Jiang et al. 2022 <https://doi.org/10.1016/j.ajhg.2022.04.004>`_).
 
@@ -567,8 +567,8 @@ The columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same 
 
 .. _detail_h2:
 
-Gene-based (conditional) heritability estimation
-================================================
+EHE (gene-based heritability estimation)
+========================================
 
 This analysis estimates the heritability of each gene and performs gene-based association tests at the same time (`Miao et al. 2023 <https://doi.org/10.1016/j.ajhg.2023.08.006>`_).
 
