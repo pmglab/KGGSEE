@@ -40,7 +40,7 @@ Flags and input files
     * - ``--vcf-ref``
       - Specifies a VCF file of genotypes sampled from a reference population. These genotypes are used to estimate LD correlation coefficients among SNPs.
     * - ``--keep-ref``
-      - Keep the parsed VCF file in KGGSEE object format in ``./VCFRefhg19/``. KGGSEE will read these files in the following tutorials, which will be faster than parsing VCF files.
+      - Keep the parsed VCF file in KGGSEE object format in the specified directory. KGGSEE will read these files in the following tutorials, which will be faster than parsing VCF files.
     * - ``--gene-assoc``
       - Triggers gene-based association tests.
     * - ``--out``
