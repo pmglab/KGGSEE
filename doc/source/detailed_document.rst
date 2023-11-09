@@ -163,11 +163,13 @@ The columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the s
 
 
 .. admonition:: Cite GATES
-   Miaoxin Li, Hong-Sheng Gui, Johnny Sheung Him Kwan and Pak Chung Sham. GATES: a rapid and powerful gene-based association test using extended Simes procedure. The American Journal of Human Genetics (2011). 88(3):283-293. https://doi.org/10.1016/j.ajhg.2011.01.019
+
+    Miaoxin Li, Hong-Sheng Gui, Johnny Sheung Him Kwan and Pak Chung Sham. GATES: a rapid and powerful gene-based association test using extended Simes procedure. The American Journal of Human Genetics (2011). 88(3):283-293. https://doi.org/10.1016/j.ajhg.2011.01.019
 
 
 .. admonition:: Cite ECS
-   Miaoxin Li, Lin Jiang, Timothy Shin Heng Mak, Johnny Sheung Him Kwan, Chao Xue, Peikai Chen, Henry Chi-Ming Leung, Liqian Cui, Tao Li and Pak Chung Sham. A powerful conditional gene-based association approach implicated functionally important genes for schizophrenia. Bioinformatics (2019). 35(4):628-635. https://doi.org/10.1093/bioinformatics/bty682
+
+    Miaoxin Li, Lin Jiang, Timothy Shin Heng Mak, Johnny Sheung Him Kwan, Chao Xue, Peikai Chen, Henry Chi-Ming Leung, Liqian Cui, Tao Li and Pak Chung Sham. A powerful conditional gene-based association approach implicated functionally important genes for schizophrenia. Bioinformatics (2019). 35(4):628-635. https://doi.org/10.1093/bioinformatics/bty682
 
 
 .. _detail_DESE:
