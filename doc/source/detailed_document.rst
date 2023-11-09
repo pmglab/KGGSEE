@@ -85,8 +85,8 @@ Examples
 --------
 
 
-Gene-based association tests based on physical distance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test based on physical distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped for association tests.
 
@@ -100,8 +100,8 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
         --out t1.1
 
 
-Gene-based association tests based on eQTLs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test guided by eQTLs of a gene
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, eQTLs of a gene will be grouped for association tests.
 
@@ -115,8 +115,8 @@ In this example, eQTLs of a gene will be grouped for association tests.
       --out t1.2
 
 
-Transcript-based association tests based on eQTLs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test guided by eQTLs of a transcript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, eQTLs of a transcript will be grouped for association tests.
 
@@ -260,8 +260,8 @@ A transcript-level expression file looks like this:
 Examples
 --------
 
-DESE based on physical distance (or eDESE:dist)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESE based on physical distance (eDESE:dist)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, SNPs inside a gene and its 10 kb adjacent regions will be considered as belonging to a gene. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping. Adjustment for selection bias and multiple testing will be carried out by 100 permutations. 
 
@@ -468,8 +468,8 @@ When performing EMIC (triggered by ``--emic``), a GWAS summary statistic file (s
 Examples
 --------
 
-EMIC based on gene-level eQTL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Gene-expression causal-effect inference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is an example of gene-level EMIC. Only eQTLs with a p-value lower than 1E-6 will be considered IVs. Genes with a p-value of EMIC lower than 0.05 will also undergo EMIC-PFM. Genes with a p-value of EMIC lower than 0.01 will be plotted.
 
@@ -488,8 +488,8 @@ This is an example of gene-level EMIC. Only eQTLs with a p-value lower than 1E-6
       --out t3.1
 
 
-EMIC based on transcript-level eQTL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transcript-expression causal-effect inference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is an example of transcript-level EMIC. Only eQTLs with a p-value lower than 1E-6 will be considered IVs. Transcripts with a p-value of EMIC lower than 0.05 will also undergo EMIC-PFM. Transcripts with a p-value of EMIC lower than 0.01 will be plotted.
 
@@ -623,8 +623,8 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
     When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait (e.g., height).
 
 
-Gene heritability based on eQTLs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Gene heritability guided by eQTLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, eQTLs of a gene will be grouped to estimate heritability.
 
@@ -640,8 +640,8 @@ In this example, eQTLs of a gene will be grouped to estimate heritability.
       --out t4.2
 
 
-Transcript heritability based on eQTLs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transcript heritability guided by eQTLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, eQTLs of a transcript will be grouped to estimate heritability.
 
@@ -657,8 +657,8 @@ In this example, eQTLs of a transcript will be grouped to estimate heritability.
       --out t4.3
     
 
-Gene conditional heritability based on physical distance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Gene's conditional heritability based on physical distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, SNPs inside a gene and its 10 kb adjacent regions will be grouped to estimate heritability. Significant genes by ECS with Bonferroni-adjusted p<0.05 will be retained for fine-mapping and then calculating conditional heritability.
 
