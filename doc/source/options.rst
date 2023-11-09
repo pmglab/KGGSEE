@@ -30,10 +30,10 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
       - Specifies a VCF file of genotypes sampled from a reference population. These genotypes are used to estimate LD correlation coefficients among SNPs. For VCF files of separated chromosomes, use wildcards with quotes like ``"chr*.vcf.gz"``.
       - null
     * - ``--keep-ref``
-      - Keep the parsed VCF files as KGGSEE object format in a folder named ``VCFRefhg19`` or ``VCFRefhg38`` under the output folder.
-      - n/a
+      - Specifies a folder to keep the parsed VCF files in KGGSEE object format.
+      - null
     * - ``--saved-ref``
-      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref``.  Reading KGGSEE object format files is faster than parsing VCF files.
+      - Specifies the folder of the genotypes of the reference population in KGGSEE object format, which was saved by ``--keep-ref``.  Reading KGGSEE object format files is faster than parsing VCF files.
       - null
     * - ``--filter-maf-le``
       - Filter SNPs with a minor allele frequency lower than the setting.
