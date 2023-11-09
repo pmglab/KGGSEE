@@ -14,7 +14,7 @@ In the "Default" columns of the following tables, "null" denotes that the flag w
 Reference population genotypes
 ==============================
 
-These options work on the VCF file of reference population genotypes. Only SNPs that pass the filters will be used for subsequent analyses. These options act on all the analyses.
+These options work on the VCF file of reference population genotypes. Only SNPs that pass the filters will be used for subsequent analyses.
 
 
 .. list-table:: 
@@ -27,13 +27,13 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
       - Description
       - Default
     * - ``--vcf-ref``
-      - Specifies a VCF file of genotypes sampled from a reference population. These genotypes are used to estimate LD correlation coefficients among SNPs. For VCF files of separated chromosomes, use wildcards with quotes like ``"chr*.vcf.gz"``.
+      - Specifies a VCF file of genotypes sampled from the target population. These genotypes are used to estimate LD correlation coefficients between any pair of SNPs. For VCF files of separated chromosomes, use wildcards and quotes like ``"chr*.vcf.gz"``.
       - null
     * - ``--keep-ref``
       - Specifies a directory to keep the parsed VCF files in KGGSEE object format.
       - null
     * - ``--saved-ref``
-      - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which was saved by ``--keep-ref``.  Reading KGGSEE object format files is faster than parsing VCF files.
+      - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which was saved by ``--keep-ref``. Reading KGGSEE object format files is faster than parsing VCF files.
       - null
     * - ``--filter-maf-le``
       - Filter SNPs with a minor allele frequency lower than the setting.
@@ -42,8 +42,8 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
       - Filter SNPs with a p-value of rejecting Hardy-Weinberg equilibrium lower than the setting.
       - ``1E-5``
     * - ``--chrom``
-      - Specify chromosome labels. By default, KGGSEE assumes that the input follows standard human chromosome labels, namely 1-22, X, Y, and M. Here's an illustrative example: ``--chrom NC_052532.1,NW_024095932.1,NW_024095933.1,NW_024095934.1,NW_024095935.1``.
-      - null
+      - Specify chromosome labels. e.g., ``--chrom NC_052532.1,NW_024095932.1,NW_024095933.1,NW_024095934.1``.
+      - ``1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y,M``
     * - ``--ld-block-max-r2``
       - Set the max tolerable LD coefficient between SNPs from two LD blocks. KGGSEE divides SNPs within a genomic region into LD blocks to improve computational efficiency. Any pairwise LD coefficient between SNPs from two LD blocks are always less than the number specified by ``--ld-block-max-r2``. A smaller number leads to larger LD blocks and in turn more RAM and CPU time usage; a larger number may increase the sampling error of LD coefficient estimates. We recommand that only increase the number when the partitioned LD blocks are too big to be analyzed.
       - ``0.15``
@@ -52,8 +52,6 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
 
 GWAS summary statistics
 =======================
-
-These options work on all the analyses.
 
 
 .. list-table:: 
@@ -69,40 +67,40 @@ These options work on all the analyses.
       - Specifies a whitespace delimitated file of GWAS summary statistics.
       - null
     * - ``--chrom-col``
-      - Specifies the column of chromosomes. 
+      - Specifies the column header of chromosomes. 
       - ``CHR``
     * - ``--pos-col``
-      - Specifies the column of coordinates.
+      - Specifies the column header of coordinates.
       - ``BP``
     * - ``--p-col``
-      - Specifies the column of p-values.
+      - Specifies the column header of p-values.
       - ``P``
     * - ``--a1-col``
-      - Specifies the column of the reference allele to calculate effect sizes.
+      - Specifies the column header of the effect allele.
       - ``A1``
     * - ``--a2-col``
-      - Specifies the column of the other allele.
+      - Specifies the column header of the other allele.
       - ``A2``
     * - ``--freq-a1-col``
-      - Specifies the column of the frequency of the allele specified by ``--a1-col``.
+      - Specifies the column header of the frequencies of the allele specified by ``--a1-col``.
       - ``FRQ_U``
     * - ``--beta-col``
-      - Specifies the column of effect sizes.
+      - Specifies the column header of effect sizes.
       - null
     * - ``--beta-type``
-      - Specifies the type of effect sizes:  ``0`` for the linear regression coefficient of a quantitative phenotype; ``1`` for the logarithm of odds ratio or logistic regression coefficient of a qualitative phenotype; ``2`` for an odds ratio of a qualitative phenotype.
+      - Specifies the type of effect sizes:  ``0`` for the linear regression coefficient of a quantitative trait; ``1`` for the logarithm of odds ratio or logistic regression coefficient of a dichotomous trait; ``2`` for an odds ratio of a dichotomous trait.
       - null
     * - ``--se-col``
-      - Specifies the column of standard errors of effect sizes. Note: even if the effect size is provided as an odds ratio, this is still the standard error of the logarithm (base e) of the odds ratio.
+      - Specifies the column header of standard errors of effect sizes. Note: even if the effect size is provided as an odds ratio, this is still the standard error of the logarithm (base e) of the odds ratio.
       - ``SE``
     * - ``--nmiss-col``
-      - Specifies the column of sample sizes for a quantitative phenotype.
+      - Specifies the column header of sample sizes for a quantitative trait.
       - null
     * - ``--case-col``
-      - Specifies the column of case sample sizes for a qualitative phenotype.
+      - Specifies the column header of case sample sizes for a qualitative trait.
       - null
     * - ``--control-col``
-      - Specifies the column of control sample sizes for a qualitative phenotype.
+      - Specifies the column header of control sample sizes for a dichotomous trait.
       - null
 
 
@@ -111,8 +109,6 @@ These options work on all the analyses.
 Global misc
 ===========
 
-
-These options work on the all analyses.
 
 .. list-table::
     :widths: 3 8 2
@@ -139,7 +135,7 @@ These options work on the all analyses.
       - Output results in Excel format.
       - n/a
     * - ``--only-hgnc-gene``
-      - Only genes with an HGNC-approved gene symbol are considered in analyses.
+      - Only genes with an HGNC-approved gene symbol are considered in the analysis.
       - n/a
     * - ``--out``
       - Specifies the output prefix of results.
@@ -148,7 +144,7 @@ These options work on the all analyses.
       - Specify a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
       - null
     * - ``--regions-out``
-      - Specifies genomic regions to be excluded in analyses, e.g. ``chr1,chr2:2323-34434,chr2:43455-345555``. 
+      - Specifies genomic regions to be excluded in the analysis, e.g., ``chr1,chr2:2323-34434,chr2:43455-345555``. 
       - null
     * - ``--resource``
       - Specifies the path KGGSEE running resource data.
@@ -180,7 +176,7 @@ GATES and ECS
       - Specifies a fasta-styled file of eQTL summary statistics. If this flag is used, ``--neargene`` is overridden, and eQTLs of a gene or transcript will be grouped and tested.
       - null
     * - ``--filter-eqtl-p``
-      - Specifies the threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be used. The default is ``0.01`` when performing gene-based association tests and heritability estimating.
+      - Specifies the threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be used. The default is ``0.01`` when performing gene-based association tests and heritability estimation.
       - ``0.01``
 
 
@@ -302,11 +298,11 @@ EHE
       - Triggers gene-based association tests and estimation of gene heritability. The flags of ``--neargene``, ``--eqtl-file`` and ``--filter-eqtl-p`` have the same meaning as in :ref:`GATES and ECS <option_assoc>`.
       - n/a
     * - ``--case-col``, ``--control-col``, ``--nmiss-col``
-      - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a continuous trait.
+      - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a quantitative trait.
       - null
     * - ``--gene-condi``
-      - When ``--gene-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
+      - When ``--gene-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
       - n/a
     * - ``--prevalence``
-      - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
+      - Specifies the proportion of cases in the population when estimating the heritability of a dichotomous trait.
       - 0.01
