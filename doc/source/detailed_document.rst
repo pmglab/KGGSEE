@@ -426,7 +426,7 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
     Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene-based association framework integrating isoform-level eQTL data reveals new susceptibility genes for schizophrenia. Elife (2022). 10:e70779. https://doi.org/10.7554/elife.70779
 
 
-.. admonition:: Citation of the enrichment analyses
+.. admonition:: Citation of the enrichment analysis
 
     Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
 
