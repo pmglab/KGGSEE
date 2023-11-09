@@ -108,8 +108,8 @@ These options work on the GWAS summary statistics and act on all analyses.
 
 .. _option_assoc:
 
-Gene-based association
-======================
+GATES and ECS
+=============
 
 
 .. list-table::
@@ -236,8 +236,8 @@ EMIC
 
 .. _option_h2:
 
-Gene-based (conditional) heritability
-=====================================
+EHE
+===
 
 
 .. list-table::
@@ -265,8 +265,8 @@ Gene-based (conditional) heritability
 
 .. _option_misc:
 
-Miscellaneous global options
-============================
+Misc
+====
 
 
 .. list-table::
