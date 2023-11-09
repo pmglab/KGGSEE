@@ -162,12 +162,12 @@ The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based a
 The columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same as ``*.gene.pvalue.txt``. The difference is that, for each gene, in ``*.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``*.gene.var.pvalue.txt.gz``, all variants are output. The file with the suffix of ``.qq.png`` is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.
 
 
-.. admonition:: Cite GATES
+.. admonition:: Citation of GATES
 
     Miaoxin Li, Hong-Sheng Gui, Johnny Sheung Him Kwan and Pak Chung Sham. GATES: a rapid and powerful gene-based association test using extended Simes procedure. The American Journal of Human Genetics (2011). 88(3):283-293. https://doi.org/10.1016/j.ajhg.2011.01.019
 
 
-.. admonition:: Cite ECS
+.. admonition:: Citation of ECS
 
     Miaoxin Li, Lin Jiang, Timothy Shin Heng Mak, Johnny Sheung Him Kwan, Chao Xue, Peikai Chen, Henry Chi-Ming Leung, Liqian Cui, Tao Li and Pak Chung Sham. A powerful conditional gene-based association approach implicated functionally important genes for schizophrenia. Bioinformatics (2019). 35(4):628-635. https://doi.org/10.1093/bioinformatics/bty682
 
@@ -416,12 +416,17 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
       - p-values of conditional significant genes within the gene set.
 
 
-.. note::
-    **DESE.** Lin Jiang, Chao Xue, Sheng Dai, Shangzhen Chen, Peikai Chen, Pak Chung Sham, Haijun Wang and Miaoxin Li. DESE: estimating driver tissues by selective expression of genes associated with complex diseases or traits. Genome Biology (2019). 20(1):1-19. https://doi.org/10.1186/s13059-019-1801-5
+.. admonition:: Citation of DESE
 
-    **eDESE.** Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene-based association framework integrating isoform-level eQTL data reveals new susceptibility genes for schizophrenia. Elife (2022). 10:e70779. https://doi.org/10.7554/elife.70779
+    Lin Jiang, Chao Xue, Sheng Dai, Shangzhen Chen, Peikai Chen, Pak Chung Sham, Haijun Wang and Miaoxin Li. DESE: estimating driver tissues by selective expression of genes associated with complex diseases or traits. Genome Biology (2019). 20(1):1-19. https://doi.org/10.1186/s13059-019-1801-5
 
-    **Enrichment analyses.** Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
+
+.. admonition:: Citation of eDESE
+    Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene-based association framework integrating isoform-level eQTL data reveals new susceptibility genes for schizophrenia. Elife (2022). 10:e70779. https://doi.org/10.7554/elife.70779
+
+
+.. admonition:: Citation of the enrichment analyses
+    Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
 
 
 .. _detail_EMIC:
@@ -556,8 +561,8 @@ The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gen
 The columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as ``*.emic.gene.txt``. The difference is that, for each gene, in ``*.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``*.emic.gene.var.tsv.gz``, all eQTLs are output. The file with a suffix of ``.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of ``.emic.qq.png`` saves the Q-Q plot for EMIC p-values. The file with a suffix of ``.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by ``--emic-plot-p`` is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
 
 
-.. note::
-    **EMIC.** Lin Jiang, Lin Miao, Guorong Yi, Xiangyi Li, Chao Xue, Mulin Jun Li, Hailiang Huang and Miaoxin Li. Powerful and robust inference of causal genes of complex phenotypes with dependent expression quantitative loci by a novel median-based Mendelian randomization. The American Journal of Human Genetics (2022). 109(5):838-856. https://doi.org/10.1016/j.ajhg.2022.04.004
+.. admonition:: Citation of EMIC
+    Lin Jiang, Lin Miao, Guorong Yi, Xiangyi Li, Chao Xue, Mulin Jun Li, Hailiang Huang and Miaoxin Li. Powerful and robust inference of causal genes of complex phenotypes with dependent expression quantitative loci by a novel median-based Mendelian randomization. The American Journal of Human Genetics (2022). 109(5):838-856. https://doi.org/10.1016/j.ajhg.2022.04.004
 
 
 .. _detail_h2:
@@ -727,5 +732,5 @@ When ``--gene-condi`` is specified, a file with a suffix of ``.finemapping.gene.
       - Standard error of the conditional heritability estimate
 
 
-.. note::
-    **EHE.** Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
+.. admonition:: Citation of EHE
+    Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
