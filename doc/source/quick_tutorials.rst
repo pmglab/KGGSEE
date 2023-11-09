@@ -21,7 +21,7 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
     java -Xmx4g -jar ../kggsee.jar \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-      --keep-ref \
+      --keep-ref VCFRefhg19 \
       --gene-assoc \
       --out t1
 
@@ -40,7 +40,7 @@ Flags and input files
     * - ``--vcf-ref``
       - Specifies a VCF file of genotypes sampled from a reference population. These genotypes are used to estimate LD correlation coefficients among SNPs.
     * - ``--keep-ref``
-      - Keep the parsed VCF file (KGGSEE object format) in a folder named ``VCFRefhg19`` under the output folder. KGGSEE will read these files in the following tutorials, which will be faster than parsing VCF files.
+      - Keep the parsed VCF file in KGGSEE object format in ``./VCFRefhg19/``. KGGSEE will read these files in the following tutorials, which will be faster than parsing VCF files.
     * - ``--gene-assoc``
       - Triggers gene-based association tests.
     * - ``--out``
@@ -107,7 +107,7 @@ Flags and input files
     * - ``--sum-file``
       - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, columns of SNP coordinates and p-values are needed.
     * - ``--saved-ref``
-      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
+      - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
       - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE.
     * - ``--gene-condi``
@@ -195,7 +195,7 @@ Flags and input files
     * - ``--sum-file``
       - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, in addition to the columns of SNP coordinates and p-values, two columns of SNP alleles (named A1 and A2 by default), a column of A1 allele frequency (named FRQ_U by default), and two columns of SNP effect sizes (no default header) and their standard errors (named SE by default) are also needed.
     * - ``--saved-ref``
-      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
+      - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` for gene-level EMIC. Try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for transcript-level EMIC.
     * - ``--beta-col``
@@ -276,7 +276,7 @@ Flags and input files
     * - ``--sum-file``
       - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, in addition to the columns of SNP coordinates and p-values, two columns of case and control sample sizes are also needed.
     * - ``--saved-ref``
-      - Specifies the folder of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
+      - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--case-col``
       - Specifies the column name of the case sample size.
     * - ``--control-col``
