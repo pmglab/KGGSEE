@@ -4,7 +4,7 @@
 Options
 =======
 
-The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Misc <option_misc>` act on all the analyses. For clarity, we have categorized the other parameters by :ref:`GATES and EHE <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`EHE <option_h2>`, although this has resulted in duplications.
+The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Global misc <option_misc>` act on all the analyses. For clarity, we have categorized the other parameters by :ref:`GATES and EHE <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`EHE <option_h2>`, although this has resulted in duplications.
 
 In the "Default" columns of the following tables, "null" denotes that the flag works with an argument but there is no default value; "n/a" denotes that the flag works without any argument.
 
@@ -108,8 +108,8 @@ These options work on all the analyses.
 
 .. _option_misc:
 
-Misc
-====
+Global misc
+===========
 
 
 These options work on the all analyses.
@@ -151,6 +151,8 @@ These options work on the all analyses.
       - Specifies genomic regions to be excluded in analyses, e.g. ``chr1,chr2:2323-34434,chr2:43455-345555``. 
       - null
     * - ``--resource``
+      - Specifies the path KGGSEE running resource data.
+      - ``path/to/kggsee.jar/resources/``
 
 
 .. _option_assoc:
@@ -308,9 +310,3 @@ EHE
     * - ``--prevalence``
       - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
       - 0.01
-
-      - Specifies the path KGGSEE running resource data.
-      - ``path/to/kggsee.jar/resources/``
-
-
-
