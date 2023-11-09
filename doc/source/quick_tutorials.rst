@@ -11,8 +11,8 @@ Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data fold
 
 .. _t1:
 
-Gene-based association tests
-============================
+GATES and ECS (gene-based association tests)
+============================================
 
 GATES and ECS are two statistical methods combining the p-values of a group of SNPs into one p-value. This analysis inputs p-values of SNPs and outputs p-values of genes. The command is:
 
@@ -80,8 +80,8 @@ The Q-Q plots for p-values of inputted GWAS file (inside or outside of gene) and
 
 .. _t2:
 
-DESE
-====
+DESE (driver-tissue inference)
+==============================
     
 DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues and outputs p-values of phenotype-tissue associations and conditional p-values of genes. The command is:
 
@@ -166,8 +166,8 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a W
 
 .. _t3:
 
-EMIC
-====
+EMIC (gene-expression causal-effect inference)
+==============================================
 
 EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis inputs effect sizes of SNPs on the phenotype and genes' expressions and outputs effect sizes and p-values of genes' expression effects on the phenotype. The command is:
 
@@ -248,8 +248,8 @@ File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association
 
 .. _t4:
 
-Gene-based heritability estimation
-==================================
+EHE (gene-based heritability estimation)
+========================================
     
 Heritability is a measure of how well differences in people's genes account for differences in their phenotypes. This tutorial estimates the heritability of each gene with GWAS summary statistics. The command is:
 
