@@ -14,7 +14,7 @@ Make sure the KGGSEE Java archive ``kggsee.jar``, the running resource data fold
 GATES and ECS (gene-based association tests)
 ============================================
 
-GATES and ECS are two statistical methods combining the p-values of a group of SNPs into one p-value. This analysis inputs p-values of SNPs and outputs p-values of genes. The command is:
+GATES and ECS are two statistical methods combining the p-values of a group of SNPs into one p-value. This analysis inputs p-values of SNPs and outputs p-values of genes. The tutorial command is:
 
 .. code:: shell
 
@@ -61,7 +61,7 @@ The numeric results of gene-based association tests are saved in ``t1.gene.pvalu
     * - Gene
       - Gene symbol
     * - #Var
-      - Number of variants within the gene
+      - Number of variants within a gene
     * - ECSP
       - p-value of ECS
     * - GATESP
@@ -71,11 +71,11 @@ The numeric results of gene-based association tests are saved in ``t1.gene.pvalu
     * - Pos
       - Coordinate of the variant with the lowest p-value within the gene
     * - GWAS_Var_P
-      - p-value of the variant
+      - p-value of the variant with the lowest p-value within the gene
 
 The columns of ``t1.gene.var.pvalue.txt.gz`` are the same as ``t1.gene.pvalue.txt``. The difference is that, for each gene, in ``t1.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``t1.gene.var.pvalue.txt.gz``, all variants are output.
 
-The Q-Q plots for p-values of inputted GWAS file (inside or outside of gene) and gene-based association tests by GATES or ECS are saved in ``t1.qq.png``.
+The Q-Q plots for p-values of input GWAS file (inside or outside of each gene) and gene-based association tests by GATES or ECS are saved in ``t1.qq.png``.
 
 
 .. _t2:
@@ -83,7 +83,7 @@ The Q-Q plots for p-values of inputted GWAS file (inside or outside of gene) and
 DESE (driver-tissue inference)
 ==============================
     
-DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues and outputs p-values of phenotype-tissue associations and conditional p-values of genes. The command is:
+DESE performs phenotype-tissue association tests and conditional gene-based association tests at the same time. This analysis inputs p-values of a GWAS and expression profile of multiple tissues and outputs p-values of phenotype-tissue associations and conditional p-values of genes. The tutorial command is:
 
 .. code:: shell
 
@@ -107,13 +107,13 @@ Options and input files
     * - ``--sum-file``
       - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, columns of SNP coordinates and p-values are needed.
     * - ``--saved-ref``
-      - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
+      - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
-      - Specifies a gene expression file that contains means and standard errors of gene expressions in multiple tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE.
+      - Specifies a gene expression file that contains means and standard errors of gene expressions for tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE.
     * - ``--gene-condi``
       - Triggers the DESE analysis.
     * - ``--out``
-      - Specifies the prefix of output files.
+      - Specifies the prefix of the output files.
 
 
 Output files
@@ -142,12 +142,12 @@ The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``
     * - ECSP
       - p-value of ECS
     * - CondiECSP
-      - p-value of conditional gene-based association tests by conditional ECS
+      - p-value of the conditional gene-based association tests by conditional ECS
     * - GeneScore
-      - The gene's selective expression score in all tissues. A gene with a high score will be given higher priority to enter the conditioning procedure.
+      - Gene's selective-expression score. A gene with a high score will be given higher priority to enter the conditioning procedure.
        
 
-Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The file contains three columns:
+Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of the other genes in the interrogated tissue. The file contains three columns:
 
 .. list-table::
     :widths: 1 4
@@ -169,7 +169,7 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a W
 EMIC (gene-expression causal-effect inference)
 ==============================================
 
-EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis inputs effect sizes of SNPs on the phenotype and genes' expressions and outputs effect sizes and p-values of genes' expression effects on the phenotype. The command is:
+EMIC inferences gene expressions' causal effect on a complex phenotype with dependent expression quantitative loci by a robust median-based Mendelian randomization. SNPs with effects on both the phenotype and a gene are considered as instrumental variables (IVs) of the gene, which can be used to infer the gene's expression effect on the phenotype. This analysis uses effect sizes of SNPs on the phenotype and genes' expressions and outputs effect sizes and p-values of the expression effects on the phenotype. The tutorial command is:
 
 .. code:: shell
 
@@ -193,19 +193,19 @@ Options and input files
     * - Flag
       - Description
     * - ``--sum-file``
-      - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, in addition to the columns of SNP coordinates and p-values, two columns of SNP alleles (named A1 and A2 by default), a column of A1 allele frequency (named FRQ_U by default), and two columns of SNP effect sizes (no default header) and their standard errors (named SE by default) are also needed.
+      - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, in addition to the columns of SNP coordinates and p-values, two columns of SNP alleles (named A1 and A2 by default), a column of the effect allele (A1) frequency (named FRQ_U by default), and two columns of SNP effect sizes and their standard errors (named SE by default) are also needed.
     * - ``--saved-ref``
       - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--eqtl-file``
-      - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` for gene-level EMIC. Try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for transcript-level EMIC.
+      - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is for gene-level EMIC. You can try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for a transcript-level EMIC.
     * - ``--beta-col``
       - Specifies the column name of effect sizes in the GWAS file.
     * - ``--beta-type``
-      - Specifies the type of the effect size; here ``2`` means that it is the odds ratio for a qualitative phenotype.
+      - Specifies the type of the effect sizes; here ``2`` means that it is the odds ratio for a qualitative phenotype.
     * - ``--emic``
       - Triggers the EMIC analysis.
     * - ``--out``
-      - Specifies the prefix of output files.
+      - Specifies the prefix of the output files.
 
 
 Output files
@@ -228,22 +228,22 @@ The numeric results of EMIC are saved in ``t3.emic.gene.txt``. There are nine co
     * - Details_EMIC
       - Each detailed result has four components in brackets: the number of IVs, the causal effect estimate and its standard error, and the p-value. When a transcript-level EMIC is performed, results for each transcript are listed.
     * - Chrom
-      - Chromosome of the gene
+      - Chromosome of a gene
     * - Pos
       - The coordinate of the IV with the lowest GWAS p-value
     * - GWAS_Var_P
-      - GWAS p-value of the IV
+      - GWAS p-value of an IV
     * - GWAS_Var_Beta
-      - The phenotype association effect size of the IV
+      - The phenotype association effect size of an IV
     * - GWAS_Var_SE
-      - Standard error of the effect size
+      - Standard error of an effect size
 
 
 The columns of ``t3.emic.gene.var.tsv.gz`` are the same as ``t3.emic.gene.txt``. The difference is that, for each gene, in ``t3.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``turorial_3.emic.gene.var.tsv.gz``, all eQTLs are output. In this tutorial, the file ``t3.emic.gene.PleiotropyFinemapping.txt`` is empty, we ignore it here.
 
-File ``t3.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for EMIC p-values. 
+File ``t3.qq.png`` saves the Q-Q plot for the GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for the EMIC p-values. 
 
-File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
+File ``t3.scatterplots.emic.pdf`` saves the scatter plots of the genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IVs and the most significant GWAS variant. The error bar in a rectangle denotes the standard error of the coefficient estimate.
 
 
 .. _t4:
@@ -251,7 +251,7 @@ File ``t3.scatterplots.emic.pdf`` saves the scatter plots of genetic association
 EHE (gene-based heritability estimation)
 ========================================
     
-Heritability is a measure of how well differences in people's genes account for differences in their phenotypes. This tutorial estimates the heritability of each gene with GWAS summary statistics. The command is:
+Heritability is a measure of how well differences in people's genes account for differences in their phenotypes. This tutorial estimates the heritability of each gene using GWAS summary statistics. The tutorial command is:
 
 .. code:: shell
 
@@ -276,18 +276,18 @@ Options and input files
     * - ``--sum-file``
       - Specifies a whitespace delimitated file of GWAS summary statistics. In this analysis, in addition to the columns of SNP coordinates and p-values, two columns of case and control sample sizes are also needed.
     * - ``--saved-ref``
-      - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
+      - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--case-col``
       - Specifies the column name of the case sample size.
     * - ``--control-col``
       - Specifies the column name of the control sample size.
     * - ``--gene-herit``
-      - Triggers gene-based association tests and estimation of gene heritability.
+      - Triggers gene-based association tests and estimations of gene heritability.
     * - ``--out``
-      - Specifies the prefix of output files.
+      - Specifies the prefix of the output files.
 
 
 Output files
 ------------
-The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named ``Herit`` and ``HeritSE``, which are the estimate and its standard error of the gene heritability.
+The output files are generally the same as the first tutorial, except that, in ``t4.gene.pvalue.txt``, ``t4.gene.var.pvalue.txt.gz``, there are two more columns named ``Herit`` and ``HeritSE``, which are the estimate and its standard error of a gene's heritability.
 
