@@ -422,10 +422,12 @@ If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment te
 
 
 .. admonition:: Citation of eDESE
+
     Xiangyi Li, Lin Jiang, Chao Xue, Mulin Jun Li and Miaoxin Li. A conditional gene-based association framework integrating isoform-level eQTL data reveals new susceptibility genes for schizophrenia. Elife (2022). 10:e70779. https://doi.org/10.7554/elife.70779
 
 
 .. admonition:: Citation of the enrichment analyses
+
     Hongsheng Gui, Johnny S. Kwan, Pak C. Sham, Stacey S. Cherny and Miaoxin Li. Sharing of Genes and Pathways Across Complex Phenotypes: A Multilevel Genome-Wide Analysis. Genetics (2017). 206(3):1601–1609. https://doi.org/10.1534/genetics.116.198150
 
 
@@ -562,6 +564,7 @@ The columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same 
 
 
 .. admonition:: Citation of EMIC
+
     Lin Jiang, Lin Miao, Guorong Yi, Xiangyi Li, Chao Xue, Mulin Jun Li, Hailiang Huang and Miaoxin Li. Powerful and robust inference of causal genes of complex phenotypes with dependent expression quantitative loci by a novel median-based Mendelian randomization. The American Journal of Human Genetics (2022). 109(5):838-856. https://doi.org/10.1016/j.ajhg.2022.04.004
 
 
@@ -733,4 +736,5 @@ When ``--gene-condi`` is specified, a file with a suffix of ``.finemapping.gene.
 
 
 .. admonition:: Citation of EHE
+
     Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
