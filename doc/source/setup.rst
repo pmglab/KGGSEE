@@ -30,7 +30,7 @@ System requirements
 Setup a Java Runtime Environment (JRE)
 ======================================
 
-KGGSEE needs JRE 1.8 or higher to run. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent for KGGSEE.
+KGGSEE needs JRE 1.8 or higher. Both `Java(TM) SE JRE <https://java.com/en/download/manual.jsp>`_ and `OpenJDK JRE <https://openjdk.java.net/install>`_ are competent.
 
 After installing a JRE, check by entering ``java -version`` in a Terminal of Linux/MacOS, or a CMD/PowerShell of MS Windows. If it displays the JRE version like ``Java(TM) SE Runtime Environment (build x)`` or ``OpenJDK Runtime Environment (build x)``, it means the JRE has already been set up. Otherwise, check if JRE has been installed and if ``java`` is in ``$PATH``.
 
@@ -38,7 +38,7 @@ After installing a JRE, check by entering ``java -version`` in a Terminal of Lin
 KGGSEE and its running resources
 ================================
 
-KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and EHE) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal effect estimation (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed depends on the analysis. We provide the following download links.
+KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To perform an analysis, corresponding running resources are also needed.  For example, reference genotypes and gene annotations are needed for gene-based association tests (GATES and ECS) and heritability estimations (EHE); in addition, eQTL summary statistics are needed for gene-expression causal-effect estimations (EMIC). Thus, ``kggsee.jar`` is always needed and which resource files are needed depends on the analysis. We provide the following download links.
 
 .. list-table::
     :widths: 1 2 1 
