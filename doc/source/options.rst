@@ -4,7 +4,7 @@
 Options
 =======
 
-The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Miscellaneous global options <option_misc>` act on all analyses. For clarity, we have categorized the other parameters by :ref:`Gene-based association <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`Gene-based (conditional) heritability <option_h2>`, although this has resulted in some duplication of parameters.
+The options for :ref:`Reference population genotypes <option_vcf>`, :ref:`GWAS summary statistics <option_gwas>`, and :ref:`Misc <option_misc>` act on all the analyses. For clarity, we have categorized the other parameters by :ref:`GATES and EHE <option_assoc>`, :ref:`DESE <option_dese>`, :ref:`EMIC <option_emic>` and :ref:`EHE <option_h2>`, although this has resulted in duplications.
 
 In the "Default" columns of the following tables, "null" denotes that the flag works with an argument but there is no default value; "n/a" denotes that the flag works without any argument.
 
@@ -14,7 +14,7 @@ In the "Default" columns of the following tables, "null" denotes that the flag w
 Reference population genotypes
 ==============================
 
-These options work on the VCF file of reference population genotypes. Only SNPs that pass the filters will be used for subsequent analyses. These options act on all analyses.
+These options work on the VCF file of reference population genotypes. Only SNPs that pass the filters will be used for subsequent analyses. These options act on all the analyses.
 
 
 .. list-table:: 
@@ -53,7 +53,7 @@ These options work on the VCF file of reference population genotypes. Only SNPs 
 GWAS summary statistics
 =======================
 
-These options work on the GWAS summary statistics and act on all analyses.
+These options work on all the analyses.
 
 
 .. list-table:: 
@@ -104,6 +104,53 @@ These options work on the GWAS summary statistics and act on all analyses.
     * - ``--control-col``
       - Specifies the column of control sample sizes for a qualitative phenotype.
       - null
+
+
+.. _option_misc:
+
+Misc
+====
+
+
+These options work on the all analyses.
+
+.. list-table::
+    :widths: 3 8 2
+    :header-rows: 1
+    :class: tight-table
+
+
+    * - Flag
+      - Description
+      - Default
+    * - ``--nt``
+      - Specifies the number of threads.
+      - ``4``
+    * - ``--lib-update``
+      - Download ``kggsee.jar`` from http://pmglab.top/kggsee and replace the current running one.
+      - n/a
+    * - ``--buildver``
+      - Specifies the reference genome version of the coordinates. The supported versions are ``hg19`` and ``hg38``.
+      - ``hg19``
+    * - ``--db-gene``
+      - Specifies the database of gene annotations. ``refgene`` for RefSeq Genes; ``gencode`` for GENCODE; ``refgene,gencode`` for both.
+      - ``refgene``
+    * - ``--excel``
+      - Output results in Excel format.
+      - n/a
+    * - ``--only-hgnc-gene``
+      - Only genes with an HGNC-approved gene symbol are considered in analyses.
+      - n/a
+    * - ``--out``
+      - Specifies the output prefix of results.
+      - ``./kggsee1``
+    * - ``--regions-bed``
+      - Specify a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
+      - null
+    * - ``--regions-out``
+      - Specifies genomic regions to be excluded in analyses, e.g. ``chr1,chr2:2323-34434,chr2:43455-345555``. 
+      - null
+    * - ``--resource``
 
 
 .. _option_assoc:
@@ -262,50 +309,6 @@ EHE
       - Specifies the proportion of cases in the population when estimating the heritability of a qualitative phenotype.
       - 0.01
 
-
-.. _option_misc:
-
-Misc
-====
-
-
-.. list-table::
-    :widths: 3 8 2
-    :header-rows: 1
-    :class: tight-table
-
-
-    * - Flag
-      - Description
-      - Default
-    * - ``--nt``
-      - Specifies the number of threads.
-      - ``4``
-    * - ``--lib-update``
-      - Download ``kggsee.jar`` from http://pmglab.top/kggsee and replace the current running one.
-      - n/a
-    * - ``--buildver``
-      - Specifies the reference genome version of the coordinates. The supported versions are ``hg19`` and ``hg38``.
-      - ``hg19``
-    * - ``--db-gene``
-      - Specifies the database of gene annotations. ``refgene`` for RefSeq Genes; ``gencode`` for GENCODE; ``refgene,gencode`` for both.
-      - ``refgene``
-    * - ``--excel``
-      - Output results in Excel format.
-      - n/a
-    * - ``--only-hgnc-gene``
-      - Only genes with an HGNC-approved gene symbol are considered in analyses.
-      - n/a
-    * - ``--out``
-      - Specifies the output prefix of results.
-      - ``./kggsee1``
-    * - ``--regions-bed``
-      - Specify a `BED file <https://en.wikipedia.org/wiki/BED_(file_format)>`_ to define customized gene coordinates instead of the annotation from RefSeqGene or GENCODE. The first three columns of the BED file define gene coordinates and are mandatory; the fourth column defines gene names and is optional. When the fourth column is absent, a gene name of the format like ``chr1:100-200`` will be allocated.
-      - null
-    * - ``--regions-out``
-      - Specifies genomic regions to be excluded in analyses, e.g. ``chr1,chr2:2323-34434,chr2:43455-345555``. 
-      - null
-    * - ``--resource``
       - Specifies the path KGGSEE running resource data.
       - ``path/to/kggsee.jar/resources/``
 
