@@ -13,7 +13,7 @@ We first describe the general aspects of all analyses and then describe details 
 3. Based on the flag specified, KGGSEE reads more needed files and performs the corresponding analysis.
 
     * :ref:`GATES and ECS (gene-based association tests) <detail_ECS>` trigered by ``--gene-assoc``;
-    * :ref:`DESE (driver-tissue inference) <detail_DESE>` trigered by ``--gene-condi``;
+    * :ref:`DESE (driver-tissue inference) <detail_DESE>` trigered by ``--gene-assoc-condi``;
     * :ref:`EMIC (gene-expression causal-effect inference) <detail_EMIC>` trigered by ``--emic``;
     * :ref:`EHE (gene-based heritability estimation) <detail_h2>` trigered by ``--gene-herit``.
 
@@ -191,7 +191,7 @@ Synopsis
 .. code:: shell
 
     java -Xms16g -Xmx16g -jar kggsee.jar
-      --gene-condi
+      --gene-assoc-condi
       --out <prefix>
       --vcf-ref <file>
       --sum-file <file>
@@ -210,7 +210,7 @@ Synopsis
       --dese-permu-num <number>
 
 
-The flag ``--gene-condi`` triggers DESE. First, KGGSEE performs gene-based association tests, which is the same as the analyses triggered by ``--gene-assoc``. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified by one number, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. ``--neargene`` can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``. If ``--eqtl-file`` is specified, eDESE is evoked; KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
+The flag ``--gene-assoc-condi`` triggers DESE. First, KGGSEE performs gene-based association tests, which is the same as the analyses triggered by ``--gene-assoc``. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified by one number, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. ``--neargene`` can also have two values to set an asymmetric boundary extension, e.g., 5 kb upstream and 15 kb downstream of a gene can be set by ``--neargene 5000,15000``. If ``--eqtl-file`` is specified, eDESE is evoked; KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
 
 Second, after the gene-based association tests, significant genes by ECS are retained for fine-mapping. ``--multiple-testing`` specifies the method for multiple testing correction: ``bonf`` denotes Bonferroni correction; ``benfdr`` denotes Benjamini–Hochberg FDR; ``fixed`` denotes no correction. ``--p-value-cutoff`` specifies the threshold of the adjusted p-value. ``--top-gene`` specifies the maximum number of genes retained for fine-mapping. So, only genes (no more than the specified maximum number) with adjusted p-values lower than the specified threshold are retained for fine-mapping. Then, KGGSEE reads the expression file specified by ``--expression-file`` and performs iterative estimation of driver tissues. When ``--dese-permu-num`` is omitted, only unadjusted p-values are output. The unadjusted p-values are inflated due to selection bias in the iterations, which is only valid for tissue prioritization. For phenotype-tissue association tests, add ``--dese-permu-num 100`` for an adjustment by 100 permutations for selection bias and multiple testing.
 
@@ -270,13 +270,13 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be consi
     java -Xmx4g -jar ../kggsee.jar \
       --db-gene refgene,gencode \
       --only-hgnc-gene \
-      --gene-condi \
+      --gene-assoc-condi \
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --neargene 10000 \
       --multiple-testing bonf \
       --p-value-cutoff 0.05 \
-      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --expression-file ../resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz \
       --dese-permu-num 100 \
       --out geneAssoc
 
@@ -293,14 +293,14 @@ eDESE:gene
     java -Xmx4g -jar ../kggsee.jar \
       --db-gene refgene,gencode \
       --only-hgnc-gene \
-      --gene-condi \
+      --gene-assoc-condi \
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
       --filter-eqtl-p 0.01 \
       --multiple-testing bonf \
       --p-value-cutoff 0.05 \
-      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --expression-file ../resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz \
       --out geneAssoceQTL
 
 eDESE:isoform
@@ -310,7 +310,7 @@ eDESE:isoform
     java -Xmx4g -jar ../kggsee.jar \
       --db-gene refgene,gencode \
       --only-hgnc-gene \
-      --gene-condi \
+      --gene-assoc-condi \
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --eqtl-file GTEx_v8_transcript_BrainBA9.eqtl.txt.gz \
@@ -331,7 +331,7 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
     java -Xmx10g -jar ../kggsee.jar \
       --db-gene refgene \
       --only-hgnc-gene \
-      --gene-condi \
+      --gene-assoc-condi \
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --neargene 5000 \
@@ -386,10 +386,12 @@ Results of phenotype-tissue associations are saved in a file with a suffix of ``
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - p
-      - This is a Wilcoxon rank-sum test which tests whether the selective expression median of the phenotype-associated genes is significantly higher than that of other genes in an interrogated tissue. The unadjusted p-values are inflated due to selection bias in the iterations and are only valid for tissue prioritizations
-    * - BHFDRq
-      - The Benjamini-Hochberg adjusted p-values are adjusted by permutations for selection bias and multiple testing and are valid for hypothesis tests.
+    * - Unadjusted(p)
+      - Unadjusted p-values for the tissue-phenotype associations
+    * - Adjusted(p)
+      - Adjusted p-values calculated by adjusting both selection bias and multiple testing
+    * - Median(IQR)SigVsAll
+      - Median (interquartile range) expression of the conditionally significant genes and all the background genes
 
 
 If ``--geneset-db`` or ``--geneset-file`` is specified, results of enrichment tests are saved in a file with a suffix of ``.geneset.txt``. The columns of the file are as follows:
@@ -619,10 +621,10 @@ Synopsis
       --neargene <basepair>  # default: 5000
       --eqtl-file <file>
       --filter-eqtl-p <pval>  # default: 0.01
-      --gene-condi
+      --gene-assoc-condi
 
 
-``--gene-herit`` triggers gene-based association tests and estimation of gene heritability. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by ``--nmiss-col``; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by ``--case-col`` and ``--control-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. When ``--gene-condi`` is specified, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <detail_DESE>`. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
+``--gene-herit`` triggers gene-based association tests and estimation of gene heritability. ``--sum-file`` specifies a white space delimited GWAS summary statistic file which must have three columns of the chromosome of SNP, coordinate of SNP, and p-value of SNP; headers of the three columns can be specified by ``--chrom-col``, ``--pos-col`` and ``--p-col`` separately. In addition, for quantitative phenotype, a column of sample sizes is needed, and its header is specified by ``--nmiss-col``; for qualitative phenotype, two columns of case sample sizes and control sample sizes are needed, and their header is specified by ``--case-col`` and ``--control-col`` separately. SNPs belonging to a gene can be defined either by SNPs close to the gene or by eQTLs of the gene. If ``--neargene`` is specified, KGGSEE reads gene annotations and considers SNPs inside a gene and its adjacent regions at a fixed number of basepairs on both sides to be a test unit. If ``--eqtl-file`` is specified, KGGSEE reads the eQTL summary statistic file and considers eQTLs of a gene or a transcript to be a test unit, and ``--neargene`` is overridden. When ``--eqtl-file`` is specified, ``--filter-eqtl-p`` can be used to specify a threshold of eQTL p-values. Only eQTLs with a p-value lower than the threshold will be considered. When ``--gene-assoc-condi`` is specified, KGGSEE also calculates the conditional heritability of genes, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <detail_DESE>`. :ref:`A description of the eQTL file format <eqtl_file>` is near the beginning of the page.
 
 
 Examples
@@ -700,7 +702,7 @@ In this example, SNPs inside a gene and its 10 kb adjacent regions will be group
       --neargene 10000 \
       --multiple-testing bonf \
       --p-value-cutoff 0.05 \
-      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --expression-file ../resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz \
       --out t4.4
 
 
@@ -739,7 +741,7 @@ The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based h
 The columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same as ``*.gene.pvalue.txt``. The difference is that, for each gene, in ``*.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``*.gene.var.pvalue.txt.gz``, all variants are output. The file with the suffix of ``.qq.png`` is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.
 
 
-When ``--gene-condi`` is specified, a file with a suffix of ``.finemapping.gene.ecs.txt`` is also output. This file has the following four more columns in addition to its counterpart output by :ref:`DESE <detail_DESE>`.
+When ``--gene-assoc-condi`` is specified, a file with a suffix of ``.finemapping.gene.ecs.txt`` is also output. This file has the following four more columns in addition to its counterpart output by :ref:`DESE <detail_DESE>`.
 
 .. list-table::
     :widths: 1 4
