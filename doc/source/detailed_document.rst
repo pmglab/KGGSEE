@@ -560,7 +560,30 @@ The numeric results of EMIC-PFM are saved in a file with a suffix of ``.emic.gen
       - The p-value of an extended Cochran's Q test. The significance (p<1E-3) means that the causal effect is more likely to be false-positive. At this point, KGGSEE excludes its eQTLs which are also the eQTLs of other significant genes, and redoes EMIC. In this case, results in the columns of minP_EMIC_PFM and DetailsEMIC_PFM will be different from those in the columns of minP_EMIC and Details_EMIC.
 
 
-The columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as ``*.emic.gene.txt``. The difference is that, for each gene, in ``*.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``*.emic.gene.var.tsv.gz``, all eQTLs are output. The file with a suffix of ``.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of ``.emic.qq.png`` saves the Q-Q plot for EMIC p-values. The file with a suffix of ``.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by ``--emic-plot-p`` is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates.
+The columns of the file with a suffix of ``.emic.gene.var.tsv.gz`` are the same as ``*.emic.gene.txt``. The difference is that, for each gene, in ``*.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``*.emic.gene.var.tsv.gz``, all eQTLs are output. The file with a suffix of ``.qq.png`` saves the Q-Q plot for GWAS p-values of IVs. The file with a suffix of ``.emic.qq.png`` saves the Q-Q plot for EMIC p-values. The file with the suffix of ``.scatterplots.emic.pdf`` saves the scatter plots of genetic association with gene expression. Each gene with an EMIC p-value lower than the threshold specified by ``--emic-plot-p`` is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IV and the most significant GWAS variant. The error bars in the rectangles denote the standard errors of the coefficient estimates. The file with the suffix of ``..scatterplots.emic.txt`` saves the numeric results of the scatter plots. For each gene, the first line is the gene ID after ``>`` which is followed the estimated causal effect size (``Eff.=``) and the p-value (``p=``). Then, a table of the information of each IV is shown:
+
+
+.. list-table::
+    :widths: 1 4
+    :header-rows: 1
+    :class: tight-table
+
+    * - Header
+      - Description
+    * - BP
+      - The coordinate of the IV
+    * - ExpBeta
+      - The effect size of the IV to the expression
+    * - ExpBetaSE
+      - The SE of ExpBeta
+    * - TraitBeta
+      - The effect size of the IV to the trait. It is the linear regression coefficient for a quantitative trait; it is the logistic regression coefficient or the natural logarithm of the odds ratio for a dichotomous trait, which is depending on the value of ``--beta-type``.
+    * - TraitBetaSE
+      - The SE of TraitBeta
+
+
+After the table, the LD coefficient matrix of the IVs is shown.
+
 
 
 .. admonition:: Citation of EMIC
@@ -738,3 +761,4 @@ When ``--gene-condi`` is specified, a file with a suffix of ``.finemapping.gene.
 .. admonition:: Citation of EHE
 
     Lin Miao, Lin Jiang, Bin Tang, Pak Chung Sham and Miaoxin Li. Dissecting the high-resolution genetic architecture of complex phenotypes by accurately estimating gene-based conditional heritability. The American Journal of Human Genetics (2023). 110(9):1534–1548. https://doi.org/10.1016/j.ajhg.2023.08.006
+
