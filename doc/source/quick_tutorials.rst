@@ -19,9 +19,9 @@ GATES and ECS are two statistical methods combining the p-values of a group of S
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-      --sum-file scz_gwas_eur_chr1.tsv.gz \
-      --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
-      --keep-ref VCFRefhg19 \
+      --sum-file ./scz_gwas_eur_chr1.tsv.gz \
+      --vcf-ref ./1kg_hg19_eur_chr1.vcf.gz \
+      --keep-ref ./VCFRefhg19/ \
       --gene-assoc \
       --out t1
 
@@ -88,9 +88,9 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-      --sum-file scz_gwas_eur_chr1.tsv.gz \
-      --saved-ref VCFRefhg19 \
-      --expression-file GTEx_v8_TMM.gene.meanSE.txt.gz \
+      --sum-file ./scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref ./VCFRefhg19/ \
+      --expression-file ../resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz \
       --gene-condi \
       --out t2
 
@@ -109,7 +109,7 @@ Options and input files
     * - ``--saved-ref``
       - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
-      - Specifies a gene expression file that contains means and standard errors of gene expressions for tissues/cell types. Here ``GTEx_v8_TMM.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM.transcript.meanSE.txt`` for transcript-level DESE.
+      - Specifies a gene expression file that contains means and standard errors of gene expressions for tissues/cell types. Here ``GTEx_v8_TMM_all.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM_all.transcript.meanSE.txt`` for transcript-level DESE.
     * - ``--gene-condi``
       - Triggers the DESE analysis.
     * - ``--out``
@@ -158,10 +158,12 @@ Results of driver-tissue prioritizations are in ``t2.celltype.txt``. This is a W
       - Description
     * - TissueName
       - Name of the tissue being tested
-    * - p
-      - The p-values for tissue-phenotype associations.
-    * - BHFDRq
-      - The Benjamini-Hochberg adjusted p-values
+    * - Unadjusted(p)
+      - Unadjusted p-values for the tissue-phenotype associations
+    * - Adjusted(p)
+      - Adjusted p-values calculated by adjusting both selection bias and multiple testing
+    * - Median(IQR)SigVsAll
+      - Median (interquartile range) expression of the conditionally significant genes and all the background genes
 
 
 .. _t3:
@@ -174,9 +176,10 @@ EMIC inferences gene expressions' causal effect on a complex phenotype with depe
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-      --sum-file scz_gwas_eur_chr1.tsv.gz \
-      --saved-ref VCFRefhg19 \
-      --eqtl-file GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --sum-file ./scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref ./VCFRefhg19/ \
+      --eqtl-file ./GTEx_v8_gene_BrainBA9.eqtl.txt.gz \
+      --emic-plot-p 0.01 \
       --beta-col OR \
       --beta-type 2 \
       --emic \
@@ -198,6 +201,8 @@ Options and input files
       - Specifies the directory of genotypes of reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--eqtl-file``
       - Specifies a fasta-styled file of SNPs' effects on gene expressions. Here ``GTEx_v8_gene_BrainBA9.eqtl.txt.gz`` is for gene-level EMIC. You can try ``GTEx_v8_transcript_BrainBA9.eqtl.txt.gz`` for a transcript-level EMIC.
+    * - ``--emic-plot-p``
+      - Specifies the p-value threshold for plotting a scatter plot.
     * - ``--beta-col``
       - Specifies the column name of effect sizes in the GWAS file.
     * - ``--beta-type``
@@ -243,7 +248,7 @@ The columns of ``t3.emic.gene.var.tsv.gz`` are the same as ``t3.emic.gene.txt``.
 
 File ``t3.qq.png`` saves the Q-Q plot for the GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for the EMIC p-values. 
 
-File ``t3.scatterplots.emic.pdf`` saves the scatter plots of the genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IVs and the most significant GWAS variant. The error bar in a rectangle denotes the standard error of the coefficient estimate.
+File ``t3.scatterplots.emic.pdf`` saves the scatter plots of the genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IVs and the most significant GWAS variant. The error bar in a rectangle denotes the standard error of the coefficient estimate. File ``t3.scatterplots.emic.txt`` saves the numeric results of the scatter plots in ``t3.scatterplots.emic.pdf``.
 
 
 .. _t4:
@@ -256,8 +261,8 @@ Heritability is a measure of how well differences in people's genes account for 
 .. code:: shell
 
     java -Xmx4g -jar ../kggsee.jar \
-      --sum-file scz_gwas_eur_chr1.tsv.gz \
-      --saved-ref VCFRefhg19 \
+      --sum-file ./scz_gwas_eur_chr1.tsv.gz \
+      --saved-ref ./VCFRefhg19/ \
       --case-col Nca \
       --control-col Nco \
       --gene-herit \
