@@ -346,7 +346,7 @@ Outputs
 -------
 The three files with suffixes of ``.gene.pvalue.txt``, ``.gene.var.pvalue.txt.gz``, and ``.qq.png`` are the same as their counterparts output by :ref:`Gene-based association tests <detail_ECS>`.
 
-In addition, results of conditional gene-based association tests are saved in a file with a suffix of ``.finemapping.gene.ecs.txt``. The columns of the file are as follows:
+In addition, results of conditional gene-based association tests are saved in a file with a suffix of ``.gene.assoc.condi.txt``. The columns of the file are as follows:
 
 .. list-table::
     :widths: 1 4
@@ -741,7 +741,7 @@ The file with a suffix of ``.gene.pvalue.txt`` saves the results of gene-based h
 The columns of the file with the suffix of ``.gene.var.pvalue.txt.gz`` are the same as ``*.gene.pvalue.txt``. The difference is that, for each gene, in ``*.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``*.gene.var.pvalue.txt.gz``, all variants are output. The file with the suffix of ``.qq.png`` is the Q-Q plots for p-values of GWAS summary statistics and gene-based association tests by GATES and ECS.
 
 
-When ``--gene-assoc-condi`` is specified, a file with a suffix of ``.finemapping.gene.ecs.txt`` is also output. This file has the following four more columns in addition to its counterpart output by :ref:`DESE <detail_DESE>`.
+When ``--gene-assoc-condi`` is specified, a file with a suffix of ``.gene.assoc.condi.txt`` is also output. This file has the following four more columns in addition to its counterpart output by :ref:`DESE <detail_DESE>`.
 
 .. list-table::
     :widths: 1 4
