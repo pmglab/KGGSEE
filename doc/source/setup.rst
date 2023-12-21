@@ -51,10 +51,10 @@ KGGSEE is written in Java and distributed as a Java Archive ``kggsee.jar``. To p
     * - `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_
       - The KGGSEE program
       - 46 MB
-    * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_
+    * - `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0Bk-jeiAtIlA-abGjOCdbqEw?e=3Jhy5g>`_
       - A OneDrive folder containing all running resource files provided by us
       - 
-    * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
+    * - `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB4mE73oh8Gs6ObS9aJe3XmA>`_
       - Running resource files except for reference genotypes and eQTL summary statistics 
       - 362 MB
     * - `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
@@ -67,11 +67,11 @@ Set up an environment for the Quick tutorials
 
 A quick and easy way to set up an environment for the :ref:`Quick tutorials <quick_tutorials>` is
 
-#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
+#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_, `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB4mE73oh8Gs6ObS9aJe3XmA>`_ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EWqZHY25tT5Nq1GMwtl06ocBHoTAXGyBTH74zAp68dv5VA?e=tPtZ7B>`_
 #. Unzip ``resources.zip`` and ``tutorials.zip``
 #. Put ``kggsee.jar``, ``resources/`` and ``tutorials/`` under one directory.
 
-where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_ contains
+where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB4mE73oh8Gs6ObS9aJe3XmA>`_ contains
 
 .. list-table::
     :widths: 1 1
@@ -90,9 +90,9 @@ where `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/lim
       - `Ensembl <https://www.ensembl.org/index.html>`_ gene ID and transcript ID
     * - ``resources/*.symbols.gmt.gz``
       - `MSigDB <http://www.gsea-msigdb.org/gsea/msigdb/index.jsp>`_ gene sets
-    * - ``resources/GTEx_v8_TMM.gene.meanSE.txt.gz``
+    * - ``resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz``
       - The gene-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
-    * - ``resources/GTEx_v8_TMM.transcript.meanSE.txt.gz``
+    * - ``resources/GTEx_v8_TMM_all.transcript.meanSE.txt.gz``
       - The transcript-level expression profile of the `GTEx v8 <https://www.gtexportal.org/home/>`_ tissues
 
 
@@ -118,7 +118,7 @@ and `tutorials.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limia
 Set up an environment for customized analyses 
 =============================================
 
-In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_, reference genotypes of five 1000 Genomes Project super populations and eQTL summary statistics of 49 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
+In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB4mE73oh8Gs6ObS9aJe3XmA>`_, reference genotypes of five 1000 Genomes Project super populations and eQTL summary statistics of 49 GTEx v8 tissues are also available for downloading under `resources/ <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EpXRqLXIToZItErUHiDNDO0BM29gbEn1-Grs14D_EqORJQ?e=0ZjvlN>`_:
 
 .. list-table::
     :widths: 1 2
@@ -139,7 +139,7 @@ In addition to the files packaged in `resources.zip <https://mailsysueducn-my.sh
 
 Then, a straightforward way to set up an environment for customized analyses is
 
-#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB8lGeyTwPuiWM26AX8CHP8Q?e=PwbMoa>`_
+#. Download `kggsee.jar <https://pmglab.top/kggsee/download/lib/v1/kggsee.jar>`_ and `resources.zip <https://mailsysueducn-my.sharepoint.com/:u:/g/personal/limiaoxin_mail_sysu_edu_cn/EYhQXE95WZFMqERo_xNOhZUB4mE73oh8Gs6ObS9aJe3XmA>`_
 #. Unzip ``resources.zip``, and put ``kggsee.jar`` and ``resources/`` under one directory
 #. Download the reference genotypes (`1kg_hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Etg8dblAlUtGhtyN9RO49e0BvkXzgZj6Byy7PtNOUdLMMA?e=ks1hm1>`_ or `1kg_hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/Ep3EPaJSEqtAk_Eh7I7X4OwB9MDNe-LEwGUTFGC1V__O-A?e=d3KbyH>`_) of the population that matches your GWAS.
 #. For running EMIC or eDESE, also download the eQTL summary statistics (`eqtl_hg19 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EnhWhqLUNcpOrh6O3enFvCUBRvQ13v2970tcpOnNmmlKyg?e=1jkl06>`_ or `eqtl_hg38 <https://mailsysueducn-my.sharepoint.com/:f:/g/personal/limiaoxin_mail_sysu_edu_cn/EtWxtqj5HTRHsEw4IiZ9xAMBu9S8Defi67pmL3_rNUjb9w?e=ufFapJ>`_) of phenotype-associated tissues.
