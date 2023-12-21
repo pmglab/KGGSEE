@@ -118,7 +118,7 @@ Options and input files
 
 Output files
 ------------
-The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``t2.qq.png`` are the same as their counterparts with the same suffixes of the first tutorial. In addition, the results of conditional gene-based association tests are in ``t2.finemapping.gene.ecs.txt`` which contains nine columns:
+The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``t2.qq.png`` are the same as their counterparts with the same suffixes of the first tutorial. In addition, the results of conditional gene-based association tests are in ``t2.gene.assoc.condi.txt`` which contains nine columns:
 
 .. list-table::
     :widths: 1 4
