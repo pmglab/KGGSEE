@@ -195,7 +195,7 @@ DESE
     * - Flag
       - Description
       - Default
-    * - ``--gene-condi``
+    * - ``--gene-assoc-condi``
       - Trigers the DESE, eDESE or SelDP.
       - n/a
     * - ``--expression-file``
@@ -300,8 +300,8 @@ EHE
     * - ``--case-col``, ``--control-col``, ``--nmiss-col``
       - When ``--case-col`` and ``--control-col`` are specified, KGGSEE will regard the input as summary statistics from case/control samples and automatically adjust for the disease prevalence. On the other hand, if the ``--nmiss-col`` is specified, KGGSEE will regard the input as summary statistics for a quantitative trait.
       - null
-    * - ``--gene-condi``
-      - When ``--gene-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
+    * - ``--gene-assoc-condi``
+      - When ``--gene-assoc-condi`` is specified in addition to ``--gene-herit``, KGGSEE also calculates the conditional heritability, and the flags of ``--multiple-testing``, ``--p-value-cutoff``, ``--top-gene`` and ``--expression-file`` have the same meaning as in :ref:`DESE <option_dese>`.
       - n/a
     * - ``--prevalence``
       - Specifies the proportion of cases in the population when estimating the heritability of a dichotomous trait.
