@@ -91,7 +91,7 @@ DESE performs phenotype-tissue association tests and conditional gene-based asso
       --sum-file ./scz_gwas_eur_chr1.tsv.gz \
       --saved-ref ./VCFRefhg19/ \
       --expression-file ../resources/GTEx_v8_TMM_all.gene.meanSE.txt.gz \
-      --gene-condi \
+      --gene-assoc-condi \
       --out t2
 
 
@@ -110,7 +110,7 @@ Options and input files
       - Specifies the directory of the genotypes of the reference population in KGGSEE object format, which is saved by the ``--keep-ref`` flag in the first tutorial.
     * - ``--expression-file``
       - Specifies a gene expression file that contains means and standard errors of gene expressions for tissues/cell types. Here ``GTEx_v8_TMM_all.gene.meanSE.txt`` is for gene-level DESE. Try ``GTEx_v8_TMM_all.transcript.meanSE.txt`` for transcript-level DESE.
-    * - ``--gene-condi``
+    * - ``--gene-assoc-condi``
       - Triggers the DESE analysis.
     * - ``--out``
       - Specifies the prefix of the output files.
