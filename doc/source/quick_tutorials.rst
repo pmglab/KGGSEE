@@ -75,7 +75,7 @@ The numeric results of gene-based association tests are saved in ``t1.gene.pvalu
 
 The columns of ``t1.gene.var.pvalue.txt.gz`` are the same as ``t1.gene.pvalue.txt``. The difference is that, for each gene, in ``t1.gene.pvalue.txt``, only the variant with the lowest p-value is output, while in ``t1.gene.var.pvalue.txt.gz``, all variants are output.
 
-The Q-Q plots for p-values of input GWAS file (inside or outside of each gene) and gene-based association tests by GATES or ECS are saved in ``t1.qq.png``.
+The Q-Q plots for p-values of input GWAS file (inside or outside of each gene) and gene-based association tests by GATES or ECS are saved in ``t1.qq.pdf``.
 
 
 .. _t2:
@@ -118,7 +118,7 @@ Options and input files
 
 Output files
 ------------
-The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``t2.qq.png`` are the same as their counterparts with the same suffixes of the first tutorial. In addition, the results of conditional gene-based association tests are in ``t2.gene.assoc.condi.txt`` which contains nine columns:
+The three files of ``t2.gene.pvalue.txt``, ``t2.gene.var.pvalue.txt.gz``, and ``t2.qq.pdf`` are the same as their counterparts with the same suffixes of the first tutorial. In addition, the results of conditional gene-based association tests are in ``t2.gene.assoc.condi.txt`` which contains nine columns:
 
 .. list-table::
     :widths: 1 4
@@ -246,7 +246,7 @@ The numeric results of EMIC are saved in ``t3.emic.gene.txt``. There are nine co
 
 The columns of ``t3.emic.gene.var.tsv.gz`` are the same as ``t3.emic.gene.txt``. The difference is that, for each gene, in ``t3.emic.gene.txt``, only the eQTL with the lowest GWAS p-value is output, while in ``turorial_3.emic.gene.var.tsv.gz``, all eQTLs are output. In this tutorial, the file ``t3.emic.gene.PleiotropyFinemapping.txt`` is empty, we ignore it here.
 
-File ``t3.qq.png`` saves the Q-Q plot for the GWAS p-values of IVs. File ``t3.emic.qq.png`` saves the Q-Q plot for the EMIC p-values. 
+File ``t3.qq.pdf`` saves the Q-Q plot for the GWAS p-values of IVs. File ``t3.emic.qq.pdf`` saves the Q-Q plot for the EMIC p-values. 
 
 File ``t3.scatterplots.emic.pdf`` saves the scatter plots of the genetic association with gene expression. Each gene with an EMIC p-value lower than 2.5E-3 (default threshold) is saved on a separate page of the PDF. A filled rectangle on the plots denotes an IV. The red rectangle denotes the most significant GWAS variant among all the IVs of a gene. The slope of the line represents the estimated causal effect. The color of an IV denotes the degree of the LD between the IVs and the most significant GWAS variant. The error bar in a rectangle denotes the standard error of the coefficient estimate. File ``t3.scatterplots.emic.txt`` saves the numeric results of the scatter plots in ``t3.scatterplots.emic.pdf``.
 
