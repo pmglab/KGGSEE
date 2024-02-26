@@ -320,10 +320,10 @@ eDESE:isoform
       --expression-file GTEx_v8_TMM.transcript.meanSE.txt.gz \
       --out geneAssocIsoformeQTL
 
-DESE for drug repositioning
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESE for drug prioritization analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile of which the format is the same as :ref:`the gene expression file <expression_file>`. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to aid the drug repositioning for complex diseases.
+In this example, ``--expression-file`` specifies a customized file of the drug-induced gene-expression fold-change profile of which the format is the same as :ref:`the gene expression file <expression_file>`. DESE estimates the selective drug perturbation effect on the phenotype-associated genes' expression to prioritize the drug candidates for complex diseases.
 
 
 .. code:: shell
@@ -335,10 +335,13 @@ In this example, ``--expression-file`` specifies a customized file of the drug-i
       --vcf-ref 1kg_hg19_eur_chr1.vcf.gz \
       --sum-file scz_gwas_eur_chr1.tsv.gz \
       --neargene 5000 \
+      --regions-out chr6:28477797-33448354 \
       --multiple-testing bonf \
       --p-value-cutoff 0.05 \
-      --expression-file drug-induced_expression_change_profile \
+      --filter-maf-le 0.05 \
+      --expression-file drug-induced_expression_change_profile.txt \
       --dese-permu-num 100 \
+      --calcu-specificity false \
       --out Selective_Perturbed_Drugs
 
 
@@ -375,7 +378,7 @@ In addition, results of conditional gene-based association tests are saved in a 
       - The gene's selective expression score in all tissues. A gene with a high score will be given higher priority to enter the conditioning procedure.
 
 
-Results of phenotype-tissue associations are saved in a file with a suffix of ``.celltype.txt``. The columns of the file are as follows:
+Results of phenotype-tissue associations or drug prioritization analysis are saved in a file with a suffix of ``.celltype.txt``. The columns of the file are as follows:
 
 .. list-table::
     :widths: 1 4
