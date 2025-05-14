@@ -310,3 +310,6 @@ EHE
     * - ``--prevalence``
       - Specifies the proportion of cases in the population when estimating the heritability of a dichotomous trait.
       - 0.01
+    * - ``--adjust-gc``
+      - Ask KGGSEE to adjust the p-values and chi-square statistics using the genomic control factors from the input GWAS data before all follow-up analyses.
+      - 1
